@@ -17,9 +17,9 @@ class CreateModulesTable extends Migration
             $table->increments('id');
             $table->string('module_code');
             $table->string('grade');
-            $table->int('year_taken');
-            $table->int('sem_taken');
-            $table->int('user_id');
+            $table->integer('year_taken');
+            $table->integer('sem_taken');
+            $table->integer('user_id');
             $table->timestamps();
 
         });
