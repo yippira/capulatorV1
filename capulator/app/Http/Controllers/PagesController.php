@@ -9,8 +9,13 @@ class PagesController extends Controller
     public function index(){
 
         //return main landing page
-        
+
         return view('pages.index');
 
+    }
+
+    public function slider(){
+
+        return view('pages.slider');
     }
 }

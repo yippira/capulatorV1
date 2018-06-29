@@ -14,3 +14,12 @@
 Route::get('/', function () {
     return view('pages.index');
 });
+
+Route::get('/slider', function() {
+
+    return view('pages.slider');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
