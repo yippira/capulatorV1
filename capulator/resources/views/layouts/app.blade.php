@@ -144,7 +144,7 @@
                         hideSliderAtLimit: 0,
                         hideCaptionAtLimit: 0,
                         hideAllCaptionAtLilmit: 0,
-                        debugMode: false,
+                        debugMode: true,
                         fallbacks: {
                             simplifyAll: "off",
                             disableFocusListener: false,
