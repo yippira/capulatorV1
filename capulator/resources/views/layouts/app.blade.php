@@ -109,23 +109,18 @@
 
     <script>
             var tpj = jQuery;
-            var revapi42;
+            var revapi92;
             tpj(document).ready(function() {
-                if (tpj("#rev_slider_42_1").revolution == undefined) {
-                    revslider_showDoubleJqueryError("#rev_slider_42_1");
+                if (tpj("#rev_slider_92_1").revolution == undefined) {
+                    revslider_showDoubleJqueryError("#rev_slider_92_1");
                 } else {
-                    revapi42 = tpj("#rev_slider_42_1").show().revolution({
+                    revapi92 = tpj("#rev_slider_92_1").show().revolution({
                         sliderType: "hero",
     
                         sliderLayout: "fullwidth",
                         dottedOverlay: "none",
                         delay: 9000,
                         navigation: {},
-                        viewPort: {
-                            enable: true,
-                            outof: "pause",
-                            visible_area: "80%"
-                        },
                         responsiveLevels: [1240, 1024, 778, 480],
                         gridwidth: [1240, 1024, 778, 480],
                         gridheight: [500, 450, 400, 350],
@@ -144,7 +139,7 @@
                         hideSliderAtLimit: 0,
                         hideCaptionAtLimit: 0,
                         hideAllCaptionAtLilmit: 0,
-                        debugMode: true,
+                        debugMode: false,
                         fallbacks: {
                             simplifyAll: "off",
                             disableFocusListener: false,
