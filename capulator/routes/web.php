@@ -21,7 +21,7 @@ Route::get('/slider', function() {
 });
 
 Route::get('/dashboard', function(){
-    return view('dashboard');
+    return view('dashboard.index');
 });
 
 Auth::routes();
@@ -30,5 +30,5 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Route::get('/modules', function(){
 
-    return view('pages.modules');
+    return view('dashboard.modules');
 });
