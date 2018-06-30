@@ -18,4 +18,4 @@ Route::get('/dashboard', 'DashboardController@index');
 
 Auth::routes();
 
-Route::get('/modules', 'DashboardController@modules');
+Route::get('/modules', 'ModulesController@index');
