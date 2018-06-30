@@ -11,24 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.index');
-});
-
-Route::get('/slider', function() {
-
-    return view('pages.slider');
-});
-
-Route::get('/dashboard', function(){
-    return view('dashboard.index');
-});
-
-Auth::routes();
+Route::get('/', 'PagesController@index');
+Route::get('/slider', 'PagesController@slider');
 
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::get('/modules', function(){
+Auth::routes();
 
-    return view('dashboard.modules');
-});
+Route::get('/modules', 'DashboardController@modules');
