@@ -27,3 +27,8 @@ Route::get('/dashboard', function(){
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+
+Route::get('/modules', function(){
+
+    return view('pages.modules');
+});
