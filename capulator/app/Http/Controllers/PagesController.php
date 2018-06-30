@@ -18,4 +18,9 @@ class PagesController extends Controller
 
         return view('pages.slider');
     }
+
+    public function dashboard(){
+
+        return view('dashboard');
+    }
 }

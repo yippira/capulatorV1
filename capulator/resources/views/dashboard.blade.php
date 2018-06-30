@@ -20,9 +20,9 @@
         
                 <div class="container">
                     <div>
-                    @include('inc.nav')
+                    @include('inc.userNav')
                     <div class="col-md-3 col-sm-3">
-                        @include('inc.sideNav')
+                        @include('inc.userSideNav')
                     </div>
                     <div class="col-md-9 col-sm-9">
                     @yield('content')
