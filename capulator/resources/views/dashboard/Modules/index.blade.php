@@ -33,6 +33,27 @@
         </table>
       </div>
       
+
+      <div id="create" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
+              <h4 class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+              <p>Form starts here</p>
+            </div>
+              <div class="modal-footer">
+                <button class="btn btn-warning" type="submit" id="add">
+                  Add
+                </button>
+              </div>
+          </div>
+        </div>
+      </div>
+
+
 <a href="/modules/create" class="btn btn-default">Add Modules</a> 
 {!! Form::open(['url' => 'foo/bar']) !!}
     

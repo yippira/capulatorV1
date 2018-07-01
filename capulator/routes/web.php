@@ -20,3 +20,6 @@ Auth::routes();
 
 Route::get('/modules', 'ModulesController@index');
 Route::get('/notes', 'NotesController@index');
+
+Route::resource('modules', 'ModulesController');
+Route::resource('notes', 'NotesController');

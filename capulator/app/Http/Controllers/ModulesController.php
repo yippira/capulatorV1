@@ -33,7 +33,8 @@ class ModulesController extends Controller
      */
     public function create()
     {
-        // think about how to do this.
+        //return the modules adding view.
+        return view('dashboard.modules.create');
     }
 
     /**

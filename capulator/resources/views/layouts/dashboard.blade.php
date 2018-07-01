@@ -32,5 +32,20 @@
             </main>
         </div>
         <script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
+
+        {{-- Ajax form add --}}
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+
+        <script type="text/javascript">
+
+            $(document).on('click', '.create-modal',function(){
+                $('#create').modal('show');
+                $('.form-horizontal').show();
+                $('.modal-title').text('Add Post');
+            });
+
+        </script>
     </body>
 </html>
