@@ -36,6 +36,10 @@
             </main>
         </div>
 
+    
+               
+
+
         
         <script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
 
@@ -47,10 +51,13 @@
 
         <script type="text/javascript">
 
+
+
             $('#num_modules').hide();
 
             var yearSelected = false;
             var semSelected = false;
+            var mod_num = 0;
 
             $('#year').change(function() {
                 
@@ -74,6 +81,24 @@
                 
             });
 
+            $('#num_modules').change(function(){
+                $('select option:selected').each(function(){
+
+                mod_num = $(this).text() + " ";
+                });
+
+            $("#module_details").html('');    
+            console.log(mod_num);
+            for(var i = 0; i < mod_num; i++){
+                $("#module_details").append('Test');
+            }
+            });
+            
+
+
+
+
+
             // $(document).on('click', '.create-modal',function(){
             //     $('#create').modal('show');
             //     $('.form-horizontal').show();
@@ -81,5 +106,7 @@
             // });
 
         </script>
+
+        
     </body>
 </html>
