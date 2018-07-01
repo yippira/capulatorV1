@@ -22,7 +22,7 @@
               <td>{{$module->year_taken}}</td>
               <td>{{$module->sem_taken}}</td>
                     <td>{{$module->grade}}</td>
-                    <td>4 ("hardcoded")</td>
+              <td>{{$module->mc_worth}}</td>
                   </tr>
               
               @endforeach
@@ -33,7 +33,7 @@
         </table>
       </div>
       
-Add Modules
+<a href="/modules/create" class="btn btn-default">Add Modules</a> 
 {!! Form::open(['url' => 'foo/bar']) !!}
     
 {!! Form::close() !!}

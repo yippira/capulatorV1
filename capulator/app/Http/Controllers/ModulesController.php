@@ -23,7 +23,7 @@ class ModulesController extends Controller
         //we have to sort out to show only modules by user later.
         //currently getting all modules
         $modules = Module::orderBy('created_at','desc')->paginate(5);
-        return view('dashboard.modules')->with('modules',$modules);
+        return view('dashboard.modules.index')->with('modules',$modules);
     }
 
     /**
