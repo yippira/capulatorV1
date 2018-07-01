@@ -7,11 +7,11 @@
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Module Code</th>
-              <th>Year taken</th>
-              <th>Sem Taken</th>
-              <th>Grade</th>
-              <th>MC Worth</th>
+              <th class="col-md-3 col-sm-3">Module Code</th>
+              <th class="col-md-2 col-sm-2">Year taken</th>
+              <th class="col-md-2 col-sm-2">Sem Taken</th>
+              <th class="col-md-2 col-sm-2">Grade</th>
+              <th class="col-md-2 col-sm-2">MC Worth</th>
             </tr>
           </thead>
           <tbody>
@@ -31,30 +31,14 @@
            
           </tbody>
         </table>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create">
+            Add Modules
+          </button>
       </div>
       
 
-      <div id="create" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" name="button">&times;</button>
-              <h4 class="modal-title"></h4>
-            </div>
-            <div class="modal-body">
-              <p>Form starts here</p>
-            </div>
-              <div class="modal-footer">
-                <button class="btn btn-warning" type="submit" id="add">
-                  Add
-                </button>
-              </div>
-          </div>
-        </div>
-      </div>
 
 
-<a href="/modules/create" class="btn btn-default">Add Modules</a> 
 {!! Form::open(['url' => 'foo/bar']) !!}
     
 {!! Form::close() !!}

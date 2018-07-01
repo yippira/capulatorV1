@@ -33,7 +33,7 @@
         </table>
       </div>
       
-<a href="/modules/create" class="btn btn-default">Add Modules</a> 
+
 {!! Form::open(['url' => 'foo/bar']) !!}
     
 {!! Form::close() !!}
