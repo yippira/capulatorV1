@@ -36,11 +36,33 @@
           </button>
       </div>
       
+      <div aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1" id="create" class="modal fade" role="dialog">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" aria-label="Close" class="close" data-dismiss="modal" name="button">&times;</button>
+                <h4 class="modal-title">State the academic period</h4>
+              </div>
+              <div class="modal-body">
+                
+                  {!! Form::open(['url' => 'foo/bar']) !!}
+                  <div class="form-group col-md-6 col-sm-6">
+                      {{Form::label('year_taken', 'Year Taken')}} {{Form::select('year', ['2016' => '2016', '2017' => '2017', '2018' => '2018', '2019' => '2019'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Year'])}}
+                  </div>
+                  <div class="form-group col-md-6 col-sm-6">
+                      {{Form::label('sem_taken', 'Semester Taken')}} {{Form::select('semester', ['1' => '1', '2' => '2'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Semester'])}}
+                  </div>
+                  {!! Form::close() !!}
+              </div>
+                <div class="modal-footer">
+                  <button class="btn btn-warning" type="submit" id="add">
+                    Add
+                  </button>
+                </div>
+            </div>
+          </div>
+        </div> 
 
 
-
-{!! Form::open(['url' => 'foo/bar']) !!}
-    
-{!! Form::close() !!}
 
 @endsection

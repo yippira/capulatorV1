@@ -7,7 +7,8 @@
 
         <title>{{config('app.name', 'Capulator')}}</title>
 
-        
+            <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 
@@ -19,24 +20,7 @@
         <div id="app">
 
             <main>
-                     <div aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1" id="create" class="modal fade" role="dialog">
-                            <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" aria-label="Close" class="close" data-dismiss="modal" name="button">&times;</button>
-                                  <h4 class="modal-title"></h4>
-                                </div>
-                                <div class="modal-body">
-                                  <p>Form starts here</p>
-                                </div>
-                                  <div class="modal-footer">
-                                    <button class="btn btn-warning" type="submit" id="add">
-                                      Add
-                                    </button>
-                                  </div>
-                              </div>
-                            </div>
-                          </div> 
+
 
                 <div class="container">
                     <div>
