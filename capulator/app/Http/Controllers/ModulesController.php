@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Module;
+use App\User;
 
 class ModulesController extends Controller
 {
@@ -22,8 +23,10 @@ class ModulesController extends Controller
     {
         //we have to sort out to show only modules by user later.
         //currently getting all modules
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id); 
         $modules = Module::orderBy('created_at','desc')->paginate(5);
-        return view('dashboard.modules.index')->with('modules',$modules);
+        return view('dashboard.modules.index')->with('modules',$user->modules);
     }
 
     /**
