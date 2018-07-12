@@ -58,7 +58,7 @@
             var yearSelected = false;
             var semSelected = false;
             var mod_num = 0;
-
+            var code = "";
             $('#year').change(function() {
                 
                        
@@ -91,10 +91,14 @@
             console.log(mod_num);
             $("#module_details").append('<hr>');
 
-            for(var i = 1; i <= mod_num; i++){
+           
+            for(var $i = 1; $i <= mod_num; $i++){
                 
+             code = "{{Form::label('mod_code";
+             code2 = ", 'Module Code')}} {{Form::text('mod_code' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}}";
             //$("#module_details").append('<div class="form-row">');
-            $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code', '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
+            $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code ' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
+            
             //next we set these 2 to hidden form and populate with the year and sem taken above
           //  $("#module_details").append('<div class="col-md-2"> {{Form::label('year_taken', 'Year')}} {{Form::text('year_taken', '2018',['class' => 'form-control', 'placeholder' => 'Eg. 2018'])}} </div>');
          //   $("#module_details").append('<div class="col-md-2"> {{Form::label('sem_taken', 'Semester')}} {{Form::text('sem_taken', '1',['class' => 'form-control', 'placeholder' => 'Eg. 1'])}} </div>');

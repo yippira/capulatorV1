@@ -45,32 +45,36 @@
               </div>
               <div class="modal-body">
                  
-                  {!! Form::open(['url' => 'foo/bar']) !!}
-                  
+                <div class="">
+                  {!! Form::open(['action' => 'ModulesController@store', 'method' => 'POST']) !!}
+                  <div class="row">
                   <div class="form-group col-md-6 col-sm-6">
                       {{Form::label('year_taken', 'Year Taken')}} {{Form::select('year', ['2016' => '2016', '2017' => '2017', '2018' => '2018', '2019' => '2019'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Year', 'id' => 'year'])}}
                   </div>
                   <div class="form-group col-md-6 col-sm-6">
                       {{Form::label('sem_taken', 'Semester Taken')}} {{Form::select('semester', ['1' => '1', '2' => '2'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Semester', 'id' => 'semester'])}}
                   </div>
-                  {{-- <div class="form-group col-md-6 col-sm-6" id="num_modules">
-                      {{Form::label('num_of_modules', 'Number of Modules taken')}} {{Form::select('modules', ['1' => '1', '2' => '2','3' => '3','4' => '4','5' => '5','6' => '6','7' => '7','8' => '8','9' => '9','10' => '10','11' => '11', '12' => '12'],'null',['class' => 'form-control', 'placeholder' => 'Select number of modules taken'])}}
-                  </div> --}}
+                </div>
+                <div class="row">
                   <div class="form-group col-md-6 col-sm-6" id="num_modules">
-                      {{Form::label('num_of_modules', 'Number of Modules taken')}} {{Form::selectRange('modules',1,12 ,'null',['class' => 'form-control', 'placeholder' => 'Select number of modules taken'])}}
+                      {{Form::label('num_of_modules', 'Number of Modules taken')}} {{Form::selectRange('num_mods',1,12 ,'null',['class' => 'form-control', 'placeholder' => 'Select number of modules taken'])}}
                   </div>
+                </div>
+                  <div class="row">
                   <div class="form-group col-md-12 col-sm-12" id="module_details">
                     {{-- We will populate this with the number of modules selected --}}
                   </div>
-                  
-                  {!! Form::close() !!}
-              </div>
+                </div>
+                </div>
+                </div>
+                
                 <div class="modal-footer">
-                  <button class="btn btn-warning" type="submit" id="add">
-                    Add
-                  </button>
+                  {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                    {!! Form::close() !!}
                 </div>
             </div>
+            
+            
           </div>
         </div> 
 
