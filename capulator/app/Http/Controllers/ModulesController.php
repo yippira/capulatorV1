@@ -63,10 +63,11 @@ class ModulesController extends Controller
         //create module, using default year and semester
 
         //test one lets get the num_mods out.
-        for($i = 0; $i < $request->input('num_mods'); $i++){
+        for($i = 1; $i <= $request->input('num_mods'); $i++){
          $module = new Module;
-         $module->module_code = $request->input('module_code');
-         $module->grade = $request->input('grade');
+         $module->module_code = $request->input('mod_code' . $i);
+         $module->grade = $request->input('grade' . $i);
+         $module->mc_worth = $request->input('mc_worth' . $i);
          $module->year_taken = $year;
          $module->sem_taken = $semester;
          $module->user_id = auth()->user()->id;

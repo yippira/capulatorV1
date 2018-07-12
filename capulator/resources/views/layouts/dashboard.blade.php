@@ -97,17 +97,19 @@
            
             for(var $i = 1; $i <= mod_num; $i++){
                 
-             code = "{{Form::label('mod_code";
-             code2 = ", 'Module Code')}} {{Form::text('mod_code' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}}";
-            //$("#module_details").append('<div class="form-row">');
-            $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code ' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
+
+            // $("#module_details").append('<div class="form-row">');
+            // $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code ' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
             
+            $("#module_details").append("<div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div>");
+
+
             //next we set these 2 to hidden form and populate with the year and sem taken above
           //  $("#module_details").append('<div class="col-md-2"> {{Form::label('year_taken', 'Year')}} {{Form::text('year_taken', '2018',['class' => 'form-control', 'placeholder' => 'Eg. 2018'])}} </div>');
          //   $("#module_details").append('<div class="col-md-2"> {{Form::label('sem_taken', 'Semester')}} {{Form::text('sem_taken', '1',['class' => 'form-control', 'placeholder' => 'Eg. 1'])}} </div>');
-            $("#module_details").append('<div class="col-md-4"> {{Form::label('grade', 'Grade')}} {{Form::text('grade', '',['class' => 'form-control', 'placeholder' => 'Eg. A'])}} </div>');
-            $("#module_details").append('<div class="col-md-4"> {{Form::label('mc_worth', 'MC Worth')}} {{Form::text('mc_worth', '',['class' => 'form-control', 'placeholder' => 'Eg. 4'])}} </div>');
-                
+         $("#module_details").append("<div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><input class = 'form-control' placeholder = 'Eg. A' name = 'grade" + $i + "' type='text' </input></div>");
+         $("#module_details").append("<div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div>");
+        
             }
 
             });
