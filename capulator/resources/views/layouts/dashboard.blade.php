@@ -14,7 +14,9 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />  
-        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
     </head>
     <body>
         <div id="app">
@@ -22,17 +24,18 @@
             <main>
 
 
-                <div class="container">
+                
                     <div>
-                    @include('inc.userNav')
-                    <div class="col-md-3 col-sm-3">
+                    @include('inc.userNav') 
+                    {{-- might have to make side bar collapsable  --}}
+                    <div class="col-md-2 col-sm-2">
                         @include('inc.userSideNav')
                     </div>
-                    <div class="col-md-9 col-sm-9">
+                    <div class="col-md-10 col-sm-10">
                     @yield('content')
                     </div>
                 </div>
-                </div>
+                
             </main>
         </div>
 
@@ -116,8 +119,14 @@
             //     $('.modal-title').text('Add Post');
             // });
 
+
+
         </script>
 
-        
+<script>
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     </body>
 </html>

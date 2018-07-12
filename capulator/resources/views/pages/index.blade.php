@@ -45,4 +45,15 @@
  
 </div>
 </div>
+{{-- <div class="container">
+<div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="{{ URL::to('/') }}/images/2.jpg" alt="Card image cap">
+    <div class="card-header">
+        Featured
+      </div>
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+</div> --}}
 @endsection
