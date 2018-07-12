@@ -76,7 +76,8 @@ class ModulesController extends Controller
         }
 
 
-        return "check done";
+        return redirect('/modules');
+        ;
    
 
     }

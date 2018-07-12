@@ -2,7 +2,30 @@
 @section('content')
 <h2>Dashboard</h2>
 <div class="row">
-    <div class="col-lg-4 col-md-6">
+        <div class="col-sm-12 col-lg-4 col-md-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-check fa-5x"></i>
+                            </div>
+                            <div class="col-xs-9 text-right">
+                            <div class="huge">{{$current_CAP}}</div>
+                                <div>Current CAP</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="/modules">
+                        <div class="panel-footer">
+                            <span class="pull-left">View Details</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+    <div class="col-sm-12 col-lg-4 col-md-6">
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <div class="row">
@@ -25,7 +48,7 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-4 col-md-6">
+    <div class="col-sm-12 col-lg-4 col-md-6">
         <div class="panel panel-yellow">
             <div class="panel-heading">
                 <div class="row">
@@ -48,31 +71,39 @@
             </a>
         </div>
     </div>
-    <div class="col-lg-4 col-md-6">
-        <div class="panel panel-green">
-            <div class="panel-heading">
-                <div class="row">
-                    <div class="col-xs-3">
-                        <i class="fa fa-percent fa-5x"></i>
-                    </div>
-                    <div class="col-xs-9 text-right">
-                    <div class="huge">{{$mc_taken/160 * 100}}% completion</div>
-                        <div>progress done</div>
+</div>
+    
+
+    <div class="row">
+            <div class="col-sm-12 col-lg-4 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-percent fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                <div class="huge">{{$mc_taken/160 * 100}}% completion</div>
+                                    <div>progress done</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/modules">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
                     </div>
                 </div>
-            </div>
-            
-            <a href="/modules">
-                <div class="panel-footer">
-                    <span class="pull-left">View Details</span>
-                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                    <div class="clearfix"></div>
-                </div>
-            </a>
-        </div>
     </div>
-    <div style="width:75%">
+    <div class='col-md-6'>
     <canvas id="myChart"></canvas>
+    </div>
+    <div class='col-md-6'>
+
     </div>
     <script>
     var ctx = document.getElementById('myChart').getContext('2d');
