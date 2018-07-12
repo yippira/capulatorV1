@@ -48,23 +48,34 @@ class ModulesController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'title'=> 'required',
-            'body'=>'required'
 
-        ]);
+        // $this->validate($request, [
+        //     'year'=> 'required',
+        //     'semester'=>'required'
 
-        //create module
+        // ]);
 
-        $module = new Module;
-        $module->module_code = $request->input('module_code');
-        $module->grade = $request->input('grade');
-        $module->year_taken = $request->input('year_taken');
-        $module->sem_taken = $request->input('sem_taken');
-        $module->user_id = auth()->user()->id;
-        $module->save();
+        //We need to first take the year and semester. 
 
-        return redirect('/dashboard');
+        $year = $request->input('year');
+        $semester = $request->input('semester');
+            
+        //create module, using default year and semester
+
+        //test one lets get the num_mods out.
+        for($i = 0; $i < $request->input('num_mods'); $i++){
+         $module = new Module;
+         $module->module_code = $request->input('module_code');
+         $module->grade = $request->input('grade');
+         $module->year_taken = $year;
+         $module->sem_taken = $semester;
+         $module->user_id = auth()->user()->id;
+         $module->save();
+
+        }
+
+
+        return "check done";
    
 
     }

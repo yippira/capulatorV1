@@ -42,9 +42,19 @@
                                     </article>
                                 </section>
                 
- 
+ {{-- end wrapper head --}}
+</div> 
+{{-- end wrapper --}}
 </div>
+<div class="container" style="padding-top: 20px;">
+    <div class="card">
+    <h2>This is where information about our capulator will go in.</h2>
+
+    <p>The Capulator aims to be your one stop for CAP target setting, graphical visualisation of CAP progression.</p>
+    </div>
+
 </div>
+<<<<<<< HEAD
 {{-- <div class="container">
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="{{ URL::to('/') }}/images/2.jpg" alt="Card image cap">
@@ -56,4 +66,7 @@
     </div>
   </div>
 </div> --}}
+=======
+
+>>>>>>> 893e964c1a4f27e61c1c23438f46b68f5fc0f5aa
 @endsection
