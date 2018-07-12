@@ -1,59 +1,54 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <a class="navbar-brand" href="{{ url ('/dashboard') }}">Capulator | Dashboard</a>
-    </div>
-    <!-- /.navbar-header -->
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="index.html">Capulator | Set Your estiny</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+              <a class="nav-link" href="index.html">
+                <i class="fa fa-fw fa-dashboard"></i>
+                <span class="nav-link-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+              <a class="nav-link" href="charts.html">
+                <i class="fa fa-fw fa-area-chart"></i>
+                <span class="nav-link-text">Modules</span>
+              </a>
+            </li>
 
-    <ul class="nav navbar-top-links navbar-right">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                  <i class="fa fa-fw fa-wrench"></i>
+                  <span class="nav-link-text">Settings</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseComponents">
+                  <li>
+                    <a href="navbar.html">Goals</a>
+                  </li>
+                  <li>
+                    <a href="cards.html">SUs</a>
+                  </li>
+                </ul>
+              </li>
+              
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+              <a class="nav-link" href="tables.html">
+                <i class="fa fa-fw fa-table"></i>
+                <span class="nav-link-text">Notes</span>
+              </a>
+            </li>
 
-        {{-- <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-alerts">
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-upload fa-fw"></i> Fuck la Perry, stop your last minute shit
-                            <span class="pull-right text-muted small">4 minutes ago</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a class="text-center" href="#">
-                        <strong>See All Alerts</strong>
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.dropdown-alerts -->
-        </li> --}}
-        <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i> {{Auth::user()->name}} <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                </li>
-                <li class="divider"></li>
-            <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw"></i> {{_('Logout')}}</a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </li>
-            </ul>
-            <!-- /.dropdown-user -->
-        </li>
-        <!-- /.dropdown -->
-    </ul>
-    <!-- /.navbar-top-links -->
-
-</nav>
+            
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+              <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-link"></i>
+                <span class="nav-link-text">Link</span>
+              </a>
+            </li>
+          </ul>
+            @include('inc.userSideNav')
+        </div>
+      </nav>
