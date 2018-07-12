@@ -51,7 +51,11 @@ class DashboardController extends Controller
 
         }
 
-        $current_CAP /= $mc_taken;
+        if($mc_taken != 0){      
+            $current_CAP /= $mc_taken;
+        }
+
+
 
         
 

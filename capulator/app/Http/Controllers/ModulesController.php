@@ -156,13 +156,13 @@ class ModulesController extends Controller
     {
         $module = Module::find($id);
                 //check if user is correct
-                if(auth()->user()-id !== $module->user_id){
+                if(auth()->user()->id !== $module->user_id){
                     return "error unauthorised destroy";
                     return redirect('/dashboard');
         
                 }
         $module->delete();
 
-        return "deleted";
+        return redirect('/modules');
     }
 }

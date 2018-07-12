@@ -12,6 +12,7 @@
               <th class="col-md-2 col-sm-2">Sem Taken</th>
               <th class="col-md-2 col-sm-2">Grade</th>
               <th class="col-md-2 col-sm-2">MC Worth</th>
+              <th class="col-md-1 col-sm-1">Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -23,8 +24,13 @@
               <td>{{$module->sem_taken}}</td>
                     <td>{{$module->grade}}</td>
               <td>{{$module->mc_worth}}</td>
+              <td> {!! Form::open(['action' => ['ModulesController@destroy', $module->id], 'method' => 'POST']) !!}
+                  {{Form::hidden('_method', 'DELETE')}}
+                {{Form::submit('delete', ['class' => 'btn btn-danger'])}}{!!Form::close() !!}
+                {{-- <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button> --}}
+              </td>
                   </tr>
-              
+
               @endforeach
               @else
               @endif
