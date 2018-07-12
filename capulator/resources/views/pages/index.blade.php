@@ -54,7 +54,6 @@
     </div>
 
 </div>
-<<<<<<< HEAD
 {{-- <div class="container">
 <div class="card" style="width: 18rem;">
     <img class="card-img-top" src="{{ URL::to('/') }}/images/2.jpg" alt="Card image cap">
@@ -66,7 +65,4 @@
     </div>
   </div>
 </div> --}}
-=======
-
->>>>>>> 893e964c1a4f27e61c1c23438f46b68f5fc0f5aa
 @endsection
