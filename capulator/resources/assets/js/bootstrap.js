@@ -54,3 +54,7 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+//trying to get progress bar ehre
+
+window.ProgressBar = require('progressbar.js');

@@ -24,13 +24,13 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {        
-        
+    {              
         $user_id = auth()->user()->id;
         $user = User::find($user_id); 
         $modules = $user->modules;
         $mc_taken = 0;
         $current_CAP = 0;
+        //Define grades value here
         $gradesValue = array(
             'A+' => '5',
             'A' => '5',
@@ -50,23 +50,19 @@ class DashboardController extends Controller
             $current_CAP += $module->mc_worth * $value;
 
         }
-
         if($mc_taken != 0){      
             $current_CAP /= $mc_taken;
         }
-
-
-
-        
-
         $data = array(
             'mc_taken' => $mc_taken,
             'current_CAP' => number_format($current_CAP, 2),
-        );
-
-        
+        );        
         return view('dashboard.index')->with($data);
     }
 
+    public function targetSetting(){
 
+        return view('dashboard.targetSetting');        
+    }
 }
+

@@ -8,9 +8,13 @@
                 <li {{ (Request::is('*modules') ? 'class="active"' : '') }}>
                     <a href="{{ url ('modules') }}"><i class="fa fa-table fa-fw"></i> Modules</a>
                 </li>
+                <li {{ (Request::is('*target_setting') ? 'class="active"' : '') }}>
+                        <a href="{{ url ('targetSetting') }}"><i class="fa fa-bullseye fa-fw"></i> Target Setting</a>
+                </li>
                 <li {{ (Request::is('*notes') ? 'class="active"' : '') }}>
                     <a href="{{ url ('notes') }}"><i class="fa fa-edit fa-fw"></i> Notes</a>
-                </li>
+                </li>                
+
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

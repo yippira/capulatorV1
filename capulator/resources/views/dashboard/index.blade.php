@@ -75,6 +75,10 @@
     
 
     <div class="row">
+            <div class="col-md-4" id="goalSetting">
+
+            </div>
+
             <div class="col-sm-12 col-lg-4 col-md-6">
                     <div class="panel panel-green">
                         <div class="panel-heading">
@@ -105,6 +109,8 @@
     <div class='col-md-6'>
 
     </div>
+    <script src="{{ asset("assets/scripts/progressbar.min.js") }}" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> 
     <script>
     var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -125,6 +131,43 @@ var chart = new Chart(ctx, {
     // Configuration options go here
     options: {}
 });
+
+
 </script>
+
+{{-- This is our semi circle goal setting --}}
+<script>
+    var bar = new ProgressBar.SemiCircle(goalSetting, {
+  strokeWidth: 6,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  easing: 'easeInOut',
+  duration: 1400,
+  svgStyle: null,
+  text: {
+    value: '',
+    alignToBottom: false
+  },
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  // Set default step function for all animate calls
+  step: (state, bar) => {
+    bar.path.setAttribute('stroke', state.color);
+    var value = Math.round(bar.value() * 100);
+    if (value === 0) {
+      bar.setText('');
+    } else {
+      bar.setText(value);
+    }
+
+    bar.text.style.color = state.color;
+  }
+});
+bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
+bar.text.style.fontSize = '2rem';
+
+bar.animate(1.0);  // Number from 0.0 to 1.0
+    </script>
 </div>
 @endsection
