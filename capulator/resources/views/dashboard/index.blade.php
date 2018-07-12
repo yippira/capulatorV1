@@ -75,9 +75,6 @@
     
 
     <div class="row">
-            <div class="col-md-4" id="goalSetting">
-
-            </div>
 
             <div class="col-sm-12 col-lg-4 col-md-6">
                     <div class="panel panel-green">
@@ -106,8 +103,15 @@
     <div class='col-md-6'>
     <canvas id="myChart"></canvas>
     </div>
-    <div class='col-md-6'>
+    <div class="col-md-6">
+            <div class='m-5 pb-5 col-md-8' id="goalSetting">
 
+                </div>
+    
+    </div>
+
+    <div class="card">
+        <h2>Testing</h2>
     </div>
     <script src="{{ asset("assets/scripts/progressbar.min.js") }}" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> 
@@ -137,6 +141,9 @@ var chart = new Chart(ctx, {
 
 {{-- This is our semi circle goal setting --}}
 <script>
+
+    
+
     var bar = new ProgressBar.SemiCircle(goalSetting, {
   strokeWidth: 6,
   color: '#FFEA82',

@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="{{ asset("assets/stylesheets/styles.css") }}" />  
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-
+          <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body>
         <div id="app">
@@ -45,7 +46,7 @@
 
         
         <script src="{{ asset("assets/scripts/frontend.js") }}" type="text/javascript"></script>
-        <script src="{{ asset("assets/scripts/progressbar.min.js") }}" type="text/javascript"></script>
+
         {{-- Ajax form add --}}
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -133,7 +134,6 @@
 
 </script>
 
-{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script> --}}
-<script src="{{ asset("assets/scripts/progressbar.min.js") }}" type="text/javascript"></script>
+
     </body>
 </html>

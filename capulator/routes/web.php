@@ -24,3 +24,4 @@ Route::get('/notes', 'NotesController@index');
 Route::resource('modules', 'ModulesController');
 Route::resource('notes', 'NotesController');
 Route::get('targetSetting', 'DashboardController@targetSetting');
+Route::get('testing', 'PagesController@test');

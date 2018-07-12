@@ -23,4 +23,8 @@ class PagesController extends Controller
 
         return view('dashboard');
     }
+    
+    public function test(){
+        return view('layouts.index');
+    }
 }
