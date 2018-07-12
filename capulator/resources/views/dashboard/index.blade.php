@@ -47,7 +47,7 @@
                 <div class="card text-white bg-success o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
-                            <i class="fa fa-fw fa-shopping-cart"></i>
+                            <i class="fa fa-fw fa-trophy"></i>
                         </div>
                         <div class="mr-5">MC To Graduation : {{160 - $mc_taken}}</div>
                     </div>
@@ -63,7 +63,7 @@
                 <div class="card text-white bg-danger o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
-                            <i class="fa fa-fw fa-support"></i>
+                            <i class="fa fa-fw fa-bullseye"></i>
                         </div>
                         <div class="mr-5">Average Grade : {{$avg_grade}}</div>
                     </div>
@@ -89,10 +89,17 @@
                 </div>
             </div>
             <div class="col-md-3">
-                    <div class='m-5 pb-5 col-md-8' id="goalSetting">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fa fa-support"></i> CAP Goal
+                    </div>
+                    <div class='mx-auto my-2 col-md-8' id="goalSetting">
         
                         </div>
-            
+                        <div class="card-footer">
+                            You are {{5 - $current_CAP}} away from your goal!
+                        </div>
+                    </div>
             </div>
         </div>
         
@@ -166,7 +173,10 @@
                         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                         <div class="modal-footer">
                             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="login.html">Logout</a>
+                            <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -207,7 +217,7 @@
                     if (value === 0) {
                       bar.setText('');
                     } else {
-                      bar.setText(value);
+                      bar.setText(value + "/5.00");
                     }
                 
                     bar.text.style.color = state.color;
@@ -216,7 +226,7 @@
                 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
                 bar.text.style.fontSize = '2rem';
                 
-                bar.animate(1);  // Number from 0.0 to 1.0
+                bar.animate({{$current_CAP}}/5);  // Number from 0.0 to 1.0
                     </script>
                 </div>
         </div>

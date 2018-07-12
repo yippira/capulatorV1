@@ -175,8 +175,7 @@
         //next we set these 2 to hidden form and populate with the year and sem taken above
       //  $("#module_details").append('<div class="col-md-2"> {{Form::label('year_taken', 'Year')}} {{Form::text('year_taken', '2018',['class' => 'form-control', 'placeholder' => 'Eg. 2018'])}} </div>');
      //   $("#module_details").append('<div class="col-md-2"> {{Form::label('sem_taken', 'Semester')}} {{Form::text('sem_taken', '1',['class' => 'form-control', 'placeholder' => 'Eg. 1'])}} </div>');
-     $("#module_details").append("");
-     $("#module_details").append("");
+
     
         }
 
