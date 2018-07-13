@@ -2,9 +2,9 @@
 @section('content')
 <div class="content-wrapper">
     <div class="container-fluid">
-            <div class="alert alert-primary" role="alert">
-                    Welcome back, {{Auth::user()->name}}!
-                  </div>
+        <div class="alert alert-primary" role="alert">
+            Welcome back, {{Auth::user()->name}}!
+        </div>
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -79,14 +79,14 @@
                 </div>
             </div>
         </div>
-        <!-- Area Chart Example-->
+        {{-- The CAP graph goes here --}}
         <div class="row">
             <div class="col-md-9">
                 <div class="card mb-3">
                     <div class="card-header">
                         <i class="fa fa-area-chart"></i> CAP Projection </div>
                     <div class="card-body">
-                        <canvas id="myAreaChart" width="100%" height="30"></canvas>
+                        <canvas id="CAPChart" width="100%" height="30"></canvas>
                     </div>
                     <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
                 </div>
@@ -97,109 +97,188 @@
                         <i class="fa fa-support"></i> CAP Goal
                     </div>
                     <div class='mx-auto my-2 col-md-8' id="goalSetting">
-        
+
+                    </div>
+                    <div class="card-footer">
+                        You are {{5 - $current_CAP}} away from your goal!
+                    </div>
+                </div>
+                <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-support"></i> Testing data
+                        </div>
+                        <div class='mx-auto my-2 col-md-8' id="">
+                            @php
+                                $earliest_year = date("Y");
+                                $earliest_sem = 1;
+                            @endphp
+
+                            @foreach($modules->sortBy('year_taken') as $module)
+
+                            @php
+                            
+                            $earliest_year = $module->year_taken;
+                            $earliest_sem = $module->sem_taken;
+
+                            @endphp
+                            @break
+
+                            @endforeach
+                            @foreach($cap_array as $cap)
+                            {{$cap}}
+                            @endforeach
                         </div>
                         <div class="card-footer">
-                            You are {{5 - $current_CAP}} away from your goal!
+                            
                         </div>
                     </div>
+                
+            </div>
+            
+
+        </div>
+
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+            <div class="card-header">
+                <i class="fa fa-table"></i> Current Semester Modules</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Module Code</th>
+                                <th>Year taken</th>
+                                <th>Sem Taken</th>
+                                <th>Grade</th>
+                                <th>MC Worth</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+                        @if(count($modules) > 0) @foreach($modules as $module)
+                        <tr>
+                            <td>{{$module->module_code}}</td>
+                            <td>{{$module->year_taken}}</td>
+                            <td>{{$module->sem_taken}}</td>
+                            <td>{{$module->grade}}</td>
+                            <td>{{$module->mc_worth}}</td>
+                            <td> {!! Form::open(['action' => ['ModulesController@destroy', $module->id], 'method' => 'POST'])
+                                !!} {{Form::hidden('_method', 'DELETE')}} {{Form::submit('delete', ['class' => 'btn btn-danger'])}}{!!Form::close()
+                                !!} {{-- <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>                                --}}
+                            </td>
+                        </tr>
+
+                        @endforeach @else @endif
+                        <tfoot>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+        </div>
+    </div>
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+        <div class="container">
+            <div class="text-center">
+                <small>Made By Pereira Yip & Bryan Wang</small>
             </div>
         </div>
-        
-                <!-- Example DataTables Card-->
-                <div class="card mb-3">
-                    <div class="card-header">
-                        <i class="fa fa-table"></i> Current Semester Modules</div>
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                            <th>Module Code</th>
-                                            <th>Year taken</th>
-                                            <th>Sem Taken</th>
-                                            <th>Grade</th>
-                                            <th>MC Worth</th>
-                                            <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                
-                                        @if(count($modules) > 0)
-                                        @foreach($modules as $module)
-                                        <tr>
-                                              <td>{{$module->module_code}}</td>
-                                        <td>{{$module->year_taken}}</td>
-                                        <td>{{$module->sem_taken}}</td>
-                                              <td>{{$module->grade}}</td>
-                                        <td>{{$module->mc_worth}}</td>
-                                        <td> {!! Form::open(['action' => ['ModulesController@destroy', $module->id], 'method' => 'POST']) !!}
-                                            {{Form::hidden('_method', 'DELETE')}}
-                                          {{Form::submit('delete', ['class' => 'btn btn-danger'])}}{!!Form::close() !!}
-                                          {{-- <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button> --}}
-                                        </td>
-                                            </tr>
-                          
-                                        @endforeach
-                                        @else
-                                        @endif
-                                        <tfoot>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-                </div>
-            </div>
-            <!-- /.container-fluid-->
-            <!-- /.content-wrapper-->
-            <footer class="sticky-footer">
-                <div class="container">
-                    <div class="text-center">
-                        <small>Made By Pereira Yip & Bryan Wang</small>
-                    </div>
-                </div>
-            </footer>
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
           <i class="fa fa-angle-up"></i>
         </a>
-            <!-- Logout Modal-->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
-                        </div>
-                        <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
-                        <div class="modal-footer">
-                            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                            <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                        </div>
-                    </div>
+                </div>
+                <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 </div>
             </div>
-            <!-- Core plugin JavaScript-->
-            <script src="assets/scripts/jquery.easing.min.js"></script>
-            <!-- Page level plugin JavaScript-->
-            <script src="assets/scripts/jquery.dataTables.js"></script>
-            <script src="assets/scripts/dataTables.bootstrap4.js"></script>
-            <!-- Custom scripts for all pages-->
-            <script src="assets/scripts/sb-admin.min.js"></script>
-            <!-- Custom scripts for this page-->
-            <script src="assets/scripts/sb-admin-datatables.min.js"></script>
-            <script src="assets/scripts/sb-admin-charts.min.js"></script>
+        </div>
+    </div>
+    <!-- Core plugin JavaScript-->
+    <script src="assets/scripts/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="assets/scripts/jquery.dataTables.js"></script>
+    <script src="assets/scripts/dataTables.bootstrap4.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/scripts/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="assets/scripts/sb-admin-datatables.min.js"></script>
 
-            <script>
 
-    
 
-                    var bar = new ProgressBar.SemiCircle(goalSetting, {
+    <script>
+        //think about what to show if you have no cap.
+        
+        var cap_array = {!! json_encode($cap_array) !!};
+        
+        var ctx = document.getElementById('CAPChart').getContext('2d');
+        var acadYearArray = [];
+        var startYear = {{$earliest_year}};
+        var startSem = {{$earliest_sem}};
+        if(startSem == 1){
+        for(var i = 0; i < 4; i ++){
+            var start = '';
+            startYear = {{$earliest_year}} + i;
+            for(var j = 1; j <= 2; j++){
+                start = startYear + '/' + j;
+                acadYearArray.push(start);
+            }
+            
+        }
+    }else{
+        acadYearArray.push(startYear + '/' + startSem);
+        for(var i = 1; i < 4; i ++){
+
+            var start = '';
+            startYear = {{$earliest_year}} + i;
+            for(var j = 1; j <= 2; j ++){
+                start = startYear + '/' + j;
+                acadYearArray.push(start);
+            }
+        }
+
+    }
+
+                var chart = new Chart(ctx, {
+                    // The type of chart we want to create
+                    type: 'line',
+                
+                    // The data for our dataset
+                    data: {
+                        labels: acadYearArray,
+                        datasets: [{
+                            label: "Your CAP",
+                            backgroundColor: 'rgba(74, 179, 213, 0.3)',
+                            borderColor: 'rgb(120, 204, 197)',
+                            data: cap_array,
+                        }]
+                    },
+                
+                    // Configuration options go here
+                    options: {}
+                });
+    </script>
+
+    <script>
+        var bar = new ProgressBar.SemiCircle(goalSetting, {
                   strokeWidth: 6,
                   color: '#FFEA82',
                   trailColor: '#eee',
@@ -230,7 +309,7 @@
                 bar.text.style.fontSize = '2rem';
                 
                 bar.animate({{$current_CAP}}/5);  // Number from 0.0 to 1.0
-                    </script>
-                </div>
-        </div>
+    </script>
+</div>
+</div>
 @endsection

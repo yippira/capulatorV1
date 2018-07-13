@@ -26,17 +26,20 @@ class DashboardController extends Controller
     public function index()
     {              
 
-        //we have to sort out to show only modules by user later.
-        //currently getting all modules
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id); 
-        $modules = Module::orderBy('created_at','desc')->paginate(5);
 
         $user_id = auth()->user()->id;
         $user = User::find($user_id); 
-        $modules = $user->modules;
+        // $modules = Module::orderBy('created_at','desc')->paginate(5);
+        
+
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id); 
+        $modules = $user->modules->sortBy('year_taken')->sortBy('sem_taken');
         $mc_taken = 0;
         $current_CAP = 0;
+        $temp_cap = 0;
+        
+
         //Define grades value here
         $gradesValue = array(
             'A+' => '5',
@@ -52,18 +55,48 @@ class DashboardController extends Controller
             'F' => '0'
         );
 
-
+        //Make Array of Various CAP here.
+        $cap_array = array();
+        $first_time = true;
         foreach($modules as $module){
+            //initialise temp_year and sem
+            $current_year = $module->year_taken;
+            $current_sem = $module->sem_taken;
+            if($first_time){
+                $temp_year = $current_year;
+                $temp_sem = $current_sem;
+            }
+            
+
             $mc_taken += $module->mc_worth;
             $value = $gradesValue[$module->grade];
-            $current_CAP += $module->mc_worth * $value;
+            if($current_year != $temp_year || $current_sem != $temp_sem){
+
+                //means we are in a different year
+
+                //means we push
+                $cap_array[] = $temp_cap/($mc_taken-4);
+                //then we add the cap
+                $temp_cap += $module->mc_worth *  $value;
+
+
+            }else{
+                //same year
+                $temp_cap += $module->mc_worth *  $value;
+                //remember to push the last year later
+            }
+            $temp_year = $current_year;
+            $temp_sem = $current_sem;
+            $first_time = false;
 
         }
 
-        
-        if($mc_taken != 0){      
-            $current_CAP /= $mc_taken;
+        if($mc_taken != 0){
+            $cap_array[] = $temp_cap/$mc_taken;
+            $current_CAP = $temp_cap/$mc_taken;
         }
+
+      
         $temp = $current_CAP;
         $avg_grade = '';
         foreach($gradesValue as $value){
@@ -74,12 +107,13 @@ class DashboardController extends Controller
                 break;
             }
         }
-
         $data = array(
             'mc_taken' => $mc_taken,
             'current_CAP' => number_format($current_CAP, 2),
             'avg_grade' => $avg_grade,
-            'modules' => $user->modules,
+            'modules' => $modules,
+            'cap_array' => $cap_array,
+            
         );        
         return view('dashboard.index')->with($data);
     }
