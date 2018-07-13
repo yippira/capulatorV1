@@ -163,9 +163,19 @@
                             <td>{{$module->sem_taken}}</td>
                             <td>{{$module->grade}}</td>
                             <td>{{$module->mc_worth}}</td>
-                            <td> {!! Form::open(['action' => ['ModulesController@destroy', $module->id], 'method' => 'POST'])
-                                !!} {{Form::hidden('_method', 'DELETE')}} {{Form::submit('delete', ['class' => 'btn btn-danger'])}}{!!Form::close()
-                                !!} {{-- <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button>                                --}}
+                            <td> <div class="">
+                                {!! Form::open(['action' => ['ModulesController@destroy', $module->id],'class' => '', 'method' => 'POST'])
+                                !!} {{Form::hidden('_method', 'DELETE')}} 
+                                {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'pull-left btn btn-danger'] )}}
+                                {!!Form::close()
+                                !!}  
+
+                                
+                                {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
+                                {{Form::hidden('_method', 'PUT')}}
+                                {{ Form::button('<i class="fa fa-edit"></i> Edit', ['type' => 'submit', 'class' => 'pull-right btn btn-warning'] )}}{!!Form::close()
+                                !!}   
+                                </div>                         
                             </td>
                         </tr>
 
@@ -188,15 +198,15 @@
         </div>
     </footer>
     <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
+    <a class="scroll-to-top rounded" style="display:block;" href="#page-top">
           <i class="fa fa-angle-up"></i>
         </a>
     <!-- Logout Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
+                    <h5 class="modal-title" id="logoutModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">×</span>
                 </button>
@@ -212,6 +222,28 @@
             </div>
         </div>
     </div>
+
+    <!-- Edit Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- Core plugin JavaScript-->
     <script src="assets/scripts/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
