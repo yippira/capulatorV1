@@ -138,7 +138,7 @@
 
         </div>
 
-        <!-- Example DataTables Card-->
+        <!-- Module information for easy access on front page-->
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i> Current Semester Modules</div>
