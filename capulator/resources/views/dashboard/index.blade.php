@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="col-md-3">
-                <div class="card">
+                <div class="card mb-3">
                     <div class="card-header">
                         <i class="fa fa-support"></i> CAP Goal
                     </div>
@@ -152,7 +152,7 @@
                                 <th>Sem Taken</th>
                                 <th>Grade</th>
                                 <th>MC Worth</th>
-                                <th>Delete</th>
+                                <th style="width: 150px;">Setting</th>
                             </tr>
                         </thead>
 
@@ -171,13 +171,31 @@
                                 !!}  
 
                                 
-                                {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
-                                {{Form::hidden('_method', 'PUT')}}
-                                {{ Form::button('<i class="fa fa-edit"></i> Edit', ['type' => 'submit', 'class' => 'pull-right btn btn-warning'] )}}{!!Form::close()
-                                !!}   
+                                <a class="btn btn-warning pull-right " data-toggle="modal" data-target="#editModal{{$module->id}}"><i class="fa fa-edit"></i> Edit</a>  
                                 </div>                         
                             </td>
                         </tr>
+                          <!-- Edit Modal-->
+                    <div class="modal fade" id="editModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Update details for {{$module->module_code}}</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
+                    {{Form::hidden('_method', 'PUT')}}
+                    {{ Form::button('<i class="fa fa-edit"></i> Edit', ['type' => 'submit', 'class' => 'pull-right btn btn-warning'] )}}{!!Form::close()
+                    !!}   
+                    </div>
+                </div>
+            </div>
+        </div>
 
                         @endforeach @else @endif
                         <tfoot>
@@ -218,32 +236,13 @@
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
+                   
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Edit Modal-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+  
     <!-- Core plugin JavaScript-->
     <script src="assets/scripts/jquery.easing.min.js"></script>
     <!-- Page level plugin JavaScript-->
@@ -338,7 +337,7 @@
                   }
                 });
                 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
-                bar.text.style.fontSize = '2rem';
+                bar.text.style.fontSize = '150%';
                 
                 bar.animate({{$current_CAP}}/5);  // Number from 0.0 to 1.0
     </script>
