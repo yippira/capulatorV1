@@ -125,21 +125,16 @@ class ModulesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'module_code'=> 'required',
+            'mc_worth'=> 'required',
             'grade'=>'required',
-            'sem_taken'=>'required',
-            'year_taken'=>'required'
 
         ]);
 
             //edit module
 
-        $module = new Module;
-        $module->module_code = $request->input('module_code');
+        $module = Module::find($id);
         $module->grade = $request->input('grade');
-        $module->year_taken = $request->input('year_taken');
-        $module->sem_taken = $request->input('sem_taken');
-        $module->user_id = auth()->user()->id;
+        $module->mc_worth = $request->input('mc_worth');
         $module->save();
 
         return redirect('/dashboard');

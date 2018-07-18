@@ -185,13 +185,23 @@
                       <span aria-hidden="true">×</span>
                     </button>
                     </div>
-                    <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
+                    <div class="modal-body">
+                            {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
+                            {{Form::hidden('_method', 'PUT')}}
+                            <div class="form-group">
+                                    {{Form::label('grade', 'Grade Achieved')}}
+                                    {{Form::text('grade', $module->grade,['class' => 'form-control', 'placeholder' => 'Grade'])}}
+                                </div>
+                                <div class="form-group">
+                                    {{Form::label('mc_worth', 'MC Worth')}}
+                                    {{Form::text('mc_worth', $module->mc_worth, ['class' => 'form-control', 'placeholder'=>'eg 4'])}}
+                                </div>
+                    </div>
                     <div class="modal-footer">
                         <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
-                    {{Form::hidden('_method', 'PUT')}}
-                    {{ Form::button('<i class="fa fa-edit"></i> Edit', ['type' => 'submit', 'class' => 'pull-right btn btn-warning'] )}}{!!Form::close()
-                    !!}   
+
+                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                    {!!Form::close()!!}   
                     </div>
                 </div>
             </div>
