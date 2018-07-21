@@ -21,37 +21,71 @@
 
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                            <th>Module Code</th>
-                                            <th>Year Taken</th>
-                                            <th>Sem Taken</th>
-                                            <th>Grade</th>
-                                            <th>MC Worth</th>
-                                            <th>Delete</th>
-                                    </tr>
-                                </thead>
-                                
-                                        @if(count($modules) > 0)
-                                        @foreach($modules as $module)
-                                        <tr>
-                                              <td>{{$module->module_code}}</td>
-                                        <td>{{$module->year_taken}}</td>
-                                        <td>{{$module->sem_taken}}</td>
-                                              <td>{{$module->grade}}</td>
-                                        <td>{{$module->mc_worth}}</td>
-                                        <td> {!! Form::open(['action' => ['ModulesController@destroy', $module->id], 'method' => 'POST']) !!}
-                                            {{Form::hidden('_method', 'DELETE')}}
-                                          {{Form::submit('delete', ['class' => 'btn btn-danger'])}}{!!Form::close() !!}
-                                          {{-- <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i></button> --}}
-                                        </td>
+                                    <thead>
+                                            <tr>
+                                                <th>Module Code</th>
+                                                <th>Year taken</th>
+                                                <th>Sem Taken</th>
+                                                <th>Grade</th>
+                                                <th>MC Worth</th>
+                                                <th style="width: 150px;">Setting</th>
                                             </tr>
-                          
-                                        @endforeach
-                                        @else
-                                        @endif
+                                        </thead>
+                
+                                        @if(count($modules) > 0) @foreach($modules as $module)
+                                        <tr>
+                                            <td>{{$module->module_code}}</td>
+                                            <td>{{$module->year_taken}}</td>
+                                            <td>{{$module->sem_taken}}</td>
+                                            <td>{{$module->grade}}</td>
+                                            <td>{{$module->mc_worth}}</td>
+                                            <td> <div class="">
+                                                {!! Form::open(['action' => ['ModulesController@destroy', $module->id],'class' => '', 'method' => 'POST'])
+                                                !!} {{Form::hidden('_method', 'DELETE')}} 
+                                                {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'pull-left btn btn-danger'] )}}
+                                                {!!Form::close()
+                                                !!}  
+                
+                                                
+                                                <a class="btn btn-warning pull-right " data-toggle="modal" data-target="#editModal{{$module->id}}"><i class="fa fa-edit"></i> Edit</a>  
+                                                </div>                         
+                                            </td>
+                                        </tr>
+                                          <!-- Edit Modal-->
+                                    <div class="modal fade" id="editModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel">Update details for {{$module->module_code}}</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">×</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                            {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
+                                            {{Form::hidden('_method', 'PUT')}}
+                                            <div class="form-group">
+                                                    {{Form::label('grade', 'Grade Achieved')}}
+                                                    {{Form::text('grade', $module->grade,['class' => 'form-control', 'placeholder' => 'Grade'])}}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{Form::label('mc_worth', 'MC Worth')}}
+                                                    {{Form::text('mc_worth', $module->mc_worth, ['class' => 'form-control', 'placeholder'=>'eg 4'])}}
+                                                </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                
+                                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                                    {!!Form::close()!!}   
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                
+                                        @endforeach @else @endif
                                         <tfoot>
-                                </tbody>
+                                            </tbody>
                             </table>
                         </div>
                     </div>

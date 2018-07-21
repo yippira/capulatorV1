@@ -5,14 +5,17 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Module;
 use App\User;
+use URL;
 
 class ModulesController extends Controller
 {
+    
 
     //disable module controller unless when authorised
     public function __construct()
     {
         $this->middleware('auth');
+
     }
     /**
      * Display a listing of the resource.
@@ -130,6 +133,7 @@ class ModulesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $current_url = $request->url();
         $this->validate($request, [
             'mc_worth'=> 'required',
             'grade'=>'required',
@@ -137,7 +141,7 @@ class ModulesController extends Controller
         ]);
 
             //edit module
-
+        
         $module = Module::find($id);
         $module->grade = $request->input('grade');
         $module->mc_worth = $request->input('mc_worth');
@@ -145,9 +149,10 @@ class ModulesController extends Controller
 
         $request->session()->flash('alert-success', 'Module ' . $module->module_code . ' was successfully edited!');
 
-
-        return redirect('/dashboard');
-    
+        if(URL::previous() == 'http://capulator.test/dashboard'){
+            return redirect('/dashboard');
+        }
+        return redirect('/modules');
     }
 
     /**
