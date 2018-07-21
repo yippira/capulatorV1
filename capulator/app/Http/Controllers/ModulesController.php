@@ -74,10 +74,16 @@ class ModulesController extends Controller
          $module->save();
 
         }
+        if($request->input('num_mods') == 1){
+        $request->session()->flash('alert-success', $request->input('num_mods') . ' module successfully added!');
+        }else{
+            $request->session()->flash('alert-success', $request->input('num_mods') . ' modules successfully added!');
 
+
+        }
 
         return redirect('/modules');
-        ;
+        
    
 
     }
@@ -136,6 +142,9 @@ class ModulesController extends Controller
         $module->grade = $request->input('grade');
         $module->mc_worth = $request->input('mc_worth');
         $module->save();
+
+        $request->session()->flash('alert-success', 'Module ' . $module->module_code . ' was successfully edited!');
+
 
         return redirect('/dashboard');
     
