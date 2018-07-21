@@ -38,6 +38,7 @@ class DashboardController extends Controller
         $mc_taken = 0;
         $current_CAP = 0;
         $temp_cap = 0;
+
         $real_mc_taken = 0;
         
 
@@ -59,6 +60,7 @@ class DashboardController extends Controller
 
         //Make Array of Various CAP here.
         $cap_array = array();
+        
         $first_time = true;
         foreach($modules as $module){
             //initialise temp_year and sem
@@ -70,32 +72,38 @@ class DashboardController extends Controller
             }
             
 
-            $mc_taken += $module->mc_worth;
+            
             $real_mc_taken += $module->mc_worth;
             $value = $gradesValue[$module->grade];
-            if($module->grade == 'S'){
 
-                $mc_taken -= 4; //We do not count here in calculation, but we deduct in MC to graduation
-            }
             if($current_year != $temp_year || $current_sem != $temp_sem){
 
                 //means we are in a different year
-                
-                //means we push
-                $cap_array[] = $temp_cap/($mc_taken-4);
+                //we have to push previous.
+                $cap_array[] = $temp_cap/($mc_taken);
                 //then we add the cap
                 $temp_cap += $module->mc_worth *  $value;
-                
+                $mc_taken += $module->mc_worth;
+                if($module->grade == 'S'){
+                    //minus away..
+                    $mc_taken -= $module->mc_worth; //We do not count here in calculation, but we deduct in MC to graduation
+                }
 
             }else{
                 //same year
+                $mc_taken += $module->mc_worth;
                 $temp_cap += $module->mc_worth *  $value;
                 //remember to push the last year later
+                if($module->grade == 'S'){
+                    //minus away..
+                    $mc_taken -= $module->mc_worth; //We do not count here in calculation, but we deduct in MC to graduation
+                }
             }
             $temp_year = $current_year;
             $temp_sem = $current_sem;
             $first_time = false;
             $test_array[] = $temp_cap;
+            $test_array2[] = $mc_taken;
         }
 
         if($mc_taken != 0){
@@ -125,6 +133,7 @@ class DashboardController extends Controller
             'cap_array' => $cap_array,
             'cap_goal' => $user->CAP_goal,
             'test_array' => $test_array,
+            'test_array2' =>$test_array2
             
         );        
         return view('dashboard.index')->with($data);

@@ -126,9 +126,16 @@
                             @foreach($cap_array as $cap)
                             {{$cap}}
                             @endforeach
+                            <div class="container">
                             @foreach($test_array as $test)
                             {{$test}}
                             @endforeach
+                            </div>
+                            <div class="container">
+                                @foreach($test_array2 as $test)
+                                {{$test}}
+                                @endforeach
+                            </div>
                         </div>
                         <div class="card-footer">
                             
