@@ -194,7 +194,14 @@
         $("#module_details").html('');    
         console.log(mod_num);
         $("#module_details").append('<hr>');
-
+        // var SU_option ="";
+        // if({{$SU_value}} > 0){
+        //      SU_option = "<option value='S'>S</option>"
+        // }else{
+        //     SU_option = "";
+        // }
+        var SU_option = "<option value='S'>S</option>"
+        var grade_options = "<option value='A+'>A+</option><option value='A'>A</option><option value='A-'>A-</option><option value='B+'>B+</option><option value='B'>B</option><option value='B-'>B-</option><option value='C+'>C+</option><option value='C'>C</option><option value='D+'>D+</option><option value='D'>D</option><option value='F'>F</option>";
        
         for(var $i = 1; $i <= mod_num; $i++){
             
@@ -202,7 +209,8 @@
         // $("#module_details").append('<div class="form-row">');
         // $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code ' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
         
-        $("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><input class = 'form-control' placeholder = 'Eg. A' name = 'grade" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
+        $("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><select class = 'form-control' name = 'grade" + $i + "'>" + grade_options + SU_option + "</select></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
+        //$("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><input class = 'form-control' placeholder = 'Eg. A' name = 'grade" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
 
 
         //next we set these 2 to hidden form and populate with the year and sem taken above

@@ -192,7 +192,7 @@
                             {{Form::hidden('_method', 'PUT')}}
                             <div class="form-group">
                                     {{Form::label('grade', 'Grade Achieved')}}
-                                    {{Form::text('grade', $module->grade,['class' => 'form-control', 'placeholder' => 'Grade'])}}
+                                    {{Form::select('grade',['A+' => 'A+', 'A' => 'A', 'A-' => 'A-', 'B+' => 'B+', 'B' => 'B', 'B-' => 'B-', 'C+' => 'C+', 'C' => 'C', 'D+' => 'D+', 'D' => 'D', 'F' => 'F', 'S'=>'S'], $module->grade, ['class' => 'form-control'])}}
                                 </div>
                                 <div class="form-group">
                                     {{Form::label('mc_worth', 'MC Worth')}}

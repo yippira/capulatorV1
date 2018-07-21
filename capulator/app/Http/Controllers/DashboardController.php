@@ -38,6 +38,7 @@ class DashboardController extends Controller
         $mc_taken = 0;
         $current_CAP = 0;
         $temp_cap = 0;
+        $real_mc_taken = 0;
         
 
         //Define grades value here
@@ -52,7 +53,8 @@ class DashboardController extends Controller
             'C' => '2',
             'D+' => '1.5',
             'D' => '1',
-            'F' => '0'
+            'F' => '0',
+            'S' => '0'
         );
 
         //Make Array of Various CAP here.
@@ -69,7 +71,12 @@ class DashboardController extends Controller
             
 
             $mc_taken += $module->mc_worth;
+            $real_mc_taken += $module->mc_worth;
             $value = $gradesValue[$module->grade];
+            if($module->grade == 'S'){
+
+                $mc_taken -= 4; //We do not count here in calculation, but we deduct in MC to graduation
+            }
             if($current_year != $temp_year || $current_sem != $temp_sem){
 
                 //means we are in a different year
@@ -107,8 +114,11 @@ class DashboardController extends Controller
                 break;
             }
         }
+
+        
+
         $data = array(
-            'mc_taken' => $mc_taken,
+            'mc_taken' => $real_mc_taken,
             'current_CAP' => number_format($current_CAP, 2),
             'avg_grade' => $avg_grade,
             'modules' => $modules,

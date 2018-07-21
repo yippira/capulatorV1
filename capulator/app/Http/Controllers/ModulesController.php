@@ -29,7 +29,11 @@ class ModulesController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id); 
         $modules = Module::orderBy('created_at','desc')->paginate(5);
-        return view('dashboard.modules.index')->with('modules',$user->modules);
+        $data = array(
+            'modules' => $user->modules,
+            'SU_value' => $user->su,
+        );
+        return view('dashboard.modules.index')->with($data);
     }
 
     /**
