@@ -102,8 +102,8 @@ class DashboardController extends Controller
             $temp_year = $current_year;
             $temp_sem = $current_sem;
             $first_time = false;
-            $test_array[] = $temp_cap;
-            $test_array2[] = $mc_taken;
+            //$test_array[] = $temp_cap;
+            //$test_array2[] = $mc_taken;
         }
 
         if($mc_taken != 0){
@@ -132,8 +132,8 @@ class DashboardController extends Controller
             'modules' => $modules,
             'cap_array' => $cap_array,
             'cap_goal' => $user->CAP_goal,
-            'test_array' => $test_array,
-            'test_array2' =>$test_array2
+           // 'test_array' => $test_array,
+            //'test_array2' =>$test_array2
             
         );        
         return view('dashboard.index')->with($data);

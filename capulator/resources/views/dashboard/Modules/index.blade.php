@@ -5,7 +5,7 @@
                 @include('inc.messages')
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
-                    <a href="#">Dashboard</a>
+                    <a href="/dashboard">Dashboard</a>
                 </li>
                 <li class="breadcrumb-item active">Modules</li>
             </ol>

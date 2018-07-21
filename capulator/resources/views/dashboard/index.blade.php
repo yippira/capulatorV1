@@ -7,7 +7,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="#">Dashboard</a>
+                <a href="/dashboard">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">My Dashboard</li>
         </ol>
@@ -126,7 +126,7 @@
                             @foreach($cap_array as $cap)
                             {{$cap}}
                             @endforeach
-                            <div class="container">
+                            {{-- <div class="container">
                             @foreach($test_array as $test)
                             {{$test}}
                             @endforeach
@@ -135,7 +135,7 @@
                                 @foreach($test_array2 as $test)
                                 {{$test}}
                                 @endforeach
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="card-footer">
                             
