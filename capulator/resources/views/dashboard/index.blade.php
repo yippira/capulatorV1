@@ -2,9 +2,8 @@
 @section('content')
 <div class="content-wrapper">
     <div class="container-fluid">
-        <div class="alert alert-primary" role="alert">
-            Welcome back, {{Auth::user()->name}}!
-        </div>
+            @include('inc.messages')
+
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">

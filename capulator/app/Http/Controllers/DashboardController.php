@@ -134,5 +134,30 @@ class DashboardController extends Controller
         return redirect('/targetSetting');
 
     }
+
+    public function user(){
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $data = array(
+            
+            
+            'su' => $user->su,
+            'exemption' => $user->exemption,
+        );
+
+
+        return view('dashboard.userSetting')->with($data);
+    }
+
+    public function setSpecial(Request $request){
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $user->su = $request->input('SU');
+        $user->exemption = $request->input('exemption');
+        $user->save();
+
+        return redirect('/special');
+
+    }
 }
 

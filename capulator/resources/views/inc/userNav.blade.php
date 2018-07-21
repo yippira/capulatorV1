@@ -30,7 +30,7 @@
                     <a href="{{ url ('targetSetting') }}">CAP Goal</a>
                   </li>
                   <li>
-                  <a href="{{url('special')}}">SUs & Exemption</a>
+                  <a href="{{url('user')}}">SUs & Exemption</a>
                   </li>
                 </ul>
               </li>

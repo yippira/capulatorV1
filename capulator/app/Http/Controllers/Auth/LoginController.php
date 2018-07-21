@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\User;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -18,7 +20,15 @@ class LoginController extends Controller
     |
     */
 
-    use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        redirectPath as laravelRedirectPath;
+    }
+
+    public function redirectPath(){
+
+        session()->flash('alert-success', 'Welcome back, '. Auth::user()->name . '!');
+        return $this->laravelRedirectPath();
+    }
 
     /**
      * Where to redirect users after login.

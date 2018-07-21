@@ -25,5 +25,6 @@ Route::resource('modules', 'ModulesController');
 Route::resource('notes', 'NotesController');
 Route::get('targetSetting', 'DashboardController@targetSetting');
 Route::get('testing', 'PagesController@test');
-Route::get('special','DashboardController@special');
+Route::get('user','DashboardController@user');
 Route::post('setGoal', 'DashboardController@setGoal');
+Route::post('setSpecial', 'DashboardController@setSpecial');

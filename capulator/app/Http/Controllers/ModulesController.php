@@ -147,7 +147,7 @@ class ModulesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         $module = Module::find($id);
                 //check if user is correct
@@ -157,6 +157,7 @@ class ModulesController extends Controller
         
                 }
         $module->delete();
+        $request->session()->flash('alert-success', 'Module ' . $module->module_code . ' was successfully deleted!');
 
         return redirect('/modules');
     }
