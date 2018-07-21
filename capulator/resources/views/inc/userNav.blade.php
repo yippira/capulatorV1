@@ -27,10 +27,10 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                   <li>
-                    <a href="{{ url ('targetSetting') }}">Goals</a>
+                    <a href="{{ url ('targetSetting') }}">CAP Goal</a>
                   </li>
                   <li>
-                    <a href="cards.html">SUs</a>
+                  <a href="{{url('special')}}">SUs & Exemption</a>
                   </li>
                 </ul>
               </li>

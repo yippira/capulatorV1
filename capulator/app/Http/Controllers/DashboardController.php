@@ -34,7 +34,7 @@ class DashboardController extends Controller
 
         $user_id = auth()->user()->id;
         $user = User::find($user_id); 
-        $modules = $user->modules->sortBy('year_taken')->sortBy('sem_taken');
+        $modules = $user->modules->sortBy('sem_taken')->sortBy('year_taken');
         $mc_taken = 0;
         $current_CAP = 0;
         $temp_cap = 0;
@@ -73,12 +73,12 @@ class DashboardController extends Controller
             if($current_year != $temp_year || $current_sem != $temp_sem){
 
                 //means we are in a different year
-
+                
                 //means we push
                 $cap_array[] = $temp_cap/($mc_taken-4);
                 //then we add the cap
                 $temp_cap += $module->mc_worth *  $value;
-
+                
 
             }else{
                 //same year
@@ -88,7 +88,7 @@ class DashboardController extends Controller
             $temp_year = $current_year;
             $temp_sem = $current_sem;
             $first_time = false;
-
+            $test_array[] = $temp_cap;
         }
 
         if($mc_taken != 0){
@@ -113,6 +113,8 @@ class DashboardController extends Controller
             'avg_grade' => $avg_grade,
             'modules' => $modules,
             'cap_array' => $cap_array,
+            'cap_goal' => $user->CAP_goal,
+            'test_array' => $test_array,
             
         );        
         return view('dashboard.index')->with($data);
@@ -121,6 +123,16 @@ class DashboardController extends Controller
     public function targetSetting(){
 
         return view('dashboard.targetSetting');        
+    }
+
+    public function setGoal(Request $request){
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        $user->CAP_goal = number_format($request->input('cap_goal'), 2, '.', ',');
+        $user->save();
+
+        return redirect('/targetSetting');
+
     }
 }
 

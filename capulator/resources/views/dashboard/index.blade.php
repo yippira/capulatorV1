@@ -100,7 +100,7 @@
 
                     </div>
                     <div class="card-footer">
-                        You are {{5 - $current_CAP}} away from your goal!
+                        You are {{$cap_goal - $current_CAP}} away from your goal!
                     </div>
                 </div>
                 <div class="card">
@@ -126,6 +126,9 @@
                             @endforeach
                             @foreach($cap_array as $cap)
                             {{$cap}}
+                            @endforeach
+                            @foreach($test_array as $test)
+                            {{$test}}
                             @endforeach
                         </div>
                         <div class="card-footer">
@@ -336,11 +339,11 @@
                   // Set default step function for all animate calls
                   step: (state, bar) => {
                     bar.path.setAttribute('stroke', state.color);
-                    var value = Math.round(bar.value() * 500)/100;
+                    var value = Math.round(bar.value() * 100 * {{$current_CAP}})/100;
                     if (value === 0) {
                       bar.setText('');
                     } else {
-                      bar.setText(value + "/5.00");
+                      bar.setText(value + "/" + ({{$cap_goal}}).toFixed(2));
                     }
                 
                     bar.text.style.color = state.color;
@@ -349,7 +352,7 @@
                 bar.text.style.fontFamily = '"Raleway", Helvetica, sans-serif';
                 bar.text.style.fontSize = '150%';
                 
-                bar.animate({{$current_CAP}}/5);  // Number from 0.0 to 1.0
+                bar.animate(Math.min({{$current_CAP}}, {{$cap_goal}})/{{$cap_goal}});  // Number from 0.0 to 1.0
     </script>
 </div>
 </div>
