@@ -85,9 +85,9 @@ class NotesController extends Controller
 
         //check if user is correct
         if(auth()->user()->id !== $note->user_id){
-
-            return redirect('/notes')->with('error','Unauthorised Page');
-
+            $request->session()->flash('alert-danger','Unauthorised Page');
+            redirect('dashboard.notes');
+ 
         }
 
         return view('dashboard.notes.edit')->with('note',$note);
@@ -138,7 +138,7 @@ class NotesController extends Controller
         $request->session()->flash('alert-danger','Unauthorised Page');
  
         
-            return redirect('/notes');
+            return redirect('/dashboard/notes');
 
         }
 $note->delete();
