@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+Use App\Note;
 
 class NotesController extends Controller
 {
@@ -41,7 +42,23 @@ class NotesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'title'=> 'required',
+            'body'=>'required'
+
+        ]);
+
+        //create post
+
+        $note = new Note;
+        $note->title = $request->input('title');
+        $note->body = $request->input('body');
+        $note->user_id = auth()->user()->id;
+        $note->save();
+
+        $request->session()->flash('alert-success','Note ' . $request->input('title') . ' successfully created!');
+        return redirect('/notes');
+  
     }
 
     /**
