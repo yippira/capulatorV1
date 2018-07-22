@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class NotesController extends Controller
 {
@@ -13,7 +14,13 @@ class NotesController extends Controller
      */
     public function index()
     {
-        return view('dashboard.notes');
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+        
+        $data = array(
+            'notes' => $user->notes,
+        );
+        return view('dashboard.notes.index')->with($data);
     }
 
     /**

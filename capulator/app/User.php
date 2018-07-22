@@ -30,4 +30,9 @@ class User extends Authenticatable
     public function modules(){
         return $this->hasMany('App\Module');
     }
+
+    public function notes(){
+        return $this->hasMany('App\Note');
+    }
+    
 }
