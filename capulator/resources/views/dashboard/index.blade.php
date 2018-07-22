@@ -88,7 +88,10 @@
                         <canvas id="CAPChart" width="100%" height="30"></canvas>
                     </div>
                     <div class="card-footer small text-muted">
+                            
                             @php
+                            
+                            if(!Empty($module_timestamp) || $module_timestamp != null){
                             if($module_timestamp->created_at > $module_timestamp->updated_at)
                             {
                                 $timestamp = "$module_timestamp->created_at";
@@ -99,7 +102,9 @@
                                 echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
                             //date('m/d/Y',$module_timestamp->updated_at);
                             }
+                        }
                             @endphp
+                            
                     </div>
                 </div>
             </div>
@@ -111,7 +116,7 @@
                     <div class='mx-auto my-2 col-md-8' id="goalSetting">
 
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer small">
                         @if(($cap_goal - $current_CAP) > 0)
                         You are {{$cap_goal - $current_CAP}} away from your goal!
                         @else
@@ -241,7 +246,22 @@
                     </table>
                 </div>
             </div>
-            <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+            <div class="card-footer small text-muted">                            
+                @php
+                            if(!Empty($module_timestamp) || $module_timestamp != null){
+                    if($module_timestamp->created_at > $module_timestamp->updated_at)
+                    {
+                        $timestamp = "$module_timestamp->created_at";
+                        echo('Last updated on ' . date('d/F/Y \at h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
+                        //date('m/d/Y',$module_timestamp->created_at);
+                    }else{
+                        $timestamp = "$module_timestamp->updated_at";
+                        echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
+                    //date('m/d/Y',$module_timestamp->updated_at);
+                    }
+                }
+                    @endphp
+                    </div>
         </div>
     </div>
     <!-- /.container-fluid-->
@@ -257,29 +277,7 @@
     <a class="scroll-to-top rounded" style="display:block;" href="#page-top">
           <i class="fa fa-angle-up"></i>
         </a>
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="logoutModalLabel">Leaving so soon {{Auth::user()->name}}?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-                </div>
-                <div class="modal-body">Come back soon to adjust your goals! Select Logout to confirm.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-
+    
   
     <!-- Core plugin JavaScript-->
     <script src="assets/scripts/jquery.easing.min.js"></script>

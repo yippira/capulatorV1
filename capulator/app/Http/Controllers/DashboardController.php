@@ -180,5 +180,17 @@ class DashboardController extends Controller
         return redirect('/user');
 
     }
+    public function reset(Request $request){
+        $user_id = auth()->user()->id;
+        $user = User::find($user_id);
+
+        foreach($user->modules as $module){
+            $module->delete();
+
+        }
+        $request->session()->flash('alert-success', 'Your modules were successfully deleted!');
+
+        return redirect('/user');
+    }
 }
 

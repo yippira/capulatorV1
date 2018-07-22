@@ -25,8 +25,17 @@
                                 {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
                                 {!!Form::close()!!} 
                      
+                                <hr>
+                                {!! Form::open(['action' => ['DashboardController@reset'], 'method' => 'POST'])!!}
+                                <div class="form-group">
+                                        {{Form::hidden('_method', 'DELETE')}} 
+                                        {{Form::label('reset', 'Delete all modules and reset')}}
+                                </div>
+                                {{Form::submit('RESET', ['class' => 'btn btn-danger'])}}
+                                {!!Form::close()!!} 
+                                
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    <div class="card-footer small text-muted"></div>
                 </div>
             </div>
             

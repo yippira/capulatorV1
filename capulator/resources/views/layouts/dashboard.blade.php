@@ -31,6 +31,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     @include('inc.userNav') 
     @yield('content')
+    @include('inc.logout')
 </body>
 
 </html>
