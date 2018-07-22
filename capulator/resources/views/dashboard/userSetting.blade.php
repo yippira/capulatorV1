@@ -2,6 +2,7 @@
 @section('content')
 <div class="content-wrapper">
         <div class="container-fluid">
+                @include('inc.messages')
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#">Dashboard</a>
@@ -10,17 +11,13 @@
             </ol>
                <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-target"></i> Setup exemptions and SU 
+                        <i class="fa fa-target"></i> Setup exemptions
                       
                     </div>
                     
 
                     <div class="card-body">
                             {!! Form::open(['action' => ['DashboardController@setSpecial'], 'method' => 'POST'])!!}
-                            <div class="form-group">
-                                    {{Form::label('SU', 'Total MC able to SU')}}
-                                    {{Form::text('SU', $su,['class' => 'form-control', 'placeholder' => 'Default: 32 MC in total.'])}}
-                                </div>
                                 <div class="form-group">
                                         {{Form::label('exemption', 'Exempted MC for graduation')}}
                                         {{Form::text('exemption', $exemption,['class' => 'form-control', 'placeholder' => 'Polytechnic default : 20 MC.'])}}

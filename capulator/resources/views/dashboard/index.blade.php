@@ -51,7 +51,7 @@
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-trophy"></i>
                         </div>
-                        <div class="mr-5">MC To Graduation : {{160 - $mc_taken}}</div>
+                        <div class="mr-5">MC To Graduation : {{160 - $mc_taken - $exemption}}</div>
                     </div>
                     <a class="card-footer text-white clearfix small z-1" href="#">
                   <span class="float-left">View Details</span>
@@ -87,7 +87,20 @@
                     <div class="card-body">
                         <canvas id="CAPChart" width="100%" height="30"></canvas>
                     </div>
-                    <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+                    <div class="card-footer small text-muted">
+                            @php
+                            if($module_timestamp->created_at > $module_timestamp->updated_at)
+                            {
+                                $timestamp = "$module_timestamp->created_at";
+                                echo('Last updated on ' . date('d/F/Y \at h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
+                                //date('m/d/Y',$module_timestamp->created_at);
+                            }else{
+                                $timestamp = "$module_timestamp->updated_at";
+                                echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
+                            //date('m/d/Y',$module_timestamp->updated_at);
+                            }
+                            @endphp
+                    </div>
                 </div>
             </div>
             <div class="col-md-3">
@@ -127,9 +140,11 @@
                             @break
 
                             @endforeach
-                            @foreach($cap_array as $cap)
+
+                            
+                            {{-- @foreach($cap_array as $cap)
                             {{$cap}}
-                            @endforeach
+                            @endforeach --}}
                             {{-- <div class="container">
                             @foreach($test_array as $test)
                             {{$test}}

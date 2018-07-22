@@ -35,6 +35,7 @@ class DashboardController extends Controller
         $user_id = auth()->user()->id;
         $user = User::find($user_id); 
         $modules = $user->modules->sortBy('sem_taken')->sortBy('year_taken');
+        $newest = $user->modules->sortByDesc('created_at')->sortByDesc('updated_at')->first();
         $mc_taken = 0;
         $current_CAP = 0;
         $temp_cap = 0;
@@ -132,6 +133,8 @@ class DashboardController extends Controller
             'modules' => $modules,
             'cap_array' => $cap_array,
             'cap_goal' => $user->CAP_goal,
+            'exemption' => $user->exemption,
+            'module_timestamp' => $newest,
            // 'test_array' => $test_array,
             //'test_array2' =>$test_array2
             
@@ -160,7 +163,6 @@ class DashboardController extends Controller
         $data = array(
             
             
-            'su' => $user->su,
             'exemption' => $user->exemption,
         );
 
@@ -171,11 +173,11 @@ class DashboardController extends Controller
     public function setSpecial(Request $request){
         $user_id = auth()->user()->id;
         $user = User::find($user_id);
-        $user->su = $request->input('SU');
         $user->exemption = $request->input('exemption');
         $user->save();
+        $request->session()->flash('alert-success','Exemption Successfully Added!');
 
-        return redirect('/special');
+        return redirect('/user');
 
     }
 }
