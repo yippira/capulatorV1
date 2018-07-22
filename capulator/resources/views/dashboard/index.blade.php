@@ -99,7 +99,11 @@
 
                     </div>
                     <div class="card-footer">
+                        @if(($cap_goal - $current_CAP) > 0)
                         You are {{$cap_goal - $current_CAP}} away from your goal!
+                        @else
+                        You have reached your goal! Keep it up!
+                        @endif
                     </div>
                 </div>
                 <div class="card">
