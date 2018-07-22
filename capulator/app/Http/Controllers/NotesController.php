@@ -56,7 +56,7 @@ class NotesController extends Controller
         $note->user_id = auth()->user()->id;
         $note->save();
 
-        $request->session()->flash('alert-success','Note ' . $request->input('title') . ' successfully created!');
+        $request->session()->flash('alert-success','Note "' . $request->input('title') . '" successfully created.');
         return redirect('/notes');
   
     }
@@ -103,6 +103,19 @@ class NotesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $note = Note::find($id);
+        //check if user is correct
+        if(auth()->user()->id !== $note->user_id){
+            
+        $request->session()->flash('alert-danger','Unauthorised Page');
+ 
+        
+            return redirect('/notes');
+
+        }
+$note->delete();
+session()->flash('alert-success','Note "' . $note->title . '" successfully deleted.');
+ 
+return redirect('/notes');
     }
 }
