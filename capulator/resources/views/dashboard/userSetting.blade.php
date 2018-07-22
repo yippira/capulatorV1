@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-<div class="content-wrapper">
-        <div class="container-fluid">
-                @include('inc.messages')
+
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#">Dashboard</a>
@@ -38,10 +36,7 @@
                     <div class="card-footer small text-muted"></div>
                 </div>
             </div>
-            
-        </div>
 
-        
         
             <!-- Core plugin JavaScript-->
             <script src="assets/scripts/jquery.easing.min.js"></script>
@@ -53,6 +48,5 @@
             <!-- Custom scripts for this page-->
             <script src="assets/scripts/sb-admin-datatables.min.js"></script>
             <script src="assets/scripts/sb-admin-charts.min.js"></script>
-</div>
 
 @endsection

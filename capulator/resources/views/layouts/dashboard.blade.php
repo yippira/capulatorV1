@@ -36,6 +36,7 @@
     @yield('content')
         </div>
       </div>
+      @include('inc.footer')
     @include('inc.logout')
 </body>
 
