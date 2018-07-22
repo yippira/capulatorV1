@@ -123,7 +123,7 @@
                 {!! Form::open(['action' => 'ModulesController@store', 'method' => 'POST']) !!}
                 <div class="row">
                 <div class="form-group col-md-6 col-sm-6">
-                    {{Form::label('year_taken', 'Year Taken')}} {{Form::select('year', ['2016' => '2016', '2017' => '2017', '2018' => '2018', '2019' => '2019'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Year', 'id' => 'year'])}}
+                    {{Form::label('year_taken', 'Year Taken')}} {{Form::selectRange('year',  date('Y', strtotime('- 5 years')),date('Y', strtotime('+ 2 years')),'null',['class' => 'form-control', 'placeholder' => 'Pick a Year', 'id' => 'year'])}}
                 </div>
                 <div class="form-group col-md-6 col-sm-6">
                     {{Form::label('sem_taken', 'Semester Taken')}} {{Form::select('semester', ['1' => '1', '2' => '2'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Semester', 'id' => 'semester'])}}
