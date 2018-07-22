@@ -186,13 +186,13 @@
         });
 
         $('#num_modules').change(function(){
+            $("#module_details").html('');
             $('select option:selected').each(function(){
 
             mod_num = $(this).text() + " ";
             });
 
-        $("#module_details").html('');    
-        console.log(mod_num);
+            
         $("#module_details").append('<hr>');
         // var SU_option ="";
         // if({{$SU_value}} > 0){
