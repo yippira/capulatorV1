@@ -24,7 +24,7 @@
                                                 <th>Note Title</th>
                                                 <th>Created At</th>
                                                 <th>Updated At</th>
-                                                <th style="width: 150px;">Setting</th>
+                                                <th style="width: 150px;">Options</th>
                                             </tr>
                                         </thead>
                 
@@ -41,7 +41,7 @@
                                                 !!}  
                 
                                                 
-                                                <a class="btn btn-warning pull-right " data-toggle="modal" data-target="#editModal{{$note->id}}"><i class="fa fa-edit"></i> Edit</a>  
+                                                <a class="btn btn-warning pull-right " href="/notes/{{$note->id}}/edit"><i class="fa fa-edit"></i> Edit</a>  
                                                 </div>                         
                                             </td>
                                         </tr>

@@ -48,7 +48,7 @@ class NotesController extends Controller
 
         ]);
 
-        //create post
+        //create note
 
         $note = new Note;
         $note->title = $request->input('title');
@@ -80,8 +80,20 @@ class NotesController extends Controller
      */
     public function edit($id)
     {
-        //
-    }
+        
+        $note = Note::find($id);
+
+        //check if user is correct
+        if(auth()->user()->id !== $note->user_id){
+
+            return redirect('/notes')->with('error','Unauthorised Page');
+
+        }
+
+        return view('dashboard.notes.edit')->with('note',$note);
+       
+
+         }
 
     /**
      * Update the specified resource in storage.
@@ -92,7 +104,23 @@ class NotesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'title'=> 'required',
+            'body'=>'required'
+
+        ]);
+
+        //edit note
+        
+        $note = Note::find($id);
+        $note->title = $request->input('title');
+        $note->body = $request->input('body');
+    
+        $note->save();
+
+        $request->session()->flash('alert-success','Note "' . $request->input('title') . '" successfully edited.');
+        return redirect('/notes');
+  
     }
 
     /**
