@@ -30,7 +30,12 @@
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
     @include('inc.userNav') 
+    <div class="content-wrapper">
+        <div class="container-fluid">
+          @include('inc.messages')
     @yield('content')
+        </div>
+      </div>
     @include('inc.logout')
 </body>
 

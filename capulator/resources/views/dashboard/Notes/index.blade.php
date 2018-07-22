@@ -1,8 +1,6 @@
 @extends('layouts.dashboard')
 @section('content')
-<div class="content-wrapper">
-        <div class="container-fluid">
-                @include('inc.messages')
+
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="/dashboard">Dashboard</a>
@@ -12,9 +10,9 @@
                <div class="card mb-3">
                     <div class="card-header">
                         <i class="fa fa-table"></i> Manage your notes 
-                        <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create">
+                        <a class="btn btn-primary pull-right" href="/notes/create">
                                 Add Note
-                        </button>
+                        </a>
                     </div>
 
                     <div class="card-body">
@@ -80,7 +78,7 @@
                 </div>
             </div>
             
-        </div>
+        
 
         
         
@@ -94,51 +92,7 @@
             <!-- Custom scripts for this page-->
             <script src="assets/scripts/sb-admin-datatables.min.js"></script>
             <script src="assets/scripts/sb-admin-charts.min.js"></script>
-</div>
 
 
-{{-- Create modal --}}
-<div aria-labelledby="createModalLabel" aria-hidden="true" tabindex="-1" id="create" class="modal fade" role="dialog">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-                    <h4 class="modal-title">State the academic period</h4>
-              <button type="button" aria-label="Close" class="close" data-dismiss="modal" name="button"><span aria-hidden="true">&times;</span></button>
-            
-            </div>
-            <div class="modal-body">
-               
-              <div class="">
-                {!! Form::open(['action' => 'ModulesController@store', 'method' => 'POST']) !!}
-                <div class="row">
-                <div class="form-group col-md-6 col-sm-6">
-                    {{Form::label('year_taken', 'Year Taken')}} {{Form::selectRange('year',  date('Y', strtotime('- 5 years')),date('Y', strtotime('+ 2 years')),'null',['class' => 'form-control', 'placeholder' => 'Pick a Year', 'id' => 'year'])}}
-                </div>
-                <div class="form-group col-md-6 col-sm-6">
-                    {{Form::label('sem_taken', 'Semester Taken')}} {{Form::select('semester', ['1' => '1', '2' => '2'],'null',['class' => 'form-control', 'placeholder' => 'Pick a Semester', 'id' => 'semester'])}}
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-md-6 col-sm-6" id="num_modules">
-                    {{Form::label('num_of_modules', 'Number of Modules taken')}} {{Form::selectRange('num_mods',1,12 ,'null',['class' => 'form-control', 'placeholder' => 'Select number of modules taken'])}}
-                </div>
-              </div>
-                <div class="row">
-                <div class="form-group col-md-12 col-sm-12" id="module_details">
-                  {{-- We will populate this with the number of modules selected --}}
-                </div>
-              </div>
-              </div>
-              </div>
-              
-              <div class="modal-footer">
-                {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
-                  {!! Form::close() !!}
-              </div>
-          </div>
-          
-          
-        </div>
-      </div> 
 
 @endsection

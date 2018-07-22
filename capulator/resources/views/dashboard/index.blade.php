@@ -1,8 +1,5 @@
 @extends('layouts.dashboard') 
 @section('content')
-<div class="content-wrapper">
-    <div class="container-fluid">
-            @include('inc.messages')
 
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
@@ -377,6 +374,4 @@
                 
                 bar.animate(Math.min({{$current_CAP}}, {{$cap_goal}})/{{$cap_goal}});  // Number from 0.0 to 1.0
     </script>
-</div>
-</div>
 @endsection

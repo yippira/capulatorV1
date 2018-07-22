@@ -30,7 +30,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.notes.create');
     }
 
     /**
