@@ -14,7 +14,7 @@ class AddExemptionToUser extends Migration
     public function up()
     {
         Schema::table('users',function($table){
-            $table->integer('exemption');
+            $table->integer('exemption')->default(0);
         });
     }
 

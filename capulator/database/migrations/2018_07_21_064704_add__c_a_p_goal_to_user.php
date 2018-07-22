@@ -14,7 +14,7 @@ class AddCAPGoalToUser extends Migration
     public function up()
     {
         Schema::table('users',function($table){
-            $table->double('CAP_goal', 3,  2);
+            $table->double('CAP_goal', 3,  2)->default(5.00);
         });
     }
 
