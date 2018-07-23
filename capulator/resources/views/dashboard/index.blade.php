@@ -1,6 +1,21 @@
 @extends('layouts.dashboard') 
 @section('content')
+@php
+$earliest_year = date("Y");
+$earliest_sem = 1;
+@endphp
 
+@foreach($modules->sortBy('year_taken') as $module)
+
+@php
+
+$earliest_year = $module->year_taken;
+$earliest_sem = $module->sem_taken;
+
+@endphp
+@break
+
+@endforeach
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -11,75 +26,56 @@
         <!-- Icon Cards-->
         <div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-primary o-hidden h-100">
+                <div class="card text-white grass-green o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-long-arrow-up"></i>
                         </div>
                         <div class="mr-5">Current CAP : {{$current_CAP}}</div>
                     </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                </a>
+                    
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-warning o-hidden h-100">
+                <div class="card text-white deep-orange o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-check"></i>
                         </div>
                         <div class="mr-5">MC Taken : {{$mc_taken}}</div>
                     </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                </a>
+                 
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-success o-hidden h-100">
+                <div class="card text-white pale-purple o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-trophy"></i>
                         </div>
-                        <div class="mr-5">MC To Graduation : {{160 - $mc_taken - $exemption}}</div>
+                        <div class="mr-5">MC To Graduate : {{160 - $mc_taken - $exemption}}</div>
                     </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                </a>
+                   
                 </div>
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
-                <div class="card text-white bg-danger o-hidden h-100">
+                <div class="card text-white blood-red o-hidden h-100">
                     <div class="card-body">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-bullseye"></i>
                         </div>
                         <div class="mr-5">Average Grade : {{$avg_grade}}</div>
                     </div>
-                    <a class="card-footer text-white clearfix small z-1" href="#">
-                  <span class="float-left">View Details</span>
-                  <span class="float-right">
-                    <i class="fa fa-angle-right"></i>
-                  </span>
-                </a>
+                  
                 </div>
             </div>
         </div>
-        {{-- The CAP graph goes here --}}
-        <div class="row">
+        {{-- End icon cards here --}}
+        {{-- The CAP graph starts here --}}
+        <div class="row mb-3">
             <div class="col-md-9">
                 <div class="card mb-3">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <i class="fa fa-area-chart"></i> CAP Projection </div>
                     <div class="card-body">
                         <canvas id="CAPChart" width="100%" height="30"></canvas>
@@ -107,7 +103,7 @@
             </div>
             <div class="col-md-3">
                 <div class="card mb-3">
-                    <div class="card-header">
+                    <div class="card-header small">
                         <i class="fa fa-support"></i> CAP Goal
                     </div>
                     <div class='mx-auto my-2 col-md-8' id="goalSetting">
@@ -122,26 +118,13 @@
                     </div>
                 </div>
                 <div class="card">
-                        <div class="card-header">
+                        <div class="card-header small">
                             <i class="fa fa-support"></i> Testing data
                         </div>
                         <div class='mx-auto my-2 col-md-8' id="">
-                            @php
-                                $earliest_year = date("Y");
-                                $earliest_sem = 1;
-                            @endphp
+                                <canvas id="radar">
+                                    </canvas>
 
-                            @foreach($modules->sortBy('year_taken') as $module)
-
-                            @php
-                            
-                            $earliest_year = $module->year_taken;
-                            $earliest_sem = $module->sem_taken;
-
-                            @endphp
-                            @break
-
-                            @endforeach
 
                             
                             {{-- @foreach($cap_array as $cap)
@@ -169,6 +152,8 @@
         </div>
 
         <!-- Module information for easy access on front page-->
+<div class="row">
+    <div class="col-lg-9">
         <div class="card mb-3">
             <div class="card-header">
                 <i class="fa fa-table"></i> Current Semester Modules</div>
@@ -235,7 +220,9 @@
                     </div>
                 </div>
             </div>
+        
         </div>
+        
 
                         @endforeach @else @endif
                         <tfoot>
@@ -258,9 +245,23 @@
                     }
                 }
                     @endphp
-                    </div>
+            </div>
         </div>
     </div>
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-header">
+                
+            </div>
+            <div class="card-body">
+
+            </div>
+            <div class="card-footer">
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -294,6 +295,7 @@
         var cap_array = {!! json_encode($cap_array) !!};
         
         var ctx = document.getElementById('CAPChart').getContext('2d');
+        var radar = document.getElementById('radar').getContext('2d');
         var acadYearArray = [];
         var startYear = {{$earliest_year}};
         var startSem = {{$earliest_sem}};
@@ -321,8 +323,31 @@
 
     }
 
+//Radar chart for grades attained
+
+var data = {
+    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    datasets: [{
+        data: [20, 10, 4, 2]
+    }]
+}
+
+var myRadarChart = new Chart(radar, {
+    type: 'radar',
+    data: data,
+    options: options
+});
+
+var options = {
+    scale: {
+        // Hides the scale
+        display: false
+    }
+};
+
+//Capulator graph chart
                 var chart = new Chart(ctx, {
-                    // The type of chart we want to create
+                    
                     type: 'line',
                 
                     // The data for our dataset

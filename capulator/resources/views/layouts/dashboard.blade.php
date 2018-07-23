@@ -28,7 +28,7 @@
   
 </head>
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+<body class="fixed-nav sticky-footer dark-navyblue" id="page-top">
     @include('inc.userNav') 
     <div class="content-wrapper">
         <div class="container-fluid">
