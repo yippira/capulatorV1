@@ -69,7 +69,8 @@ class NotesController extends Controller
      */
     public function show($id)
     {
-        //
+        $note = Note::find($id);
+        return view('dashboard.notes.show')->with('note', $note);
     }
 
     /**
