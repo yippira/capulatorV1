@@ -326,11 +326,26 @@ $earliest_sem = $module->sem_taken;
 //Radar chart for grades attained
 
 var data = {
-    labels: ['Running', 'Swimming', 'Eating', 'Cycling'],
+    labels: ['A', 'B', 'C', 'D'],
     datasets: [{
+        label:'test',
         data: [20, 10, 4, 2]
     }]
 }
+
+var options = {
+    scale: {
+        // Hides the scale
+        display: true,
+    },
+    title: {
+        display:true,
+        text: 'Grades Obtained',
+    },
+    legend:{
+        text:'test',
+    }
+};
 
 var myRadarChart = new Chart(radar, {
     type: 'radar',
@@ -338,12 +353,6 @@ var myRadarChart = new Chart(radar, {
     options: options
 });
 
-var options = {
-    scale: {
-        // Hides the scale
-        display: false
-    }
-};
 
 //Capulator graph chart
                 var chart = new Chart(ctx, {
