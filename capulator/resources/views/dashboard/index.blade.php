@@ -120,8 +120,9 @@ $earliest_sem = $module->sem_taken;
                     </div>
                 </div>
                 <div class="card">
-                        <div class="card-header small">
+                        <div class="card-header">
                             <i class="fa fa-sticky-note"></i> Notes
+                            <a class="btn-sm btn btn-primary pull-right" href="/notes/create"><i class="fa fa-plus"></i></a>
                         </div>
                         <div class='card-body'>
                                 <div class="table-responsive">
