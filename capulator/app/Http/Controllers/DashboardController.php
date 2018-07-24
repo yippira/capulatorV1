@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Module;
 use App\User;
+use App\Note;
 
 class DashboardController extends Controller
 {
@@ -34,6 +35,8 @@ class DashboardController extends Controller
 
         $modules = $user->modules->sortBy('sem_taken')->sortBy('year_taken');
         $newest = $user->modules->sortByDesc('created_at')->sortByDesc('updated_at')->first();
+        
+        $notes = Note::where('user_id', $user_id)->orderBy('created_at','desc')->take(10)->get();
         $mc_taken = 0;
         $current_CAP = 0;
         $temp_cap = 0;
@@ -136,6 +139,7 @@ class DashboardController extends Controller
             'cap_goal' => $user->CAP_goal,
             'exemption' => $user->exemption,
             'module_timestamp' => $newest,
+            'notes' => $notes,
            // 'test_array' => $test_array,
             //'test_array2' =>$test_array2
             

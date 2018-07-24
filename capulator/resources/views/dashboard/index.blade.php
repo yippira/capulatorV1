@@ -121,14 +121,52 @@ $earliest_sem = $module->sem_taken;
                 </div>
                 <div class="card">
                         <div class="card-header small">
-                            <i class="fa fa-support"></i> Testing data
+                            <i class="fa fa-sticky-note"></i> Notes
                         </div>
-                        <div class='mx-auto my-2 col-md-8' id="">
-                                <canvas id="radar">
-                                    </canvas>
-
-
+                        <div class='card-body'>
+                                <div class="table-responsive">
+                    <table id="dataTable2">
+                        <thead>
+                            <tr>
+                            <th>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        
+                            @foreach($notes as $note)
+                        <tr>
+                        <td>
+                            <table>
+                                   
+                                <thead>
+                                <tr>
+                                <th>
+                                        <h5>{!! $note->title!!}</h5>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <tr>
+                                        <td>
+                                                
+                                       
+                                <div class="small">
+                                    @php
+                                        echo strip_tags($note->body);
+                                    @endphp
+                                </div>
+                            </td>
+                            </tr>
+                        </tbody>
                             
+                </table>
+            </td>
+        </tr>
+            @endforeach  
+                        </tbody>                         
+        </table>
+                </div>
                             {{-- @foreach($cap_array as $cap)
                             {{$cap}}
                             @endforeach --}}
@@ -273,11 +311,7 @@ $earliest_sem = $module->sem_taken;
             </div>
         </div>
     </footer>
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" style="display:block;" href="#page-top">
-          <i class="fa fa-angle-up"></i>
-        </a>
-    
+
   
     <!-- Core plugin JavaScript-->
     <script src="assets/scripts/jquery.easing.min.js"></script>
@@ -297,7 +331,6 @@ $earliest_sem = $module->sem_taken;
         var cap_array = {!! json_encode($cap_array) !!};
         
         var ctx = document.getElementById('CAPChart').getContext('2d');
-        var radar = document.getElementById('radar').getContext('2d');
         var acadYearArray = [];
         var startYear = {{$earliest_year}};
         var startSem = {{$earliest_sem}};
@@ -325,35 +358,6 @@ $earliest_sem = $module->sem_taken;
 
     }
 
-//Radar chart for grades attained
-
-var data = {
-    labels: ['A', 'B', 'C', 'D'],
-    datasets: [{
-        label:'test',
-        data: [20, 10, 4, 2]
-    }]
-}
-
-var options = {
-    scale: {
-        // Hides the scale
-        display: true,
-    },
-    title: {
-        display:true,
-        text: 'Grades Obtained',
-    },
-    legend:{
-        text:'test',
-    }
-};
-
-var myRadarChart = new Chart(radar, {
-    type: 'radar',
-    data: data,
-    options: options
-});
 
 
 //Capulator graph chart
