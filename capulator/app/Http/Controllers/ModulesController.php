@@ -175,7 +175,10 @@ class ModulesController extends Controller
                 }
         $module->delete();
         $request->session()->flash('alert-success', 'Module ' . $module->module_code . ' was successfully deleted!');
-
+        if(URL::previous() == 'http://capulator.test/dashboard'){
+            return redirect('/dashboard');
+        }
+        
         return redirect('/modules');
     }
 }
