@@ -32,8 +32,6 @@ class DashboardController extends Controller
         // $modules = Module::orderBy('created_at','desc')->paginate(5);
         
 
-        $user_id = auth()->user()->id;
-        $user = User::find($user_id); 
         $modules = $user->modules->sortBy('sem_taken')->sortBy('year_taken');
         $newest = $user->modules->sortByDesc('created_at')->sortByDesc('updated_at')->first();
         $mc_taken = 0;
@@ -81,7 +79,9 @@ class DashboardController extends Controller
 
                 //means we are in a different year
                 //we have to push previous.
-                $cap_array[] = $temp_cap/($mc_taken);
+                if($mc_taken != 0){
+                    $cap_array[] = $temp_cap/($mc_taken);
+                }
                 //then we add the cap
                 $temp_cap += $module->mc_worth *  $value;
                 $mc_taken += $module->mc_worth;
@@ -107,6 +107,7 @@ class DashboardController extends Controller
             //$test_array2[] = $mc_taken;
         }
 
+        //Adds last year
         if($mc_taken != 0){
             $cap_array[] = $temp_cap/$mc_taken;
             $current_CAP = $temp_cap/$mc_taken;

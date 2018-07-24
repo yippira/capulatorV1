@@ -24,18 +24,44 @@
                                 {!!Form::close()!!} 
                      
                                 <hr>
-                                {!! Form::open(['action' => ['DashboardController@reset'], 'method' => 'POST'])!!}
-                                <div class="form-group">
-                                        {{Form::hidden('_method', 'DELETE')}} 
-                                        {{Form::label('reset', 'Delete all modules and reset')}}
+                                <div class="w-100">
+                                <label for="prompt">Remove all your modules</label>
                                 </div>
-                                {{Form::submit('RESET', ['class' => 'btn btn-danger'])}}
-                                {!!Form::close()!!} 
+                                <a id="prompt" class="btn btn-danger text-white" data-toggle="modal" data-target="#resetModal"><i class="fa fa-exclamation-triangle"></i> RESET</a>  
+                                            
+ 
                                 
                     </div>
                     <div class="card-footer small text-muted"></div>
                 </div>
             </div>
+
+            {{-- Reset Warning Modal --}}
+<div class="modal fade" id="resetModal" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resetModalLabel">Warning this will remove all the modules you've added!</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">×</span>
+                </button>
+                </div>
+                <div class="modal-body"><p>Are you sure you want to do this?</p>
+                        {!! Form::open(['action' => ['DashboardController@reset'], 'method' => 'POST'])!!}
+                        <div class="form-group">
+                        {{Form::hidden('_method', 'DELETE')}} 
+                        {{Form::submit('YES DO IT', ['class' => 'btn btn-danger'])}}
+                        {!!Form::close()!!} 
+                        </div>
+                       
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
         
             <!-- Core plugin JavaScript-->

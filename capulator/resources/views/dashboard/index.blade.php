@@ -55,6 +55,9 @@ $earliest_sem = $module->sem_taken;
                         </div>
                         <div class="mr-5">MC To Graduate : {{160 - $mc_taken - $exemption}}</div>
                     </div>
+                    
+                    
+                    
                    
                 </div>
             </div>
@@ -66,7 +69,6 @@ $earliest_sem = $module->sem_taken;
                         </div>
                         <div class="mr-5">Average Grade : {{$avg_grade}}</div>
                     </div>
-                  
                 </div>
             </div>
         </div>
@@ -88,7 +90,7 @@ $earliest_sem = $module->sem_taken;
                             if($module_timestamp->created_at > $module_timestamp->updated_at)
                             {
                                 $timestamp = "$module_timestamp->created_at";
-                                echo('Last updated on ' . date('d/F/Y \at h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
+                                echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
                                 //date('m/d/Y',$module_timestamp->created_at);
                             }else{
                                 $timestamp = "$module_timestamp->updated_at";

@@ -102,7 +102,7 @@
               <script src="assets/scripts/sb-admin-charts.min.js"></script>
   
   
-  <div aria-labelledby="exampleModalLabel" aria-hidden="true" tabindex="-1" id="create" class="modal fade" role="dialog">
+  <div aria-labelledby="ModuleModalLabel" aria-hidden="true" tabindex="-1" id="create" class="modal fade" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
