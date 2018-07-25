@@ -31,7 +31,7 @@ $earliest_sem = $module->sem_taken;
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-long-arrow-up"></i>
                         </div>
-                        <div class="mr-5">Current CAP : {{$current_CAP}}</div>
+                        <div class="big mr-5">CAP : <span style="font-weight:bold ;font-size: 26px;">{{$current_CAP}}</span></div>
                     </div>
                     
                 </div>
@@ -87,19 +87,13 @@ $earliest_sem = $module->sem_taken;
                             @php
                             
                             if(!Empty($module_timestamp) || $module_timestamp != null){
-                            if($module_timestamp->created_at > $module_timestamp->updated_at)
-                            {
-                                $timestamp = "$module_timestamp->created_at";
-                                echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
-                                //date('m/d/Y',$module_timestamp->created_at);
-                            }else{
                                 $timestamp = "$module_timestamp->updated_at";
                                 echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
-                            //date('m/d/Y',$module_timestamp->updated_at);
                             }
-                        }
                             @endphp
-                            
+                            <div class="pull-right">
+                                    Note: This does not reflect deleted modules!
+                            </div>
                             
                     </div>
                 </div>
