@@ -31,7 +31,7 @@ $earliest_sem = $module->sem_taken;
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-long-arrow-up"></i>
                         </div>
-                        <div class="mr-5">Current CAP : {{$current_CAP}}</div>
+                        <div class="big mr-5">CAP : <span style="font-weight:bold ;font-size: 26px;">{{$current_CAP}}</span></div>
                     </div>
                     
                 </div>
@@ -49,11 +49,20 @@ $earliest_sem = $module->sem_taken;
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white pale-purple o-hidden h-100">
-                    <div class="card-body">
+                    <div class="card-body" data-toggle="tooltip" data-placement="bottom" title="Did you know, you can set exemptions?">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-trophy"></i>
                         </div>
-                        <div class="mr-5">MC To Graduate : {{160 - $mc_taken - $exemption}}</div>
+                        <div class="mr-5">MC To Graduate : 
+                                @php
+                                    $mc_to_grad = 160 - $mc_taken - $exemption;
+                                    if($mc_to_grad <= 0){
+                                        echo '<div class="small"> Congratulations! You have graduated and survived! </div>';
+                                    }else{
+                                        echo $mc_to_grad;
+                                    }
+                                    @endphp
+                                </div>
                     </div>
                     
                     
@@ -78,7 +87,20 @@ $earliest_sem = $module->sem_taken;
             <div class="col-md-9">
                 <div class="card mb-3">
                     <div class="card-header small">
-                        <i class="fa fa-area-chart"></i> CAP Projection </div>
+                        <i class="fa fa-area-chart"></i> CAP Projection 
+                        @if(count($modules) <= 0)
+                        <span data-toggle="tooltip" data-placement="top" title="Your CAP at every semester will be shown here, add more than one semester of modules to see the graph!" class="small fa-pull-right fa-stack">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-question fa-stack-1x"></i>
+                              </span>
+                              @else
+                              <span data-toggle="tooltip" data-placement="top" title="Add useful notes" class="small fa-pull-right fa-stack">
+                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                    <i class="fa fa-question fa-stack-1x"></i>
+                                  </span>
+                              @endif
+                    </div>
+
                     <div class="card-body">
                         <canvas id="CAPChart" width="100%" height="30"></canvas>
                     </div>
@@ -87,26 +109,143 @@ $earliest_sem = $module->sem_taken;
                             @php
                             
                             if(!Empty($module_timestamp) || $module_timestamp != null){
-                            if($module_timestamp->created_at > $module_timestamp->updated_at)
-                            {
-                                $timestamp = "$module_timestamp->created_at";
-                                echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
-                                //date('m/d/Y',$module_timestamp->created_at);
-                            }else{
                                 $timestamp = "$module_timestamp->updated_at";
                                 echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
-                            //date('m/d/Y',$module_timestamp->updated_at);
                             }
-                        }
                             @endphp
+                            <div class="pull-right">
+                                    Note: Updated time does not track when modules are deleted!
+                            </div>
                             
                     </div>
                 </div>
+                <div class="">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <i class="fa fa-table"></i> Current Semester Modules</div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Module Code</th>
+                                                <th>Year taken</th>
+                                                <th>Sem Taken</th>
+                                                <th>Grade</th>
+                                                <th>MC Worth</th>
+                                                <th style="width: 150px;">Setting</th>
+                                            </tr>
+                                        </thead>
+                
+                                        @if(count($modules) > 0) @foreach($modules as $module)
+                                        <tr>
+                                            <td>{{$module->module_code}}</td>
+                                            <td>{{$module->year_taken}}</td>
+                                            <td>{{$module->sem_taken}}</td>
+                                            <td>{{$module->grade}}</td>
+                                            <td>{{$module->mc_worth}}</td>
+                                            <td> <div class="">
+                                                
+                
+                                                
+                                                <a class="btn btn-warning text-white pull-right " data-toggle="modal" data-target="#editModal{{$module->id}}"><i class="fa fa-edit"></i> Edit</a> 
+                                                 
+                                                <a class="btn btn-danger  text-white pull-left " data-toggle="modal" data-target="#deleteModal{{$module->id}}"><i class="fa fa-trash"></i> Delete</a>  
+                 
+                                                </div>                         
+                                            </td>
+                                        </tr>
+                                                    {{-- Delete Module Warning Modal --}}
+                                    <div class="modal fade" id="deleteModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="resetModalLabel">Confirmation</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                                </div>
+                                <div class="modal-body"><p>Are you sure you want to delete "{{$module->module_code}}" ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                        {!! Form::open(['action' => ['ModulesController@destroy', $module->id],'class' => '', 'method' => 'POST'])
+                                        !!} {{Form::hidden('_method', 'DELETE')}} 
+                                        {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'pull-left btn btn-danger'] )}}
+                                        {!!Form::close()
+                                        !!} 
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                                          <!-- Edit Modal-->
+                                    <div class="modal fade" id="editModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="editModalLabel">Update details for {{$module->module_code}}</h5>
+                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">×</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                            {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
+                                            {{Form::hidden('_method', 'PUT')}}
+                                            <div class="form-group">
+                                                    {{Form::label('grade', 'Grade Achieved')}}
+                                                    {{Form::select('grade',['A+' => 'A+', 'A' => 'A', 'A-' => 'A-', 'B+' => 'B+', 'B' => 'B', 'B-' => 'B-', 'C+' => 'C+', 'C' => 'C', 'D+' => 'D+', 'D' => 'D', 'F' => 'F', 'S'=>'S'], $module->grade, ['class' => 'form-control'])}}
+                                                </div>
+                                                <div class="form-group">
+                                                    {{Form::label('mc_worth', 'MC Worth')}}
+                                                    {{Form::text('mc_worth', $module->mc_worth, ['class' => 'form-control', 'placeholder'=>'eg 4'])}}
+                                                </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                
+                                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                                    {!!Form::close()!!}   
+                                    </div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                        
+                
+                                        @endforeach @else @endif
+                                        <tfoot>
+                                            </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="card-footer small text-muted">                            
+                                @php
+                                            if(!Empty($module_timestamp) || $module_timestamp != null){
+                                    if($module_timestamp->created_at > $module_timestamp->updated_at)
+                                    {
+                                        $timestamp = "$module_timestamp->created_at";
+                                        echo('Last updated on ' . date('d/F/Y \at h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
+                                        //date('m/d/Y',$module_timestamp->created_at);
+                                    }else{
+                                        $timestamp = "$module_timestamp->updated_at";
+                                        echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
+                                    //date('m/d/Y',$module_timestamp->updated_at);
+                                    }
+                                }
+                                    @endphp
+                            </div>
+                        </div>
+                    </div>
             </div>
             <div class="col-md-3">
                 <div class="card mb-3">
                     <div class="card-header small">
-                        <i class="fa fa-support"></i> CAP Goal
+                        <i class="fa fa-support"></i> CAP Goal <span data-toggle="tooltip" data-placement="top" title="Change your CAP Goal under settings!" class="small fa-pull-right fa-stack">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-question fa-stack-1x"></i>
+                              </span>
                     </div>
                     <div class='mx-auto my-2 col-md-8' id="goalSetting">
 
@@ -120,31 +259,67 @@ $earliest_sem = $module->sem_taken;
                     </div>
                 </div>
                 <div class="card">
-                        <div class="card-header">
+                        <div class="card-header small">
                             <i class="fa fa-sticky-note"></i> Notes
                             <a class="btn-sm btn btn-primary pull-right" href="/notes/create"><i class="fa fa-plus"></i></a>
                         </div>
-                        <div class='card-body'>
+                        <div style="padding: 0;" class='pb-3 card-body'>
                                 <div class="table-responsive">
                     <table id="dataTable2">
                         <thead>
                             <tr>
-                            <th>
-                            </th>
+                                <th></th>
+                            
                         </tr>
                         </thead>
                         <tbody>
                         
                             @foreach($notes as $note)
+                            
+                                                              {{-- Delete Note Warning Modal --}}
+                                                              <div class="modal fade" id="deleteNoteModal{{$note->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteNoteModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                            <h5 class="modal-title" id="deleteNoteModalLabel">Confirmation</h5>
+                                                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                                              <span aria-hidden="true">×</span>
+                                                                            </button>
+                                                                            </div>
+                                                                            <div class="modal-body"><p>Are you sure you want to delete "{{$note->title}}" ?</p>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                    {!! Form::open(['action' => ['NotesController@destroy', $note->id],'class' => 'pull-right', 'method' =>
+                                                                                    'POST']) !!} 
+                                                                                    
+                                                                                    {{Form::hidden('_method', 'DELETE')}} {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger'] )}}
+                                                        
+                                                                                    {!!Form::close() !!}
+                                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                         <tr>
+                          
                         <td>
                             <table>
                                    
+                                    <a class="btn-sm btn-danger  text-white pull-right " data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i></a>  
+ 
                                 <thead>
                                 <tr>
                                 <th>
-                                        <h5>{!! $note->title!!}</h5>
+                                        <h5>
+                                            {!! $note->title!!}   
+                                     
+                    
+                                       </h5>
+                                 
+                                        
                                 </th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -186,147 +361,28 @@ $earliest_sem = $module->sem_taken;
                             
                         </div>
                     </div>
-                
+
+                            <div class="card">
+                                <div class="card-header">
+                                    
+                                </div>
+                                <div class="card-body">
+                                    @foreach($notes as $note)
+                                    {{$note}}
+                                    @endforeach
+                                </div>
+                                <div class="card-footer">
+                                </div>
+                            </div>
+                        </div>
+                        
             </div>
             
 
         </div>
 
         <!-- Module information for easy access on front page-->
-<div class="row">
-    <div class="col-lg-9">
-        <div class="card mb-3">
-            <div class="card-header">
-                <i class="fa fa-table"></i> Current Semester Modules</div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>Module Code</th>
-                                <th>Year taken</th>
-                                <th>Sem Taken</th>
-                                <th>Grade</th>
-                                <th>MC Worth</th>
-                                <th style="width: 150px;">Setting</th>
-                            </tr>
-                        </thead>
 
-                        @if(count($modules) > 0) @foreach($modules as $module)
-                        <tr>
-                            <td>{{$module->module_code}}</td>
-                            <td>{{$module->year_taken}}</td>
-                            <td>{{$module->sem_taken}}</td>
-                            <td>{{$module->grade}}</td>
-                            <td>{{$module->mc_worth}}</td>
-                            <td> <div class="">
-                                
-
-                                
-                                <a class="btn btn-warning text-white pull-right " data-toggle="modal" data-target="#editModal{{$module->id}}"><i class="fa fa-edit"></i> Edit</a> 
-                                 
-                                <a class="btn btn-danger  text-white pull-left " data-toggle="modal" data-target="#deleteModal{{$module->id}}"><i class="fa fa-trash"></i> Delete</a>  
- 
-                                </div>                         
-                            </td>
-                        </tr>
-                                    {{-- Reset Warning Modal --}}
-                    <div class="modal fade" id="deleteModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="resetModalLabel">Confirmation</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">×</span>
-                </button>
-                </div>
-                <div class="modal-body"><p>Are you sure you want to delete "{{$module->module_code}}" ?</p>
-                </div>
-                <div class="modal-footer">
-                        {!! Form::open(['action' => ['ModulesController@destroy', $module->id],'class' => '', 'method' => 'POST'])
-                        !!} {{Form::hidden('_method', 'DELETE')}} 
-                        {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'pull-left btn btn-danger'] )}}
-                        {!!Form::close()
-                        !!} 
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-                          <!-- Edit Modal-->
-                    <div class="modal fade" id="editModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="editModalLabel">Update details for {{$module->module_code}}</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">×</span>
-                    </button>
-                    </div>
-                    <div class="modal-body">
-                            {!! Form::open(['action' => ['ModulesController@update',$module->id], 'method' => 'POST'])!!}
-                            {{Form::hidden('_method', 'PUT')}}
-                            <div class="form-group">
-                                    {{Form::label('grade', 'Grade Achieved')}}
-                                    {{Form::select('grade',['A+' => 'A+', 'A' => 'A', 'A-' => 'A-', 'B+' => 'B+', 'B' => 'B', 'B-' => 'B-', 'C+' => 'C+', 'C' => 'C', 'D+' => 'D+', 'D' => 'D', 'F' => 'F', 'S'=>'S'], $module->grade, ['class' => 'form-control'])}}
-                                </div>
-                                <div class="form-group">
-                                    {{Form::label('mc_worth', 'MC Worth')}}
-                                    {{Form::text('mc_worth', $module->mc_worth, ['class' => 'form-control', 'placeholder'=>'eg 4'])}}
-                                </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-
-                        {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
-                    {!!Form::close()!!}   
-                    </div>
-                </div>
-            </div>
-        
-        </div>
-        
-
-                        @endforeach @else @endif
-                        <tfoot>
-                            </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="card-footer small text-muted">                            
-                @php
-                            if(!Empty($module_timestamp) || $module_timestamp != null){
-                    if($module_timestamp->created_at > $module_timestamp->updated_at)
-                    {
-                        $timestamp = "$module_timestamp->created_at";
-                        echo('Last updated on ' . date('d/F/Y \at h:i:s A',(strtotime($timestamp . '+ 8 hours'))));
-                        //date('m/d/Y',$module_timestamp->created_at);
-                    }else{
-                        $timestamp = "$module_timestamp->updated_at";
-                        echo('Last updated on ' . date('d/F/Y \a\t h:i:s A',strtotime($timestamp. '+ 8 hours')));
-                    //date('m/d/Y',$module_timestamp->updated_at);
-                    }
-                }
-                    @endphp
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3">
-        <div class="card">
-            <div class="card-header">
-                
-            </div>
-            <div class="card-body">
-
-            </div>
-            <div class="card-footer">
-            </div>
-        </div>
-    </div>
-    </div>
-</div>
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -351,11 +407,17 @@ $earliest_sem = $module->sem_taken;
 
 
     <script>
-        //think about what to show if you have no cap.
+        // This is to setup tooltips
+        $(function () {
+             $('[data-toggle="tooltip"]').tooltip()
+        })
         
+
         var cap_array = {!! json_encode($cap_array) !!};
         
         var ctx = document.getElementById('CAPChart').getContext('2d');
+
+        //This will generate the years and semesters
         var acadYearArray = [];
         var startYear = {{$earliest_year}};
         var startSem = {{$earliest_sem}};
@@ -372,7 +434,6 @@ $earliest_sem = $module->sem_taken;
     }else{
         acadYearArray.push(startYear + '/' + startSem);
         for(var i = 1; i < 4; i ++){
-
             var start = '';
             startYear = {{$earliest_year}} + i;
             for(var j = 1; j <= 2; j ++){

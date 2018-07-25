@@ -13472,7 +13472,7 @@ a.text-dark:focus {
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.nav-link {
+.nav-link-text-dashboard {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
@@ -13482,10 +13482,6 @@ a.text-dark:focus {
 
 .grass-green {
   background-color: #7ccc63;
-}
-
-.black-joyce {
-  background-color: black;
 }
 
 .deep-orange {

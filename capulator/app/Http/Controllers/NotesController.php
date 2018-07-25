@@ -91,6 +91,8 @@ class NotesController extends Controller
  
         }
 
+        $request->session()->flash('alert-success','Note "' . $request->input('title') . '" successfully edited.');
+ 
         return view('dashboard.notes.edit')->with('note',$note);
        
 
@@ -145,6 +147,9 @@ class NotesController extends Controller
 $note->delete();
 session()->flash('alert-success','Note "' . $note->title . '" successfully deleted.');
  
+if(URL::previous() == 'http://capulator.test/dashboard'){
+    return redirect('/dashboard');
+}
 return redirect('/notes');
     }
 }

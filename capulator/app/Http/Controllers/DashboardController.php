@@ -36,7 +36,7 @@ class DashboardController extends Controller
         $modules = $user->modules->sortBy('sem_taken')->sortBy('year_taken');
         $newest = $user->modules->sortByDesc('created_at')->sortByDesc('updated_at')->first();
         
-        $notes = Note::where('user_id', $user_id)->orderBy('created_at','desc')->take(10)->get();
+        $notes = Note::where('user_id', $user_id)->orderBy('updated_at','DESC')->take(10)->get();
         $mc_taken = 0;
         $current_CAP = 0;
         $temp_cap = 0;
@@ -158,6 +158,9 @@ class DashboardController extends Controller
         $user->CAP_goal = number_format($request->input('cap_goal'), 2, '.', ',');
         $user->save();
 
+        
+        $request->session()->flash('alert-success','Your CAP Goal has been successfully updated.');
+ 
         return redirect('/targetSetting');
 
     }

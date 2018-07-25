@@ -11,20 +11,20 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="{{ url ('/dashboard') }}">
                 <i class="fa fa-fw fa-dashboard"></i>
-                <span class="nav-link-text">Dashboard</span>
+                <span class="nav-link-text nav-link-text-dashboard">Dashboard</span>
               </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
                 <a class="nav-link" href="{{ url ('modules') }}">
                 <i class="fa fa-fw fa-area-chart"></i>
-                <span class="nav-link-text">Modules</span>
+                <span class="nav-link-text nav-link-text-dashboard">Modules</span>
               </a>
             </li>
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
                   <i class="fa fa-fw fa-wrench"></i>
-                  <span class="nav-link-text">Settings</span>
+                  <span class="nav-link-text nav-link-text-dashboard">Settings</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
@@ -40,7 +40,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
                 <a class="nav-link" href="{{ url ('notes') }}">
                 <i class="fa fa-fw fa-table"></i>
-                <span class="nav-link-text">Notes</span>
+                <span class="nav-link-text nav-link-text-dashboard">Notes</span>
               </a>
             </li>
 
@@ -48,7 +48,7 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
                 <a class="nav-link" href="#">
                 <i class="fa fa-fw fa-link"></i>
-                <span class="nav-link-text">Link</span>
+                <span class="nav-link-text nav-link-text-dashboard">Link</span>
               </a>
             </li>
         </ul>
