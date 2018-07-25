@@ -49,7 +49,7 @@ $earliest_sem = $module->sem_taken;
             </div>
             <div class="col-xl-3 col-sm-6 mb-3">
                 <div class="card text-white pale-purple o-hidden h-100">
-                    <div class="card-body">
+                    <div class="card-body" data-toggle="tooltip" data-placement="bottom" title="Did you know, you can set exemptions?">
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-trophy"></i>
                         </div>
@@ -57,9 +57,9 @@ $earliest_sem = $module->sem_taken;
                                 @php
                                     $mc_to_grad = 160 - $mc_taken - $exemption;
                                     if($mc_to_grad <= 0){
-                                        echo 'You have graduated!';
+                                        echo '<div class="small"> Congratulations! You have graduated and survived! </div>';
                                     }else{
-                                        $mc_to_grad;
+                                        echo $mc_to_grad;
                                     }
                                     @endphp
                                 </div>
@@ -87,7 +87,20 @@ $earliest_sem = $module->sem_taken;
             <div class="col-md-9">
                 <div class="card mb-3">
                     <div class="card-header small">
-                        <i class="fa fa-area-chart"></i> CAP Projection </div>
+                        <i class="fa fa-area-chart"></i> CAP Projection 
+                        @if(count($modules) <= 0)
+                        <span data-toggle="tooltip" data-placement="top" title="Your CAP at every semester will be shown here, add more than one semester of modules to see the graph!" class="small fa-pull-right fa-stack">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-question fa-stack-1x"></i>
+                              </span>
+                              @else
+                              <span data-toggle="tooltip" data-placement="top" title="Add useful notes" class="small fa-pull-right fa-stack">
+                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                    <i class="fa fa-question fa-stack-1x"></i>
+                                  </span>
+                              @endif
+                    </div>
+
                     <div class="card-body">
                         <canvas id="CAPChart" width="100%" height="30"></canvas>
                     </div>
@@ -101,7 +114,7 @@ $earliest_sem = $module->sem_taken;
                             }
                             @endphp
                             <div class="pull-right">
-                                    Note: This does not reflect deleted modules!
+                                    Note: Updated time does not track when modules are deleted!
                             </div>
                             
                     </div>
@@ -229,7 +242,10 @@ $earliest_sem = $module->sem_taken;
             <div class="col-md-3">
                 <div class="card mb-3">
                     <div class="card-header small">
-                        <i class="fa fa-support"></i> CAP Goal
+                        <i class="fa fa-support"></i> CAP Goal <span data-toggle="tooltip" data-placement="top" title="Change your CAP Goal under settings!" class="small fa-pull-right fa-stack">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-question fa-stack-1x"></i>
+                              </span>
                     </div>
                     <div class='mx-auto my-2 col-md-8' id="goalSetting">
 
@@ -391,11 +407,17 @@ $earliest_sem = $module->sem_taken;
 
 
     <script>
-        //think about what to show if you have no cap.
+        // This is to setup tooltips
+        $(function () {
+             $('[data-toggle="tooltip"]').tooltip()
+        })
         
+
         var cap_array = {!! json_encode($cap_array) !!};
         
         var ctx = document.getElementById('CAPChart').getContext('2d');
+
+        //This will generate the years and semesters
         var acadYearArray = [];
         var startYear = {{$earliest_year}};
         var startSem = {{$earliest_sem}};
@@ -412,7 +434,6 @@ $earliest_sem = $module->sem_taken;
     }else{
         acadYearArray.push(startYear + '/' + startSem);
         for(var i = 1; i < 4; i ++){
-
             var start = '';
             startYear = {{$earliest_year}} + i;
             for(var j = 1; j <= 2; j ++){

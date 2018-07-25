@@ -158,6 +158,9 @@ class DashboardController extends Controller
         $user->CAP_goal = number_format($request->input('cap_goal'), 2, '.', ',');
         $user->save();
 
+        
+        $request->session()->flash('alert-success','Your CAP Goal has been successfully updated.');
+ 
         return redirect('/targetSetting');
 
     }
