@@ -53,7 +53,16 @@ $earliest_sem = $module->sem_taken;
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-trophy"></i>
                         </div>
-                        <div class="mr-5">MC To Graduate : {{160 - $mc_taken - $exemption}}</div>
+                        <div class="mr-5">MC To Graduate : 
+                                @php
+                                    $mc_to_grad = 160 - $mc_taken - $exemption;
+                                    if($mc_to_grad <= 0){
+                                        echo 'You have graduated!';
+                                    }else{
+                                        $mc_to_grad;
+                                    }
+                                    @endphp
+                                </div>
                     </div>
                     
                     
@@ -133,7 +142,7 @@ $earliest_sem = $module->sem_taken;
                                                 </div>                         
                                             </td>
                                         </tr>
-                                                    {{-- Reset Warning Modal --}}
+                                                    {{-- Delete Module Warning Modal --}}
                                     <div class="modal fade" id="deleteModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -238,7 +247,7 @@ $earliest_sem = $module->sem_taken;
                             <i class="fa fa-sticky-note"></i> Notes
                             <a class="btn-sm btn btn-primary pull-right" href="/notes/create"><i class="fa fa-plus"></i></a>
                         </div>
-                        <div class='card-body'>
+                        <div style="padding: 0;" class='pb-3 card-body'>
                                 <div class="table-responsive">
                     <table id="dataTable2">
                         <thead>
@@ -250,16 +259,51 @@ $earliest_sem = $module->sem_taken;
                         <tbody>
                         
                             @foreach($notes as $note)
+                            
+                                                              {{-- Delete Note Warning Modal --}}
+                                                              <div class="modal fade" id="deleteNoteModal{{$note->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteNoteModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog" role="document">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-header">
+                                                                            <h5 class="modal-title" id="deleteNoteModalLabel">Confirmation</h5>
+                                                                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                                              <span aria-hidden="true">×</span>
+                                                                            </button>
+                                                                            </div>
+                                                                            <div class="modal-body"><p>Are you sure you want to delete "{{$note->title}}" ?</p>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                    {!! Form::open(['action' => ['NotesController@destroy', $note->id],'class' => 'pull-right', 'method' =>
+                                                                                    'POST']) !!} 
+                                                                                    
+                                                                                    {{Form::hidden('_method', 'DELETE')}} {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger'] )}}
+                                                        
+                                                                                    {!!Form::close() !!}
+                                                                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                                            
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                         <tr>
                           
                         <td>
                             <table>
                                    
+                                    <a class="btn-sm btn-danger  text-white pull-right " data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i></a>  
+ 
                                 <thead>
                                 <tr>
                                 <th>
-                                        <h5>{!! $note->title!!}</h5>
+                                        <h5>
+                                            {!! $note->title!!}   
+                                     
+                    
+                                       </h5>
+                                 
+                                        
                                 </th>
+                                
                             </tr>
                         </thead>
                         <tbody>
