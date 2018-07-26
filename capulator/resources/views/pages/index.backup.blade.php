@@ -42,18 +42,11 @@
                                             </div>
     
                                             <!-- Title layer -->
-                                            <div class="">
                                             <div class="tp-caption WebProduct-Title-Light tp-resizeme rs-parallaxlevel-0" id="slide-235-layer-7" data-x="['left','left','left','left']" data-hoffset="['30','30','200','80']" data-y="['middle','middle','top','top']" data-voffset="['-110','-110','137','130']" data-fontsize="['90','90','75','75']" data-lineheight="['90','90','75','70']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:-50px;opacity:0;s:1000;e:Power2.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-start="1000" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 11; white-space: nowrap;">NUS
-                                                
-
-                                            
                                                 <br>
                                                 Capulator
                                             </div>
-                                            {{-- Capulator Logo --}}
-                                            <div class="tp-caption tp-resizeme rs-parallaxlevel-0" id="slide-235-layer-6" data-x="['left','left','left','left']" data-hoffset="['290','260','400','250']" data-y="['top','top','top','top']" data-voffset="['140','140','130','120']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="z:0;rX:0deg;rY:0;rZ:0;sX:1.5;sY:1.5;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-mask_in="x:0px;y:0px;s:inherit;e:inherit;" data-start="3950" data-responsive_offset="on" style="z-index: 10;"><img src="images/CAP2.png" alt="" width="140" height="140" data-ww="['140px','140px','85px','66px']" data-hh="['140px','140px','85px','66px']" data-no-retina>
-                                            </div>
-
+    
                                             <!-- Subtitle Layer -->
                                             <div class="tp-caption WebProduct-SubTitle-Light tp-resizeme rs-parallaxlevel-0" id="slide-235-layer-10" data-x="['left','left','left','left']" data-hoffset="['30','30','200','80']" data-y="['middle','middle','top','top']" data-voffset="['14','44','294','277']" data-fontsize="['15','15','15','13']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_in="x:-50px;opacity:0;s:1000;e:Power2.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-start="1250" data-splitin="none" data-splitout="none" data-responsive_offset="on" style="z-index: 12; white-space: nowrap;letter-spacing:2px;font-weight:500;">SET YOUR TARGETS TODAY
                                             </div>
@@ -64,10 +57,10 @@
                                             </div>
                                             @guest
                                             <!-- Login -->
-                                             <div class="tp-caption orbital-slider-button rev-btn rs-parallaxlevel-0" id="slide-235-layer-11" data-x="['left','left','left','left']" data-hoffset="['30','30','500','20']" data-y="['middle','middle','top','top']" data-voffset="['310','238','850','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;" data-style_hover="c:rgba(51, 51, 51, 1.00);bg:rgba(255, 255, 255, 1.00);" data-transform_in="x:-50px;opacity:0;s:1000;e:Power2.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-start="1750" data-splitin="none" data-splitout="none" data-actions='[{"event":"click","action":"simplelink","target": "_self", "url": "{{ route('login') }}"}]' data-responsive_offset="on" data-responsive="off" style="z-index: 15; white-space: nowrap;letter-spacing:1px;">LOGIN
+                                             <div class="tp-caption orbital-slider-button rev-btn rs-parallaxlevel-0" id="slide-235-layer-11" data-x="['left','left','left','left']" data-hoffset="['30','30','200','80']" data-y="['middle','middle','top','top']" data-voffset="['310','238','456','420']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;" data-style_hover="c:rgba(51, 51, 51, 1.00);bg:rgba(255, 255, 255, 1.00);" data-transform_in="x:-50px;opacity:0;s:1000;e:Power2.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-start="1750" data-splitin="none" data-splitout="none" data-actions='[{"event":"click","action":"simplelink","target": "_self", "url": "{{ route('login') }}"}]' data-responsive_offset="on" data-responsive="off" style="z-index: 15; white-space: nowrap;letter-spacing:1px;">LOGIN
                                                 </div> 
                                                 <!-- Register -->
-                                                <div class="tp-caption orbital-slider-button rev-btn rs-parallaxlevel-0" id="slide-235-layer-12" data-x="['left','left','left','left']" data-hoffset="['180','30','100','200']" data-y="['middle','middle','top','top']" data-voffset="['310','238','850','60']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;" data-style_hover="c:rgba(51, 51, 51, 1.00);bg:rgba(255, 255, 255, 1.00);" data-transform_in="x:-50px;opacity:0;s:1000;e:Power2.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-start="1750" data-splitin="none" data-splitout="none" data-actions='[{"event":"click","action":"simplelink","target": "_self", "url": "{{ route('register') }}"}]' data-responsive_offset="on" data-responsive="off" style="z-index: 16; white-space: nowrap;letter-spacing:1px;">REGISTER
+                                                <div class="tp-caption orbital-slider-button rev-btn rs-parallaxlevel-0" id="slide-235-layer-12" data-x="['left','left','left','left']" data-hoffset="['180','30','200','80']" data-y="['middle','middle','top','top']" data-voffset="['310','238','456','420']" data-width="none" data-height="none" data-whitespace="nowrap" data-transform_idle="o:1;" data-transform_hover="o:1;rX:0;rY:0;rZ:0;z:0;s:300;e:Linear.easeNone;" data-style_hover="c:rgba(51, 51, 51, 1.00);bg:rgba(255, 255, 255, 1.00);" data-transform_in="x:-50px;opacity:0;s:1000;e:Power2.easeOut;" data-transform_out="opacity:0;s:1500;e:Power4.easeIn;s:1500;e:Power4.easeIn;" data-start="1750" data-splitin="none" data-splitout="none" data-actions='[{"event":"click","action":"simplelink","target": "_self", "url": "{{ route('register') }}"}]' data-responsive_offset="on" data-responsive="off" style="z-index: 16; white-space: nowrap;letter-spacing:1px;">REGISTER
                                                 </div>
 
                                             @else
@@ -100,27 +93,54 @@
 
     <body class="color-custom style-simple button-flat layout-full-width if-zoom if-border-hide no-content-padding no-shadows header-classic minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-center mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky be-reg-20881">
             <div id="Wrapper">
-
+                <div id="Header_wrapper">
+                    <header id="Header">
+                        <div class="header_placeholder"></div>
+                        <div id="Top_bar">
+                            <div class="container">
+                                <div class="column one">
+                                    <div class="top_bar_left clearfix">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                </div>
                 <div id="Content">
                     <div class="content_wrapper clearfix">
                         <div class="sections_group">
                             <div class="entry-content">
-                                <div class="section mcb-section" style="padding-top:50px; padding-bottom:120px; background-color:#FFFFFF">
+                                <div class="section mcb-section" style="padding-top:125px; padding-bottom:225px; background-color:#FFFFFF">
                                     {{-- <div class="section-decoration top" style="background-image:url(images/1.jpg);height:20px"></div> --}}
-                                    
+                                    <div class="section_wrapper mcb-section-inner">
+                                        <div class="wrap mcb-wrap one valign-top clearfix">
+                                            <div class="mcbH-wrap-inner">
+                                                <div class="column mcb-column one column_column">
+                                                    <div class="column_attr clearfix">
+                                                        <h3 style="color:#b8ad00">What we believe in</h3>
+                                                        <h1>Less is more
+                                                            <br> Help me Help you
+                                                            <br> GG LA
+                                                        </h1>
+                                                    </div>
+                                                </div>
+                                                <div class="column mcb-column one-third column_button">
+                                                    <a class="button  button_right button_size_3 button_js" href="" style=" background-color:#fff !important; color:#000"><span class="button_icon"><i class="icon-docs" style=" color:#000 !important"></i></span><span class="button_label">See our work</span></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div class="section-decoration bottom" style="height:51px;"></div>
                                 </div>
-                                {{-- To make picture bigger --}}
                                 <div class="section mcb-section equal-height" style="padding-top:0px; padding-bottom:100px">
                                     <div class="section_wrapper mcb-section-inner">
                                         <div class="wrap mcb-wrap one valign-top move-up clearfix" style="margin-top:-120px">
-                                            <div class="mcb-wrap-inner"> 
-
+                                            <div class="mcb-wrap-inner">
                                                 <div class="column mcb-column one-third column_zoom_box ">
                                                     <div class="zoom_box">
                                                         <a href="content/simple2/work-details.html">
                                                             <div class="photo">
-                                                                    <img src="{{ URL::to('/') }}/images/Analytics.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                                    <img src="{{ URL::to('/') }}/images/1.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                                                                     <!-- LAYERS -->
                                                             </div>
                                                             <!-- LAYER NR. 1 -->
@@ -131,7 +151,7 @@
                                                             <div class="desc" style="background-color:rgba(0, 0, rgba(255, 4, 55, 0.8), 0.8)">
                                                                 <div class="desc_wrap">
                                                                     <div class="desc_txt">
-                                                                        Analyse Your Progress
+                                                                        1st pic
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -142,12 +162,28 @@
                                                     <div class="zoom_box">
                                                         <a href="">
                                                             <div class="photo">
-                                                                    <img src="{{ URL::to('/') }}/images/Planning.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                                    <img src="{{ URL::to('/') }}/images/1.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                                                             </div>
                                                             <div class="desc" style="background-color:rgba(255, 4, 55, 0.8)">
                                                                 <div class="desc_wrap">
                                                                     <div class="desc_txt">
-                                                                        Plan Your Future
+                                                                        lel
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="column mcb-column one-third column_zoom_box ">
+                                                    <div class="zoom_box">
+                                                        <a href="">
+                                                            <div class="photo">
+                                                                    <img src="{{ URL::to('/') }}/images/1.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                            </div>
+                                                            <div class="desc" style="background-color:rgba(228, 157, 51, 0.8)">
+                                                                <div class="desc_wrap">
+                                                                    <div class="desc_txt">
+                                                                        Ignissimos eius quaerat
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -158,12 +194,28 @@
                                                     <div class="zoom_box">
                                                         <a href="content/simple2/work-details.html">
                                                             <div class="photo">
-                                                                    <img src="{{ URL::to('/') }}/images/Calculate.jpeg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                                    <img src="{{ URL::to('/') }}/images/1.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
                                                             </div>
                                                             <div class="desc" style="background-color:rgba(57, 97, 143, 0.8)">
                                                                 <div class="desc_wrap">
                                                                     <div class="desc_txt">
-                                                                        Calculate Your CAP
+                                                                        Blanditiis voluptas voluptates
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="column mcb-column one-third column_zoom_box ">
+                                                    <div class="zoom_box">
+                                                        <a href="content/simple2/work-details.html">
+                                                            <div class="photo">
+                                                                    <img src="{{ URL::to('/') }}/images/1.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                            </div>
+                                                            <div class="desc" style="background-color:rgba(0, 0, 0, 0.8)">
+                                                                <div class="desc_wrap">
+                                                                    <div class="desc_txt">
+                                                                        Blanditiis voluptas voluptates
                                                                     </div>
                                                                 </div>
                                                             </div>

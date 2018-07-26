@@ -302,21 +302,24 @@ $earliest_sem = $module->sem_taken;
                                                                     </div>
                                                                 </div>
                         <tr>
-                          <div class="container my-2">
-                                <a class="btn-sm btn-danger  text-white pull-right " data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i></a>  
-                          </div>
+
                         <td>
                             
-                            <table>
+                            <table class="col-md-12">
                                    
                                 <thead>
                                 <tr>
                                 <th>
-                                        <h5>
+                                        <div class="my-2">
+                                                <a class="btn-sm btn-danger  text-white pull-left " data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i></a>  
+                                          </div>
+                                         
+                                        <p class="col-md-12 mx-3">
+                                                &nbsp&nbsp&nbsp
                                             {!! $note->title!!}   
                                      
                                             <hr>
-                                       </h5>
+                                        </p>
                                  
                                         
                                 </th>

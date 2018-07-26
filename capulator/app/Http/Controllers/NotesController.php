@@ -79,7 +79,7 @@ class NotesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         
         $note = Note::find($id);
@@ -91,7 +91,6 @@ class NotesController extends Controller
  
         }
 
-        $request->session()->flash('alert-success','Note "' . $request->input('title') . '" successfully edited.');
  
         return view('dashboard.Notes.edit')->with('note',$note);
        
