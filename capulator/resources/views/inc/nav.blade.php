@@ -1,4 +1,5 @@
-<nav style=""class="navbar navbar-expand-md navbar-light navbar-laravel">
+
+<nav id="header" class="hide-nav fixed-top navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name', 'Capulator') }}

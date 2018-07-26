@@ -12,7 +12,13 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <script src="{{ asset('js/new/app.js') }}"></script>
+    <script src="{{ asset('js/new/jquery-ui.min.js') }}"></script>
+    <script src="{{ asset('js/new/jquery.ui.core.js') }}"></script>
+    <script src="{{ asset('js/new/jquery.ui.tabs.js') }}"></script>
+    <script src="{{ asset('js/new/jquery.ui.widget.js') }}"></script>
+    <script src="{{ asset('js/new/jquery.ui.accordion.js') }}"></script>
+    <script src="{{ asset('js/new/animations.js') }}"></script>
     <!-- Fonts -->
     
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -51,46 +57,61 @@
     <script src="assets/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="assets/rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>
 
-    <script>
-            var tpj = jQuery;
-            var revapi92;
-            tpj(document).ready(function() {
-                if (tpj("#rev_slider_92_1").revolution == undefined) {
-                    revslider_showDoubleJqueryError("#rev_slider_92_1");
-                } else {
-                    revapi92 = tpj("#rev_slider_92_1").show().revolution({
-                        sliderType: "hero",
-    
-                        sliderLayout: "fullwidth",
-                        dottedOverlay: "none",
-                        delay: 9000,
-                        navigation: {},
-                        responsiveLevels: [1240, 1024, 778, 480],
-                        gridwidth: [1240, 1024, 778, 480],
-                        gridheight: [500, 450, 400, 350],
-                        lazyType: "none",
-                        parallax: {
-                            type: "scroll",
-                            origo: "enterpoint",
-                            speed: 400,
-                            levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50],
-                        },
-                        shadow: 0,
-                        spinner: "off",
-                        autoHeight: "off",
-                        disableProgressBar: "on",
-                        hideThumbsOnMobile: "off",
-                        hideSliderAtLimit: 0,
-                        hideCaptionAtLimit: 0,
-                        hideAllCaptionAtLilmit: 0,
-                        debugMode: false,
-                        fallbacks: {
-                            simplifyAll: "off",
-                            disableFocusListener: false,
-                        }
-                    });
-                }
-            }); /*ready*/
+<script>
+      $(document).on('scroll',function(){
+    if ( $(window).width() > 1000){ 
+    if ($(document).scrollTop() > 100){
+           $('#header').slideDown();
+     }  
+    else {
+          $('#header').slideUp();
+     }
+    }
+  });
+  </script>
+<script>
+        var tpj = jQuery;
+        var revapi68;
+        tpj(document).ready(function() {
+            if (tpj("#rev_slider_68_1").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_68_1");
+            } else {
+                revapi68 = tpj("#rev_slider_68_1").show().revolution({
+                    sliderType: "hero",
+
+                    sliderLayout: "fullwidth",
+                    dottedOverlay: "none",
+                    delay: 9000,
+                    navigation: {},
+                    responsiveLevels: [1240, 1024, 778, 480],
+                    gridwidth: [1400, 1240, 778, 480],
+                    gridheight: [768, 768, 960, 720],
+                    lazyType: "none",
+                    parallax: {
+                        type: "mouse+scroll",
+                        origo: "slidercenter",
+                        speed: 2000,
+                        levels: [1, 2, 3, 20, 25, 30, 35, 40, 45, 50],
+                        disable_onmobile: "on"
+                    },
+                    shadow: 0,
+                    spinner: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "off",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "off",
+                        disableFocusListener: false,
+                    }
+                });
+            }
+        }); /*ready*/
+    </script>  
         </script>
+        
 </body>
 </html>

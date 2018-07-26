@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Module;
 use App\User;
 use App\Note;
+use URL;
 
 class DashboardController extends Controller
 {

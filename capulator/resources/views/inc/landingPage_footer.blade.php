@@ -14,7 +14,7 @@
                             <p>
                                 This is the offspring of Pereira and Bryan's orbital project. We hope you enjoy your experience here and feel free to give us feedback!
                             </p>
-                            <p><a href="mailto:yippygames@gmail.com">yippygames@gmail.com</a></p>
+                            <p><i class="fa fa-envelope"></i><a href="mailto:yippygames@gmail.com"> : yippygames@gmail.com</a></p>
                             <hr class="no_line" style="margin: 0 auto 15px">
                             <div class="">
                                 <div class="col-md-6 mx-auto">
