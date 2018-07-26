@@ -13,7 +13,7 @@
                             <hr class="no_line" style="margin: 0 auto 15px">
                             <div class="">
                                 <div class="col-md-6 mx-auto">
-                                    <img class="img-fluid" src="images/nus_logo.jpg">
+                                    <img class="img-fluid" src="images/NUS_logo.jpg">
                                 </div>
                             </div>
                                 
