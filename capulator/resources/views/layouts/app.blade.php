@@ -28,7 +28,7 @@
         <link rel="stylesheet" type="text/css" href="assets/rs-plugin/css/layers.css">
         <link rel="stylesheet" type="text/css" href="assets/rs-plugin/css/navigation.css">
         <link rel="stylesheet" type="text/css" href="assets/rs-plugin/css/settings.css">
-        
+
       {{-- Standard JQuery, PopperJS and Bootstrap for Ajax--}}
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -64,18 +64,7 @@
     <script src="assets/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
     <script src="assets/rs-plugin/js/extensions/revolution.extension.carousel.min.js"></script>
 
-<script>
-      $(document).on('scroll',function(){
-    if ( $(window).width() > 1000){ 
-    if ($(document).scrollTop() > 100){
-           $('#header').slideDown();
-     }  
-    else {
-          $('#header').slideUp();
-     }
-    }
-  });
-  </script>
+
 <script>
         var tpj = jQuery;
         var revapi68;

@@ -195,4 +195,22 @@
     </div>
   </div>
 </div> --}}
+<script>
+     $(document).ready(function(){
+        $('#header').hide();
+    });
+    </script>
+    <script>
+   
+            $(document).on('scroll',function(){
+          if ( $(window).width() > 1000){ 
+          if ($(document).scrollTop() > 100){
+                 $('#header').slideDown();
+           }  
+          else {
+                $('#header').slideUp();
+           }
+          }
+        });
+        </script>
 @endsection
