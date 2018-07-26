@@ -124,7 +124,7 @@
                                                             <div class="desc" style="background-color:rgba(0, 0, rgba(255, 4, 55, 0.8), 0.8)">
                                                                 <div class="desc_wrap">
                                                                     <div class="desc_txt">
-                                                                        Analytics
+                                                                        Analyse Your Progress
                                                                     </div>
                                                                 </div>
                                                             </div>
