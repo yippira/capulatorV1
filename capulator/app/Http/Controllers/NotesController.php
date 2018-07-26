@@ -21,7 +21,7 @@ class NotesController extends Controller
         $data = array(
             'notes' => $user->notes,
         );
-        return view('dashboard.notes.index')->with($data);
+        return view('dashboard.Notes.index')->with($data);
     }
 
     /**
@@ -31,7 +31,7 @@ class NotesController extends Controller
      */
     public function create()
     {
-        return view('dashboard.notes.create');
+        return view('dashboard.Notes.create');
     }
 
     /**
@@ -70,7 +70,7 @@ class NotesController extends Controller
     public function show($id)
     {
         $note = Note::find($id);
-        return view('dashboard.notes.show')->with('note', $note);
+        return view('dashboard.Notes.show')->with('note', $note);
     }
 
     /**
@@ -87,13 +87,13 @@ class NotesController extends Controller
         //check if user is correct
         if(auth()->user()->id !== $note->user_id){
             $request->session()->flash('alert-danger','Unauthorised Page');
-            redirect('dashboard.notes');
+            redirect('dashboard.Notes');
  
         }
 
         $request->session()->flash('alert-success','Note "' . $request->input('title') . '" successfully edited.');
  
-        return view('dashboard.notes.edit')->with('note',$note);
+        return view('dashboard.Notes.edit')->with('note',$note);
        
 
          }

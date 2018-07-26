@@ -32,7 +32,7 @@ class ModulesController extends Controller
             'modules' => $user->modules,
             'SU_value' => $user->su,
         );
-        return view('dashboard.modules.index')->with($data);
+        return view('dashboard.Modules.index')->with($data);
     }
 
     /**
@@ -43,7 +43,7 @@ class ModulesController extends Controller
     public function create()
     {
         //return the modules adding view.
-        return view('dashboard.modules.create');
+        return view('dashboard.Modules.create');
     }
 
     /**
