@@ -92,3 +92,31 @@ body {
 .hide-nav{
   display:none;
 }
+
+.orbital-slider-button{
+  
+  z-index: 14;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  visibility: inherit;
+  transition: none;
+  border-radius: 0px;
+  font-style: normal;
+  color: rgb(255, 255, 255);
+  border-width: 0px;
+  border-style: none;
+  border-color: rgb(0, 0, 0);
+  background-color: #953272;
+  line-height: 48px;
+  margin: 0px;
+  padding: 0px 40px;
+  font-weight: 600;
+  font-size: 16px;
+  min-height: 0px;
+  min-width: 0px;
+  max-height: none;
+  max-width: none;
+  opacity: 1;
+  transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform-origin: 50% 50% 0px;
+}

@@ -4,11 +4,6 @@
             <div class="column one">
                 <aside class="widget_text widget widget_custom_html">
                     <div class="textwidget custom-html-widget">
-                        <div class="image_frame image_item no_link scale-with-grid aligncenter no_border">
-                            <div class="image_wrapper">
-                                <img class="scale-with-grid" src="content/bar2/images/bar3.png">
-                            </div>
-                        </div>
                         <hr class="no_line" style="margin: 0 auto 20px">
                         <div style="margin: 0px 20% 0; text-align: center">
                             <p>

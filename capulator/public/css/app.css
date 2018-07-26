@@ -13549,3 +13549,33 @@ body {
   display: none;
 }
 
+.orbital-slider-button {
+  z-index: 14;
+  white-space: nowrap;
+  letter-spacing: 1px;
+  visibility: inherit;
+  -webkit-transition: none;
+  transition: none;
+  border-radius: 0px;
+  font-style: normal;
+  color: white;
+  border-width: 0px;
+  border-style: none;
+  border-color: black;
+  background-color: #953272;
+  line-height: 48px;
+  margin: 0px;
+  padding: 0px 40px;
+  font-weight: 600;
+  font-size: 16px;
+  min-height: 0px;
+  min-width: 0px;
+  max-height: none;
+  max-width: none;
+  opacity: 1;
+  -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+          transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -webkit-transform-origin: 50% 50% 0px;
+          transform-origin: 50% 50% 0px;
+}
+

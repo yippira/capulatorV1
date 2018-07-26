@@ -4074,7 +4074,7 @@ ul.clients.clients_tiles li .client_wrapper:after {
 }
 
 body:not(.template-slider) #Header_wrapper {
-    background-image: url(../images/home_slider.jpg);
+    background-image: url(../images/slider_bg1.png);
 }
 
 #gallery-1 {

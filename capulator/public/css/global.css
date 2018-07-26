@@ -1,34 +1,4 @@
-/* /*
-|-------------------------------------------------------------------------
-| Be
-| Global style
-| version 5.2
-| http://BeantownThemes.com
-| http://themeforest.net/user/BeantownThemes
-|--------------------------------------------------------------------------
-| 1.0 Base
-| 2.0 Buttons
-| 3.0 Mfn-icons
-| 4.0 Shortcodes
-| 5.0 Variables
-| 6.0 Animation
-| 7.0 jQuery ui
-| 8.0 jPlayer
-| 9.0 Prrettyphoto
-| 10. simple style
-| 11. Bootstrap elements
-|
-*/
 
-/*
-|--------------------------------------------------------------------------
-|  1.0 Base
-|  
-|--------------------------------------------------------------------------
-|
-| 
-|
-*/
 
 /* #Reset & Basics (Inspired by E. Meyers)
 ================================================== */
@@ -689,8 +659,8 @@ a:hover.tp-button.lightgrey {
 
 @font-face {
 	font-family: 'mfn-icons';
-	src: url(fonts/mfn-icons.eot);
-	src: url(fonts/mfn-icons.eot) format("embedded-opentype"), url(fonts/mfn-icons.woff) format("woff"), url(fonts/mfn-icons.ttf) format("truetype"), url(fonts/mfn-icons.svg) format("svg");
+	src: url(../fonts/vendor/mfn/mfn-icons.eot);
+	src: url(../fonts/vendor/mfn/mfn-icons.eot) format("embedded-opentype"), url(../fonts/vendor/mfn/mfn-icons.woff) format("woff"), url(../fonts/vendor/mfn/mfn-icons.ttf) format("truetype"), url(../fonts/vendor/mfn/mfn-icons.svg) format("svg");
 	font-weight: 400;
 	font-style: normal;
 }
