@@ -83,7 +83,7 @@ class DashboardController extends Controller
                 //means we are in a different year
                 //we have to push previous.
                 if($mc_taken != 0){
-                    $cap_array[] = $temp_cap/($mc_taken);
+                    $cap_array[] = number_format($temp_cap/($mc_taken), 2);
                 }
                 //then we add the cap
                 $temp_cap += $module->mc_worth *  $value;
@@ -112,7 +112,7 @@ class DashboardController extends Controller
 
         //Adds last year
         if($mc_taken != 0){
-            $cap_array[] = $temp_cap/$mc_taken;
+            $cap_array[] = number_format($temp_cap/$mc_taken,2);
             $current_CAP = $temp_cap/$mc_taken;
         }
 

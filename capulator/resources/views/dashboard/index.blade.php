@@ -31,7 +31,7 @@ $earliest_sem = $module->sem_taken;
                         <div class="card-body-icon">
                             <i class="fa fa-fw fa-long-arrow-up"></i>
                         </div>
-                        <div class="big mr-5">CAP : <span style="font-weight:bold ;font-size: 26px;">{{$current_CAP}}</span></div>
+                        <div class="big mr-5">Current CAP : <span style="font-weight:bold ;font-size: 26px;">{{$current_CAP}}</span></div>
                     </div>
                     
                 </div>
@@ -94,7 +94,7 @@ $earliest_sem = $module->sem_taken;
                                 <i class="fa fa-question fa-stack-1x"></i>
                               </span>
                               @else
-                              <span data-toggle="tooltip" data-placement="top" title="Add useful notes" class="small fa-pull-right fa-stack">
+                              <span data-toggle="tooltip" data-placement="left  " title="Try to estimate your expected results for this semester to see how it'll go" class="small fa-pull-right fa-stack">
                                     <i class="fa fa-circle-thin fa-stack-2x"></i>
                                     <i class="fa fa-question fa-stack-1x"></i>
                                   </span>
@@ -242,7 +242,7 @@ $earliest_sem = $module->sem_taken;
             <div class="col-md-3">
                 <div class="card mb-3">
                     <div class="card-header small">
-                        <i class="fa fa-support"></i> CAP Goal <span data-toggle="tooltip" data-placement="top" title="Change your CAP Goal under settings!" class="small fa-pull-right fa-stack">
+                        <i class="fa fa-support"></i> CAP Goal <span data-toggle="tooltip" data-placement="left" title="Change your CAP Goal under settings!" class="small fa-pull-right fa-stack">
                                 <i class="fa fa-circle-thin fa-stack-2x"></i>
                                 <i class="fa fa-question fa-stack-1x"></i>
                               </span>
@@ -302,19 +302,20 @@ $earliest_sem = $module->sem_taken;
                                                                     </div>
                                                                 </div>
                         <tr>
-                          
+                          <div class="container my-2">
+                                <a class="btn-sm btn-danger  text-white pull-right " data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i></a>  
+                          </div>
                         <td>
+                            
                             <table>
                                    
-                                    <a class="btn-sm btn-danger  text-white pull-right " data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i></a>  
- 
                                 <thead>
                                 <tr>
                                 <th>
                                         <h5>
                                             {!! $note->title!!}   
                                      
-                    
+                                            <hr>
                                        </h5>
                                  
                                         
@@ -367,9 +368,7 @@ $earliest_sem = $module->sem_taken;
                                     
                                 </div>
                                 <div class="card-body">
-                                    @foreach($notes as $note)
-                                    {{$note}}
-                                    @endforeach
+                                 
                                 </div>
                                 <div class="card-footer">
                                 </div>
