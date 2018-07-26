@@ -1,6 +1,6 @@
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-dark dark-navyblue fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{ url ('/dashboard') }}">Capulator | Set Your Destiny</a>
+    <a class="navbar-brand" href="{{ url ('/dashboard') }}"><img width="30px" class="img-fluid" src="images/CAP2.png"> &nbsp Capulator | Set Your Destiny</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
