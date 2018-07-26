@@ -26,7 +26,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/be_style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <link href="{{ asset('css/structure.css') }}" rel="stylesheet">
@@ -36,6 +35,7 @@
         @include('inc.nav')
         <main>
             @yield('content')
+            @include('inc.landingPage_footer')
         </main>
     </div>
 
