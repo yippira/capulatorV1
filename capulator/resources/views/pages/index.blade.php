@@ -99,7 +99,7 @@
 
 {{-- Icon introduction --}}
 
-<div class="section mcb-section" style="padding-top:50px; padding-bottom:100px;">
+<div class="section mcb-section" style="background-color:rgba(255,255,255,0.45); padding-top:50px; padding-bottom:30px;">
         <div class="section_wrapper mcb-section-inner">
                 <div class="wrap mcb-wrap one  valign-top clearfix">
                         <div class="mcb-wrap-inner">
@@ -294,58 +294,48 @@
 
         {{-- End section --}}
         {{-- start new section --}}
-    <div class="text-white section mcb-section" style="padding-top:50px; padding-bottom:100px;">
+    <div class="section mcb-section" style="padding-top:50px; background-color: rgba(255,255,255,0.5);">
             <div class="section_wrapper mcb-section-inner">
                     <div class="wrap mcb-wrap one  valign-top clearfix">
                             <div class="mcb-wrap-inner">
                                 <div class="inverted column mcb-column one column_fancy_heading ">
-                                    <div class="fancy_heading fancy_heading_line">
-                                        <h2 style="font-size: 50px; color: #fff;"class="mb-5 title">Why Capulator?</h2>
+                                    <div class="fancy_heading ">
+                                        <h2 style="padding-bottom:20px; font-size: 50px; color: #000; background:url(images/underline_team.png) no-repeat bottom center;"class="mb-5 title">About us!</h2>
                                     </div>
                                 </div>
                             </div>
                     </div>
-                <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                <div class="wrap mcb-wrap one-second valign-middle clearfix">
                     <div class="mcb-wrap-inner">
                         <div class="column mcb-column one column_column">
-                            <div class="column_attr clearfix" style="padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                            <div class="column_attr clearfix" style="padding:20px 0px 15px 20px;">
                                 <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
                                     <div class="image_wrapper">
-                                        <img style="width:175px;" class="scale-with-grid inverted" src="images/calculate.png">
+                                        <img style="width:500px;" class="scale-with-grid inverted" src="images/pereira.png">
                                     </div>
                                 </div>
-                                <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px;">C</strong>alculate</h4> Easily find out what your CAP will be at the end of the semester using your expectations!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrap mcb-wrap one-third valign-middle clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column one column_column">
-                            <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
-                                <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
-                                    <div class="image_wrapper">
-                                        <img style="width:175px;" class="scale-with-grid" src="images/analysis.png">
-                                    </div>
-                                </div>
-                                <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px">A</strong>nalyse</h4> All it takes is a click! See how your CAP will behave based on different grades, plan out with our integrated note system, serve reminders and goals.
+                                <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px;">Pereira Yip</h4></strong>
+                                <p style="font-size: 28px; line-height: 40px">
+                                <a href="https://www.facebook.com/pereira.yip"><i class="fa fa-facebook mx-2"></i></a><a href="https://www.instagram.com/yippira/"><i class="mx-2 fa fa-instagram"></i></a><a href="https://twitter.com/Yippira"><i class=" mx-2 fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/pereirayip/"><i class="mx-2 fa fa-linkedin"></i></a>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                <div class="wrap mcb-wrap one-second valign-middle clearfix">
                     <div class="mcb-wrap-inner">
                         <div class="column mcb-column one column_column">
-                            <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                            <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px;">
                                 <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
                                     <div class="image_wrapper">
-                                        <img style="width:175px;" class="scale-with-grid" src="images/planning.png">
+                                        <img style="width:500px;" class="scale-with-grid" src="images/bryan_wang.png">
                                     </div>
                                 </div>
-                                
-                                <h4 class="mb-3"style="font-size:28px"><strong style="font-size:40px">P</strong>lan</h4> 
-                                Should I SU that mod? With the <i>Capulator</i>, all will be answered!
-                                
+                                <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px">Bryan Wang</h4></strong>
+                                <p style="font-size: 28px; line-height: 40px">
+                                        <a href="https://www.facebook.com/pereira.yip"><i class="fa fa-facebook mx-2"></i></a><a href="https://www.instagram.com/yippira/"><i class="mx-2 fa fa-instagram"></i></a><a href="https://twitter.com/Yippira"><i class=" mx-2 fa fa-twitter"></i></a><a href="https://www.linkedin.com/in/pereirayip/"><i class="mx-2 fa fa-linkedin"></i></a>
+                                        </p>
+        
                             </div>
                         </div>
                     </div>

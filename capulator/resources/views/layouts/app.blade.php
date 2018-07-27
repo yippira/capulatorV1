@@ -50,7 +50,9 @@
         @include('inc.nav')
         <main class="">
             @yield('content')
+            
             @include('inc.landingPage_footer')
+
         </main>
     </div>
 
@@ -68,9 +70,16 @@
 
 
 <script>
+
         var tpj = jQuery;
         var revapi68;
         tpj(document).ready(function() {
+        var scrollDistance = $(this).scrollTop();
+        if (scrollDistance > 100) {
+        $('.scroll-to-top').fadeIn();
+        } else {
+        $('.scroll-to-top').fadeOut();
+        }
             if (tpj("#rev_slider_68_1").revolution == undefined) {
                 revslider_showDoubleJqueryError("#rev_slider_68_1");
             } else {
@@ -108,10 +117,10 @@
                 });
             }
         }); /*ready*/
-    </script>  
-   {{-- Try --}}
 
-   <script src="{{ asset('js/translate3d.js') }}"></script>
+          // Scroll to top button appear
+
+    </script>  
 
 
 </body>
