@@ -250,18 +250,43 @@
             <div class="section_wrapper mcb-section-inner">
                 <div class="wrap mcb-wrap one valign-top clearfix" style="padding:60px 0 0 0">
                     <div class="mcb-wrap-inner">
-                        <div style="text-align: center;" class="column mcb-column one column_column">
+                        <div style="text-align: right; margin-top:-50px;" class="column mcb-column one-second column_column">
                             <div class="column_attr">
-                                <h2 style="color: #fff;">That sounds great...</h2>
-                                <h3 style="color: #d7d7d7;" class="pl-5"> ...So how much do I pay?</h3>
-                                <hr class="no_line" style="margin: 0 auto 50px;" />
-                                <h2 style="font-size: 50px; color: #fff;"class="mb-5 title">IT'S FREE!!!</h2>
+                                <h2 style="color: #fff; font-size: 50px;">That sounds great...</h2>
                             </div>
+                        </div>
+                        <div style="text-align: left;" class="column mcb-column one-second column_column">
+                                <div class="column_attr">
+                                <h3 style="color: #d7d7d7;" class="pl-5"> ...So how much do I pay?</h3>
+                                </div>
+                        </div>
+                                <hr class="no_line" style="margin: 0 auto 50px;" />
+                               
+                            </div>
+                        </div>
+                        <div class="wrap mcb-wrap one valign-top clearfix pb-5" style="">
+                                <div style="text-align:center;"class="mcb-wrap-inner">
+                        <h2 style="font-size: 50px; color: #fff;"class="mb-5 title">Nothing, it's free.</h2>
+                        <p style="color: #fff;">As students ourselves, we want everyone to benefit from this and it will be available for public usage!</p>
+                        <p style="color: #fff;">So wait no more! Start using Capulator now.</p>
+                        {{-- Call to action --}}
+                        <div class="mt-5 column one column_hover_color ">
+                                <div class="hover_color" style="background:#8f00ea;">
+                                    <div class="hover_color_bg" style="background:#400d95;">
+                                    <a href="{{route('register')}}">
+                                            <div class="hover_color_wrapper">
+                                                <h5 style="margin: 0; color: #fff; letter-spacing: 15px; font-weight: 600;">REGISTER NOW</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {{-- end call to action --}}
+                                </div>
                         </div>
                     </div>
                 </div>
-                <p>As students ourselves, we want as many of us to benefit from this as possible and it will be available for public usage!</p>
-       
+               
             </div>
             </div>
             
