@@ -13549,9 +13549,15 @@ body {
   display: none;
 }
 
-.landing-bg-pattern {
-  background-image: url(/images/bg-pattern.png?d808fef0da889f09742d3a074f356bc5);
-  background-repeat: repeat repeat;
+.fancy_heading_line_left {
+  background-image: url(/images/heading_hr_white_left.png?a4a806d4f460f0342469752ee43e9981);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  padding-bottom: 15px;
+}
+
+.invert {
+  -webkit-filter: invert(100%);
 }
 
 .orbital-slider-button {

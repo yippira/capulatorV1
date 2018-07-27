@@ -158,6 +158,179 @@
            
         </div>
     </div>               
+    {{-- end icon introduction --}}
+
+    {{-- Start How does it work --}}
+    <div class="text-white section mcb-section" style="padding-top:50px; margin-bottom:-85px; background:#f14a5b;">
+            <div class="section_wrapper mcb-section-outer">
+                    <div class="wrap mcb-wrap one  valign-top clearfix">
+                            <div class="mcb-wrap-inner">
+                                <div class="inverted column mcb-column one column_fancy_heading ">
+                                    <div style="text-align:left;"class="fancy_heading fancy_heading_line_left">
+                                        <h2 style="font-size: 50px; color: #fff;"class="mb-5 title">How Does It Work?</h2>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                <div class="wrap mcb-wrap one-second valign-middle clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix" style="padding:20px 0px 15px 20px;">
+                                <div class="row mb-4">
+                               
+                                <div class="col-md-3 image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                    <div class="image_wrapper">
+                                        <img style="width:100px;" class="scale-with-grid inverted" src="images/input.png">
+                                    </div>
+                                </div>
+                                <div class="col-md-9" style="margin-top:-20px">
+
+                                        <h4 class="my-3 text-white" style="font-size:28px">Key in your grades!</h4>
+                                        <div class="">With our simple and intuitive user interface, take no more than 5 minutes to setup your modules!
+                                                No Excel knowledge required! (At last!)
+                                             </div>
+
+                                </div>
+                                </div>
+                               
+                                 
+                                 <div class="row mb-4">
+                               
+                                        <div class="col-md-3 image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                            <div class="image_wrapper">
+                                                <img style="width:100px;" class="scale-with-grid inverted" src="images/calculator.png">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-9" style="margin-top:-20px">
+        
+                                                <h4 class="my-3 text-white" style="font-size:28px">We do the Math.</h4>
+                                                <div class=""> Using carefully written algorithm and tabulation, your results are decluttered and presented to you.
+                                                </div>
+                                        </div>
+                                        </div>
+
+                                        <div class="row mb-4">
+                               
+                                                <div class="col-md-3 image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                                    <div class="image_wrapper">
+                                                        <img style="width:100px;" class="scale-with-grid inverted" src="images/analyse.png">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-9" style="margin-top:-20px">
+                
+                                                        <h4 class="my-3 text-white" style="font-size:28px">All yours to plan!</h4>
+                                                        <div class="">Armed with the computed data, you are now ready to plan for your studies at NUS!
+                                                             </div>
+                
+                                                </div>
+                                                </div>
+
+                                                 
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-second  valign-top clearfix">
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one column_image ">
+                                <div class="image_frame image_item no_link no_border">
+                                    <div class="image_wrapper" style="width:140%;"><img style="border-radius:40px;" src="images/graph.PNG" alt="" width="1222" height="493" /> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+               
+            </div>
+        </div>               
+                    
+
+        {{-- New section --}}
+        <div class="section mcb-section" id="join" style="padding-top:40px; padding-bottom:0px; background-color:#1c112f; background-image:url(content/app2/images/home_app2_app_join_bg.jpg); background-repeat:no-repeat; background-position:center bottom;">
+            <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one-second  valign-top clearfix" style="padding:60px 0 0 0">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr">
+                                <h2 style="color: #fff;">Join our society and subscribe for new apps and updates</h2>
+                                <hr class="no_line" style="margin: 0 auto 35px;" />
+                                <a class="button  button_stroke_custom button_js" href="http://bit.ly/1M6lijQ" target="_blank" style=" border-color:#cb7692 !important; color:#eee8eb;"><span class="button_label">Buy BeTheme now</span></a> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-second  valign-top clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_image ">
+                            <div class="image_frame image_item no_link scale-with-grid no_border">
+                                <div class="image_wrapper"><img class="scale-with-grid" src="content/app2/images/home_app2_pic5.png" alt="" width="1222" height="493" /> </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    <div class="text-white section mcb-section" style="padding-top:50px; padding-bottom:100px;">
+            <div class="section_wrapper mcb-section-inner">
+                    <div class="wrap mcb-wrap one  valign-top clearfix">
+                            <div class="mcb-wrap-inner">
+                                <div class="inverted column mcb-column one column_fancy_heading ">
+                                    <div class="fancy_heading fancy_heading_line">
+                                        <h2 style="font-size: 50px; color: #fff;"class="mb-5 title">Why Capulator?</h2>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix" style="padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                                <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                    <div class="image_wrapper">
+                                        <img style="width:175px;" class="scale-with-grid inverted" src="images/calculate.png">
+                                    </div>
+                                </div>
+                                <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px;">C</strong>alculate</h4> Easily find out what your CAP will be at the end of the semester using your expectations!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                                <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                    <div class="image_wrapper">
+                                        <img style="width:175px;" class="scale-with-grid" src="images/analysis.png">
+                                    </div>
+                                </div>
+                                <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px">A</strong>nalyse</h4> All it takes is a click! See how your CAP will behave based on different grades, plan out with our integrated note system, serve reminders and goals.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                    <div class="mcb-wrap-inner">
+                        <div class="column mcb-column one column_column">
+                            <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                                <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                    <div class="image_wrapper">
+                                        <img style="width:175px;" class="scale-with-grid" src="images/planning.png">
+                                    </div>
+                                </div>
+                                
+                                <h4 class="mb-3"style="font-size:28px"><strong style="font-size:40px">P</strong>lan</h4> 
+                                Should I SU that mod? With the <i>Capulator</i>, all will be answered!
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>               
+                    
                                     
 {{-- <div class="container">
 <div class="card" style="width: 18rem;">

@@ -93,15 +93,19 @@ body {
   display:none;
 }
 
-.landing-bg-pattern{
-  background-image: url("../../../public/images/bg-pattern.png");
-
-  background-repeat: repeat repeat;
-
+.fancy_heading_line_left {
+  background-image: url(../../../public/images/heading_hr_white_left.png);
+  background-position: bottom left;
+  background-repeat: no-repeat;
+  padding-bottom: 15px;
 }
+
 
 #Content,#Wrapper,html {
     
+}
+.invert{
+  -webkit-filter: invert(100%);
 }
 
 .orbital-slider-button{
