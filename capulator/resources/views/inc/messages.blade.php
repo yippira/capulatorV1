@@ -6,3 +6,14 @@
               @endif
             @endforeach
 </div> <!-- end .flash-message -->
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+          Warning! Your modules were not added because not all fields were entered!
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif

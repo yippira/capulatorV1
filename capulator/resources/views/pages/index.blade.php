@@ -246,28 +246,25 @@
                     
 
         {{-- New section --}}
-        <div class="section mcb-section" id="join" style="padding-top:40px; padding-bottom:0px; background-color:#1c112f; background-image:url(content/app2/images/home_app2_app_join_bg.jpg); background-repeat:no-repeat; background-position:center bottom;">
+        <div class="section mcb-section" id="join" style="padding-top:40px; padding-bottom:0px; background-color:#1c112f;">
             <div class="section_wrapper mcb-section-inner">
-                <div class="wrap mcb-wrap one-second  valign-top clearfix" style="padding:60px 0 0 0">
+                <div class="wrap mcb-wrap one valign-top clearfix" style="padding:60px 0 0 0">
                     <div class="mcb-wrap-inner">
-                        <div class="column mcb-column one column_column">
+                        <div style="text-align: center;" class="column mcb-column one column_column">
                             <div class="column_attr">
-                                <h2 style="color: #fff;">Join our society and subscribe for new apps and updates</h2>
-                                <hr class="no_line" style="margin: 0 auto 35px;" />
-                                <a class="button  button_stroke_custom button_js" href="http://bit.ly/1M6lijQ" target="_blank" style=" border-color:#cb7692 !important; color:#eee8eb;"><span class="button_label">Buy BeTheme now</span></a> </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wrap mcb-wrap one-second  valign-top clearfix">
-                    <div class="mcb-wrap-inner">
-                        <div class="column mcb-column one column_image ">
-                            <div class="image_frame image_item no_link scale-with-grid no_border">
-                                <div class="image_wrapper"><img class="scale-with-grid" src="content/app2/images/home_app2_pic5.png" alt="" width="1222" height="493" /> </div>
+                                <h2 style="color: #fff;">That sounds great...</h2>
+                                <h3 style="color: #d7d7d7;" class="pl-5"> ...So how much do I pay?</h3>
+                                <hr class="no_line" style="margin: 0 auto 50px;" />
+                                <h2 style="font-size: 50px; color: #fff;"class="mb-5 title">IT'S FREE!!!</h2>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+       
             </div>
+            </div>
+            
         </div>
 
         

@@ -13489,7 +13489,7 @@ a.text-dark:focus {
 }
 
 .pale-purple {
-  background-color: #bdc3c7;
+  background-color: #13a1ff;
 }
 
 .blood-red {
@@ -13554,6 +13554,11 @@ body {
   background-position: bottom left;
   background-repeat: no-repeat;
   padding-bottom: 15px;
+}
+
+.landing-bg-pattern {
+  background-image: url(/images/bg-pattern.png?d808fef0da889f09742d3a074f356bc5);
+  background-repeat: repeat repeat;
 }
 
 .invert {

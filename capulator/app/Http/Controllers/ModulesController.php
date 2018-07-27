@@ -55,11 +55,22 @@ class ModulesController extends Controller
     public function store(Request $request)
     {
 
-        // $this->validate($request, [
-        //     'year'=> 'required',
-        //     'semester'=>'required'
+         $this->validate($request, [
+             'year'=> 'required',
+             'semester'=>'required',
 
-        // ]);
+
+         ]);
+         for($i = 1; $i <= $request->input('num_mods'); $i++){
+
+            $this->validate($request, [
+                'mod_code' .$i => 'bail|required',
+                'grade'.$i =>'bail|required',
+                'mc_worth'.$i =>'bail|required',
+   
+   
+            ]);
+         }
 
         //We need to first take the year and semester. 
 
@@ -81,7 +92,7 @@ class ModulesController extends Controller
 
         }
         if($request->input('num_mods') == 1){
-        $request->session()->flash('alert-success', $request->input('num_mods') . ' module successfully added!');
+            $request->session()->flash('alert-success', $request->input('num_mods') . ' module successfully added!');
         }else{
             $request->session()->flash('alert-success', $request->input('num_mods') . ' modules successfully added!');
 
