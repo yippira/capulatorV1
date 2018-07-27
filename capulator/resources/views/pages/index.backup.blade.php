@@ -247,4 +247,84 @@
     </div>
   </div>
 </div> --}}
+
+
+
+
+
+<div id="Wrapper">
+
+        <div id="Content">
+            <div class="content_wrapper clearfix">
+                <div class="sections_group">
+                    <div class="entry-content">
+                        
+                        <div class="section mcb-section" style="padding-top:50px; padding-bottom:120px; background-color:#FFFFFF">
+                            {{-- <div class="section-decoration top" style="background-image:url(images/1.jpg);height:20px"></div> --}}
+                            <div class="section mcb-section equal-height" style="padding-top:0px; padding-bottom:100px">
+                                    <div class="section_wrapper mcb-section-inner">
+                                        <div class="wrap mcb-wrap one valign-top move-up clearfix" style="margin-top:-120px">
+                                            <div class="mcb-wrap-inner"> 
+
+                                                <div class="column mcb-column one-third column_zoom_box ">
+                                                    <div class="zoom_box">
+                                                        <a href="content/simple2/work-details.html">
+                                                            <div class="photo">
+                                                                    <img src="{{ URL::to('/') }}/images/Analytics.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                                    <!-- LAYERS -->
+                                                            </div>
+                                                            <!-- LAYER NR. 1 -->
+                                                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0" id="slide-274-layer-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="s:300;s:300;" data-start="1000" data-basealign="slide" data-responsive_offset="on" style="z-index: 5;background-color:rgba(0, 0, 0, 0.25);border-color:rgba(0, 0, 0, 1.00);">
+                                                            </div>
+
+                                                            
+                                                            <div class="desc" style="background-color:rgba(0, 0, rgba(255, 4, 55, 0.8), 0.8)">
+                                                                <div class="desc_wrap">
+                                                                    <div class="desc_txt">
+                                                                        Analyse Your Progress
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="column mcb-column one-third column_zoom_box ">
+                                                    <div class="zoom_box">
+                                                        <a href="">
+                                                            <div class="photo">
+                                                                    <img src="{{ URL::to('/') }}/images/Planning.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                            </div>
+                                                            <div class="desc" style="background-color:rgba(255, 4, 55, 0.8)">
+                                                                <div class="desc_wrap">
+                                                                    <div class="desc_txt">
+                                                                        Plan Your Future
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="column mcb-column one-third column_zoom_box ">
+                                                    <div class="zoom_box">
+                                                        <a href="content/simple2/work-details.html">
+                                                            <div class="photo">
+                                                                    <img src="{{ URL::to('/') }}/images/Calculate.jpeg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
+                                                            </div>
+                                                            <div class="desc" style="background-color:rgba(57, 97, 143, 0.8)">
+                                                                <div class="desc_wrap">
+                                                                    <div class="desc_txt">
+                                                                        Calculate Your CAP
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            <div class="section-decoration bottom" style="height:51px;"></div>
+                        </div>
+                        {{-- To make picture bigger --}}
 @endsection

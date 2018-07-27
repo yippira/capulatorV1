@@ -43,10 +43,10 @@
     <link href="{{ asset('css/global.css') }}" rel="stylesheet">
     <link href="{{ asset('css/structure.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="landing-bg-pattern style-simple button-flat layout-full-width if-zoom if-border-hide no-content-padding no-shadows header-classic minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-center mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky be-reg-20881">
     <div id="app">
         @include('inc.nav')
-        <main>
+        <main class="">
             @yield('content')
             @include('inc.landingPage_footer')
         </main>
@@ -107,7 +107,6 @@
             }
         }); /*ready*/
     </script>  
-        </script>
-        
+
 </body>
 </html>

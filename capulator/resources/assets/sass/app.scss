@@ -93,6 +93,17 @@ body {
   display:none;
 }
 
+.landing-bg-pattern{
+  background-image: url("../../../public/images/bg-pattern.png");
+
+  background-repeat: repeat repeat;
+
+}
+
+#Content,#Wrapper,html {
+    
+}
+
 .orbital-slider-button{
   
   z-index: 14;

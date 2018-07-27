@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div id="header-wrapper" class="dark-navyblue pb-5">
+<div id="header-wrapper" style="">
   <div id="Wrapper"> 
         <div id="">
 
-                                                <!-- SLIDER EXAMPLE -->
+                                                <!-- SLIDER -->
                 <section class="example">
                         <article class="content">
-                            <div id="rev_slider_68_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="" style="margin:0px auto;background-color:transparent;padding:0px;margin-top:0px;margin-bottom:0px;">
+                            <div id="rev_slider_68_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" data-alias="" style="margin:0px auto;background-color:#00000f;padding:0px;margin-top:0px;margin-bottom:0px;">
                                 
                                 <div id="rev_slider_68_1" class="rev_slider fullwidthabanner" style="display:none;" data-version="5.0.7">
                                     <ul>
@@ -90,99 +90,74 @@
     
                         </article>
                     </section>
- {{-- end wrapper head --}}
+ {{-- end div --}}
 </div> 
 {{-- end wrapper --}}
 </div>
-
+{{-- End header wrapper --}}
 </div>
 
+{{-- Icon introduction --}}
 
-    <body class="color-custom style-simple button-flat layout-full-width if-zoom if-border-hide no-content-padding no-shadows header-classic minimalist-header-no sticky-header sticky-tb-color ab-hide subheader-both-center menu-link-color menuo-right menuo-no-borders mobile-tb-center mobile-mini-mr-ll tablet-sticky mobile-header-mini mobile-sticky be-reg-20881">
-            <div id="Wrapper">
-
-                <div id="Content">
-                    <div class="content_wrapper clearfix">
-                        <div class="sections_group">
-                            <div class="entry-content">
-                                <div class="section mcb-section" style="padding-top:50px; padding-bottom:120px; background-color:#FFFFFF">
-                                    {{-- <div class="section-decoration top" style="background-image:url(images/1.jpg);height:20px"></div> --}}
-                                    
-                                    <div class="section-decoration bottom" style="height:51px;"></div>
+<div class="section mcb-section" style="padding-top:50px; padding-bottom:100px;">
+        <div class="section_wrapper mcb-section-inner">
+                <div class="wrap mcb-wrap one  valign-top clearfix">
+                        <div class="mcb-wrap-inner">
+                            <div class="column mcb-column one dark column_fancy_heading ">
+                                <div class="fancy_heading fancy_heading_line">
+                                    <h2 style="font-size: 50px; color: #444;"class="mb-5 title">Why Capulator?</h2>
                                 </div>
-                                {{-- To make picture bigger --}}
-                                <div class="section mcb-section equal-height" style="padding-top:0px; padding-bottom:100px">
-                                    <div class="section_wrapper mcb-section-inner">
-                                        <div class="wrap mcb-wrap one valign-top move-up clearfix" style="margin-top:-120px">
-                                            <div class="mcb-wrap-inner"> 
-
-                                                <div class="column mcb-column one-third column_zoom_box ">
-                                                    <div class="zoom_box">
-                                                        <a href="content/simple2/work-details.html">
-                                                            <div class="photo">
-                                                                    <img src="{{ URL::to('/') }}/images/Analytics.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                                                                    <!-- LAYERS -->
-                                                            </div>
-                                                            <!-- LAYER NR. 1 -->
-                                                            <div class="tp-caption tp-shape tp-shapewrapper tp-resizeme rs-parallaxlevel-0" id="slide-274-layer-3" data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" data-width="full" data-height="full" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="s:300;s:300;" data-start="1000" data-basealign="slide" data-responsive_offset="on" style="z-index: 5;background-color:rgba(0, 0, 0, 0.25);border-color:rgba(0, 0, 0, 1.00);">
-                                                            </div>
-
-                                                            
-                                                            <div class="desc" style="background-color:rgba(0, 0, rgba(255, 4, 55, 0.8), 0.8)">
-                                                                <div class="desc_wrap">
-                                                                    <div class="desc_txt">
-                                                                        Analyse Your Progress
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="column mcb-column one-third column_zoom_box ">
-                                                    <div class="zoom_box">
-                                                        <a href="">
-                                                            <div class="photo">
-                                                                    <img src="{{ URL::to('/') }}/images/Planning.jpg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                                                            </div>
-                                                            <div class="desc" style="background-color:rgba(255, 4, 55, 0.8)">
-                                                                <div class="desc_wrap">
-                                                                    <div class="desc_txt">
-                                                                        Plan Your Future
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="column mcb-column one-third column_zoom_box ">
-                                                    <div class="zoom_box">
-                                                        <a href="content/simple2/work-details.html">
-                                                            <div class="photo">
-                                                                    <img src="{{ URL::to('/') }}/images/Calculate.jpeg" alt="" data-bgposition="center bottom" data-kenburns="on" data-duration="30000" data-ease="Linear.easeNone" data-scalestart="100" data-scaleend="120" data-rotatestart="0" data-rotateend="0" data-offsetstart="0 0" data-offsetend="0 0" data-bgparallax="10" class="rev-slidebg" data-no-retina>
-                                                            </div>
-                                                            <div class="desc" style="background-color:rgba(57, 97, 143, 0.8)">
-                                                                <div class="desc_wrap">
-                                                                    <div class="desc_txt">
-                                                                        Calculate Your CAP
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                </div>
+            <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                <div class="mcb-wrap-inner">
+                    <div class="column mcb-column one column_column">
+                        <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                            <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                <div class="image_wrapper">
+                                    <img style="width:175px;" class="scale-with-grid" src="images/calculate.png">
                                 </div>
-
-                                <div class="container" style="padding-top: 20px;">
-                                        <div style="" class="card">
-                                        <h2>This is where information about our capulator will go in.</h2>
-                                    
-                                        <p class="bryanTest">The Capulator aims to be your one stop for CAP target setting, graphical visualisation of CAP progression.</p>
-                                        </div>
-                                    
-                                    </div>
+                            </div>
+                            <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px;">C</strong>alculate</h4> Easily find out what your CAP will be at the end of the semester using your expectations!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                <div class="mcb-wrap-inner">
+                    <div class="column mcb-column one column_column">
+                        <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                            <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                <div class="image_wrapper">
+                                    <img style="width:175px;" class="scale-with-grid" src="images/analysis.png">
+                                </div>
+                            </div>
+                            <h4 class="mb-3" style="font-size:28px"><strong style="font-size:40px">A</strong>nalyse</h4> All it takes is a click! See how your CAP will behave based on different grades, plan out with our integrated note system, serve reminders and goals.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap mcb-wrap one-third valign-middle clearfix">
+                <div class="mcb-wrap-inner">
+                    <div class="column mcb-column one column_column">
+                        <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
+                            <div class="image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                <div class="image_wrapper">
+                                    <img style="width:175px;" class="scale-with-grid" src="images/planning.png">
+                                </div>
+                            </div>
+                            
+                            <h4 class="mb-3"style="font-size:28px"><strong style="font-size:40px">P</strong>lan</h4> 
+                            Should I SU that mod? With the <i>Capulator</i>, all will be answered!
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>               
                                     
 {{-- <div class="container">
 <div class="card" style="width: 18rem;">

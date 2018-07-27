@@ -13549,6 +13549,11 @@ body {
   display: none;
 }
 
+.landing-bg-pattern {
+  background-image: url(/images/bg-pattern.png?d808fef0da889f09742d3a074f356bc5);
+  background-repeat: repeat repeat;
+}
+
 .orbital-slider-button {
   z-index: 14;
   white-space: nowrap;
