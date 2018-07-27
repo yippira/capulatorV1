@@ -246,7 +246,7 @@
                     
 
         {{-- New section --}}
-        <div class="section mcb-section" id="join" style="padding-top:40px; padding-bottom:0px; background-color:#1c112f;">
+        <div class="section mcb-section parallax-perry" id="join" style="padding-top:40px; padding-bottom:0px; background-color:#1c112f;">
             <div class="section_wrapper mcb-section-inner">
                 <div class="wrap mcb-wrap one valign-top clearfix" style="padding:60px 0 0 0">
                     <div class="mcb-wrap-inner">
@@ -260,14 +260,15 @@
                         </div>
                     </div>
                 </div>
-                
+                <p>As students ourselves, we want as many of us to benefit from this as possible and it will be available for public usage!</p>
        
             </div>
             </div>
             
         </div>
 
-        
+        {{-- End section --}}
+        {{-- start new section --}}
     <div class="text-white section mcb-section" style="padding-top:50px; padding-bottom:100px;">
             <div class="section_wrapper mcb-section-inner">
                     <div class="wrap mcb-wrap one  valign-top clearfix">

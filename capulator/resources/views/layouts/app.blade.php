@@ -19,6 +19,8 @@
     <script src="{{ asset('js/new/jquery.ui.widget.js') }}"></script>
     <script src="{{ asset('js/new/jquery.ui.accordion.js') }}"></script>
     <script src="{{ asset('js/new/animations.js') }}"></script>
+
+ 
     <!-- Fonts -->
     
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
@@ -107,6 +109,10 @@
             }
         }); /*ready*/
     </script>  
+   {{-- Try --}}
+
+   <script src="{{ asset('js/translate3d.js') }}"></script>
+
 
 </body>
 </html>
