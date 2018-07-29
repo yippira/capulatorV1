@@ -13476,8 +13476,7 @@ a.text-dark:focus {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 
-
-dark-navyblue {
+.dark-navyblue {
   background-color: #2c3e50 !important;
 }
 
@@ -13596,55 +13595,3 @@ body {
           transform-origin: 50% 50% 0px;
 }
 
-.parallax-perry{
-  background: url('../images/Polygon\ bg.png') no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
-}
-
-/* 
-html {
-  height: 100%;
-  overflow:hidden;
-} */
-
-/* body{
-  color:#fff;
-  margin: 0;
-  padding: 0;
-  perspective: 1px;
-  transform-style: preserve-3d;
-  height:100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  
-}
-
-#test{
-  box-sizing: border-box;
-  min-height: 100vh;
-  padding: 30vw 0 5vw;
-  position: relative;
-  transform-style: inherit;
-  width: 100vw;
-}
-
-#test, #test:before{
-  background: 50% 50%/cover;
-}
-
-#test::before{
-  bottom:0;
-  content:"";
-  left:0;
-  position:absolute;
-  right:0;
-  top:0;
-  display:block;
-  background-image: url(../images/1.jpg);
-  background-size: cover/2;
-  transform-origin: center center 0;
-  transform: translateZ(-1px) scale(2);
-  z-index: -1;
-  min-height: 100vh;
-} */

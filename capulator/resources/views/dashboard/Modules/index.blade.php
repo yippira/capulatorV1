@@ -136,7 +136,8 @@
                 </div>
                 
                 <div class="modal-footer">
-                  {{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                    <i style="display:none;" id="spinner" class="text-primary fa fa-spinner fa-pulse fa-3x"></i>
+                  {{Form::submit('Submit', ['class' => 'btn btn-primary', 'id'=>'submit-btn'])}}
                     {!! Form::close() !!}
                 </div>
             </div>
@@ -148,7 +149,10 @@
   
         <script type="text/javascript">
   
-  
+            $('#submit-btn').click(function(){
+                $('#spinner').show();
+                $('#submit-btn').hide();
+            });
   
           $('#num_modules').hide();
   

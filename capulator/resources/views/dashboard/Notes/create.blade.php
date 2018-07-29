@@ -20,7 +20,8 @@
 </div>
         </div>
         <div class="card-footer">
-{{Form::submit('Submit', ['class' => 'btn btn-primary'])}}
+                <i style="display:none;" id="spinner" class="text-primary fa fa-spinner fa-pulse fa-3x"></i>
+{{Form::submit('Submit', ['id'=>'submit-btn','class' => 'btn btn-primary'])}}
         </div>
     </div>
     
@@ -29,4 +30,10 @@
     <script>
         CKEDITOR.replace( 'article-ckeditor' );
     </script>
+    <script type="text/javascript">
+    $('#submit-btn').click(function(){
+                $('#spinner').show();
+                $('#submit-btn').hide();
+            });
+        </script>
 @endsection
