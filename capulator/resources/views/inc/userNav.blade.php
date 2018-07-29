@@ -46,9 +46,9 @@
 
 
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                <a class="nav-link" href="#">
+            <a class="nav-link" href="{{url('links')}}">
                 <i class="fa fa-fw fa-link"></i>
-                <span class="nav-link-text nav-link-text-dashboard">Link</span>
+                <span class="nav-link-text nav-link-text-dashboard">Links</span>
               </a>
             </li>
         </ul>

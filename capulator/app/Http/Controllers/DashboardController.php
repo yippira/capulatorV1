@@ -201,5 +201,9 @@ class DashboardController extends Controller
 
         return redirect('/user');
     }
+
+    public function links(){
+        return view('dashboard.links');
+    }
 }
 

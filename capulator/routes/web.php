@@ -29,3 +29,4 @@ Route::get('user','DashboardController@user');
 Route::post('setGoal', 'DashboardController@setGoal');
 Route::post('setSpecial', 'DashboardController@setSpecial');
 Route::delete('reset','DashboardController@reset');
+Route::get('links', 'DashboardController@links');
