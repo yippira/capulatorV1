@@ -105,6 +105,12 @@ body {
   background-repeat: repeat repeat;
 
 }
+.parallax-perry{
+  background: url('../../../public/images/polygon_bg.png') no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 
 
 #Content,#Wrapper,html {

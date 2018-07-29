@@ -13561,6 +13561,12 @@ body {
   background-repeat: repeat repeat;
 }
 
+.parallax-perry {
+  background: url(/images/polygon_bg.png?a857e586c303f8e9cb67563f4c18d1ab) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
 .invert {
   -webkit-filter: invert(100%);
 }
