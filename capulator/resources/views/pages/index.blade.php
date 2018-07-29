@@ -110,7 +110,7 @@
                             </div>
                         </div>
                 </div>
-            <div class="wrap mcb-wrap one-third valign-middle clearfix">
+            <div class="wrap mcb-wrap col-md-4 valign-middle clearfix">
                 <div class="mcb-wrap-inner">
                     <div class="column mcb-column one column_column">
                         <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
@@ -124,7 +124,7 @@
                     </div>
                 </div>
             </div>
-            <div class="wrap mcb-wrap one-third valign-middle clearfix">
+            <div class="wrap mcb-wrap col-md-4 valign-middle clearfix">
                 <div class="mcb-wrap-inner">
                     <div class="column mcb-column one column_column">
                         <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
@@ -138,7 +138,7 @@
                     </div>
                 </div>
             </div>
-            <div class="wrap mcb-wrap one-third valign-middle clearfix">
+            <div class="wrap mcb-wrap col-md-4 valign-middle clearfix">
                 <div class="mcb-wrap-inner">
                     <div class="column mcb-column one column_column">
                         <div class="column_attr clearfix" style=" padding:20px 0px 15px 20px; border-left:1px solid #2b3035;">
@@ -172,13 +172,13 @@
                                 </div>
                             </div>
                     </div>
-                <div class="wrap mcb-wrap one-second valign-middle clearfix">
+                <div class="wrap mcb-wrap col-md-6 col-sm-12 valign-middle clearfix">
                     <div class="mcb-wrap-inner">
-                        <div class="column mcb-column one column_column">
+                        <div class="column mcb-column column_column">
                             <div class="column_attr clearfix" style="padding:20px 0px 15px 20px;">
                                 <div class="row mb-4">
                                
-                                <div class="col-md-3 image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
+                                <div class="col-md-3  image_frame image_item no_link scale-with-grid no_border" style="margin-bottom:20px;">
                                     <div class="image_wrapper">
                                         <img style="width:100px;" class="scale-with-grid inverted" src="images/input.png">
                                     </div>
@@ -231,7 +231,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="wrap mcb-wrap one-second  valign-top clearfix">
+                <div class="wrap mcb-wrap col-md-6 col-sm-12 valign-top clearfix">
                         <div class="mcb-wrap-inner">
                             <div class="column mcb-column one column_image ">
                                 <div class="image_frame image_item no_link no_border">
@@ -249,17 +249,25 @@
         <div class="section mcb-section parallax-perry" id="join" style="padding-top:40px; padding-bottom:0px; background-color:#1c112f;">
             <div class="section_wrapper mcb-section-inner">
                 <div class="wrap mcb-wrap one valign-top clearfix" style="padding:60px 0 0 0">
-                    <div class="mcb-wrap-inner">
+                    <div class="">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12">
                         <div style="text-align: right; margin-top:-50px;" class="column mcb-column one-second column_column">
                             <div class="column_attr">
                                 <h2 style="color: #fff; font-size: 50px;">That sounds great...</h2>
                             </div>
                         </div>
-                        <div style="text-align: left;" class="column mcb-column one-second column_column">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div style="text-align: center;" class="pl-5 ml-5 mcb-column one-second column_column">
                                 <div class="column_attr">
                                 <h3 style="color: #d7d7d7;" class="pl-5"> ...So how much do I pay?</h3>
                                 </div>
                         </div>
+                    </div>
+                </div>
                                 <hr class="no_line" style="margin: 0 auto 50px;" />
                                
                             </div>
