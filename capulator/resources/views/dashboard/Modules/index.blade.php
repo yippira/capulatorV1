@@ -9,7 +9,10 @@
             </ol>
                <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-table"></i> Manage Your Modules 
+                        <i class="fa fa-table"></i> Manage Your Modules &nbsp <span   data-toggle="tooltip" data-placement="top" title="The system will take your earliest module taken to be the start your studies, so do key it in accurately for your own convenience!" class="small fa fa-stack">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-question fa-stack-1x"></i>
+                              </span>
                         <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#create">
                                 Add Modules
                         </button>

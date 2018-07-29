@@ -43,5 +43,11 @@
       @include('inc.footer')
     @include('inc.logout')
 </body>
+<script>
+          $(function () {
+             $('[data-toggle="tooltip"]').tooltip()
+        })
+        
+  </script>
 
 </html>

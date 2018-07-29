@@ -94,7 +94,7 @@ $earliest_sem = $module->sem_taken;
                                 <i class="fa fa-question fa-stack-1x"></i>
                               </span>
                               @else
-                              <span data-toggle="tooltip" data-placement="left  " title="Try to estimate your expected results for this semester to see how it'll go" class="small fa-pull-right fa-stack">
+                              <span data-toggle="tooltip" data-placement="left" title="Try to estimate your expected results for this semester to see how it'll go" class="small fa-pull-right fa-stack">
                                     <i class="fa fa-circle-thin fa-stack-2x"></i>
                                     <i class="fa fa-question fa-stack-1x"></i>
                                   </span>
@@ -121,8 +121,8 @@ $earliest_sem = $module->sem_taken;
                 </div>
                 <div class="">
                         <div class="card mb-3">
-                            <div class="card-header">
-                                <i class="fa fa-table"></i> Current Semester Modules</div>
+                            <div data-toggle="tooltip" data-placement="bottom" title="Add new modules under the modules page!" class="card-header">
+                                <i  class="fa fa-table"></i> Current Semester Modules</div>
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -260,7 +260,7 @@ $earliest_sem = $module->sem_taken;
                 </div>
                 <div class="card">
                         <div class="card-header small">
-                            <i class="fa fa-sticky-note"></i> Notes
+                            <i  data-toggle="tooltip" data-placement="left" title="Useful notes can be displayed here! For example, to take a certain module with a friend! Or reminders, or grade targets." class="fa fa-sticky-note">&nbspNotes</i> 
                             <a class="btn-sm btn btn-primary pull-right" href="/notes/create"><i class="fa fa-plus"></i></a>
                         </div>
                         <div style="padding: 0;" class='pb-3 card-body'>
@@ -401,10 +401,7 @@ $earliest_sem = $module->sem_taken;
 
     <script>
         // This is to setup tooltips
-        $(function () {
-             $('[data-toggle="tooltip"]').tooltip()
-        })
-        
+
 
         var cap_array = {!! json_encode($cap_array) !!};
         

@@ -22,8 +22,8 @@
                 <thead>
                     <tr>
                         <th>Note Title</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
+                        <th>Created</th>
+                        <th>Updated</th>
                         <th style="">Options</th>
                     </tr>
                 </thead>
@@ -31,15 +31,14 @@
                 @if(count($notes) > 0) @foreach($notes as $note)
                 <tr>
                     <td>{{$note->title}}</td>
-                    <td>{{$note->created_at}}</td>
-                    <td>{{$note->updated_at}}</td>
+                    <td>{{date('d/F/Y \a\t h:i:s A',strtotime($note->created_at. '+ 8 hours'))}}</td>
+                    <td>{{date('d/F/Y \a\t h:i:s A',strtotime($note->updated_at. '+ 8 hours'))}}</td>
                     <td>
                         <div class="">
-                                                      {!! Form::open(['action' => ['NotesController@destroy', $note->id],'class' => '', 'method' =>
-                            'POST']) !!} 
+                                                     
                              <a class="btn btn-primary mr-1" href="/notes/{{$note->id}}"><i class="fa fa-eye"></i> View</a>                            
  
-                            {{Form::hidden('_method', 'DELETE')}} {{ Form::button('<i class="fa fa-trash"></i>                            Delete', ['type' => 'submit', 'class' => 'mr-1 btn btn-danger'] )}}
+                             <a class="mr-1 btn btn-danger text-white" data-toggle="modal" data-target="#deleteNoteModal{{$note->id}}"><i class="fa fa-times fa-sm"></i> Delete</a>  
 
                             <a class="btn btn-warning mr-1" href="/notes/{{$note->id}}/edit"><i class="fa fa-edit"></i> Edit</a>                            {!!Form::close() !!}
 
@@ -47,6 +46,31 @@
                     </td>
                 </tr>
 
+                {{-- Delete Note Warning Modal --}}
+                <div class="modal fade" id="deleteNoteModal{{$note->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteNoteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="deleteNoteModalLabel">Confirmation</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                                </div>
+                                <div class="modal-body"><p>Are you sure you want to delete "{{$note->title}}" ?</p>
+                                </div>
+                                <div class="modal-footer">
+                                        {!! Form::open(['action' => ['NotesController@destroy', $note->id],'class' => 'pull-right', 'method' =>
+                                        'POST']) !!} 
+                                        
+                                        {{Form::hidden('_method', 'DELETE')}} {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'btn btn-danger'] )}}
+            
+                                        {!!Form::close() !!}
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach @else @endif
                 <tfoot>
                     </tbody>
