@@ -58,6 +58,7 @@ class ModulesController extends Controller
          $this->validate($request, [
              'year'=> 'required',
              'semester'=>'required',
+             'num_mods'=>'required',
 
 
          ]);

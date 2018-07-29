@@ -41,17 +41,37 @@
                                             <td>{{$module->grade}}</td>
                                             <td>{{$module->mc_worth}}</td>
                                             <td> <div class="">
-                                                {!! Form::open(['action' => ['ModulesController@destroy', $module->id],'class' => '', 'method' => 'POST'])
-                                                !!} {{Form::hidden('_method', 'DELETE')}} 
-                                                {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'pull-left btn btn-danger'] )}}
-                                                {!!Form::close()
-                                                !!}  
-                
+                                                    <a class="btn btn-danger  text-white pull-left " data-toggle="modal" data-target="#deleteModal{{$module->id}}"><i class="fa fa-trash"></i> Delete</a>  
+
                                                 
                                                 <a class="btn btn-warning pull-right " data-toggle="modal" data-target="#editModal{{$module->id}}"><i class="fa fa-edit"></i> Edit</a>  
                                                 </div>                         
                                             </td>
                                         </tr>
+                                           {{-- Delete Module Warning Modal --}}
+                                    <div class="modal fade" id="deleteModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h5 class="modal-title" id="resetModalLabel">Confirmation</h5>
+                                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">×</span>
+                                                    </button>
+                                                    </div>
+                                                    <div class="modal-body"><p>Are you sure you want to delete "{{$module->module_code}}" ?</p>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                            {!! Form::open(['action' => ['ModulesController@destroy', $module->id],'class' => '', 'method' => 'POST'])
+                                                            !!} {{Form::hidden('_method', 'DELETE')}} 
+                                                            {{ Form::button('<i class="fa fa-trash"></i> Delete', ['type' => 'submit', 'class' => 'pull-left btn btn-danger'] )}}
+                                                            {!!Form::close()
+                                                            !!} 
+                                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                                    
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                           <!-- Edit Modal-->
                                     <div class="modal fade" id="editModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -209,7 +229,7 @@
           // $("#module_details").append('<div class="form-row">');
           // $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code ' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
           
-          $("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><select class = 'form-control' name = 'grade" + $i + "'>" + grade_options + SU_option + "</select></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
+          $("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><select class = 'form-control' name = 'grade" + $i + "'>" + grade_options + SU_option + "</select></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' value='4' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
           //$("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><input class = 'form-control' placeholder = 'Eg. A' name = 'grade" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
   
   
