@@ -12,6 +12,13 @@
 */
 
 Route::get('/', 'PagesController@index');
+Route::get('/home', function () {
+    if(Auth::check()) {
+        return redirect('/dashboard');
+    } else {
+        return view('auth.login');
+    }
+});
 Route::get('/slider', 'PagesController@slider');
 
 Route::get('/dashboard', 'DashboardController@index');
