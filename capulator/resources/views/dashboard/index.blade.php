@@ -16,13 +16,23 @@ $earliest_sem = $module->sem_taken;
 @break
 
 @endforeach
+
         <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
+        
+           <div class="pull-right py-2 px-2">
+                           <a data-toggle="modal" data-target="#instructionsModal"class="btn-lg text-white btn-primary">Instructions</a>
+                        
+            </div>
+            <ol class="breadcrumb">
+    
             <li class="breadcrumb-item">
                 <a href="/dashboard">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">My Dashboard</li>
+
         </ol>
+
+
         <!-- Icon Cards-->
         <div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
@@ -122,7 +132,8 @@ $earliest_sem = $module->sem_taken;
                 <div class="">
                         <div class="card mb-3">
                             <div data-toggle="tooltip" data-placement="bottom" title="Add new modules under the modules page!" class="card-header">
-                                <i  class="fa fa-table"></i> Current Semester Modules</div>
+                                <i  class="fa fa-table"></i> Current Semester Modules                             <a class="btn-sm btn btn-primary pull-right" href="/modules"><i class="fa fa-plus"></i></a></div>
+                                
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -179,6 +190,7 @@ $earliest_sem = $module->sem_taken;
                             </div>
                         </div>
                     </div>
+
                 
                                           <!-- Edit Modal-->
                                     <div class="modal fade" id="editModal{{$module->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -373,6 +385,34 @@ $earliest_sem = $module->sem_taken;
             
 
         </div>
+        
+                    {{-- Instructions Modal --}}
+                    <div class="modal fade" id="instructionsModal" tabindex="-1" role="dialog" aria-labelledby="instructionsModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="instructionsModalLabel">Welcome to Capulator!</h5>
+                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">×</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">                                    
+                                    <p>To get started, please add the modules you've taken in order to show your CAP!</p>
+                                    <p>Adding modules can be done either from the navigation bar on your left under the modules page, or the plus button below.
+                                    <img class="py-2" src="images/modules-button.PNG"><img class="py-2 px-2" src="images/button-plus.PNG">
+                                    </p>
+                                    <p>Addition settings such as exemptions/non-honours degree can be tweaked under user settings!</p>
+                                    <p>CAP Goals can be set under settings as well.</p>
+                                    <p>Helpful notes can be added for reminders/module goals.</p>
+                                </div>
+                                <div class="modal-footer">
+                                       
+                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
         <!-- Module information for easy access on front page-->
 
