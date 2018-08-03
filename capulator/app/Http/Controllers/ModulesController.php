@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Module;
 use App\User;
 use URL;
-
+use Validator;
 class ModulesController extends Controller
 {
     
@@ -63,15 +63,19 @@ class ModulesController extends Controller
 
          ]);
          for($i = 1; $i <= $request->input('num_mods'); $i++){
-
-            $this->validate($request, [
-                'mod_code' .$i => 'bail|required',
-                'grade'.$i =>'bail|required',
-                'mc_worth'.$i =>'bail|required',
-   
-   
-            ]);
+            $messages =['mod_code'.$i.'.required' => 'You did not key in your number ' . $i . ' Module!', 
+            'grade'.$i.'.required' => 'You did not key in your number ' . $i . ' grade!',
+            'mc_worth'.$i.'.required'=>'You did not key in your number ' . $i . ' MC Worth!'];
+            $validator = Validator::make($request->all(),['mod_code' .$i => 'bail|required',
+            'grade'.$i =>'bail|required',
+            'mc_worth'.$i =>'bail|required'],$messages);
+           
+            if($validator->fails()){
+                return redirect()->back()->withErrors($validator->errors());
+            }
+    
          }
+
 
         //We need to first take the year and semester. 
 

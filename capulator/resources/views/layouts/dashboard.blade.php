@@ -47,7 +47,16 @@
           $(function () {
              $('[data-toggle="tooltip"]').tooltip()
         })
+
+        $(document).ready(function(){
+
+          $("#add_modal").reset();
+        })
+          
         
+
+       
+
   </script>
 
 </html>

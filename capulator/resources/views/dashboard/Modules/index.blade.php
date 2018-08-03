@@ -136,7 +136,7 @@
               <div class="modal-body">
                  
                 <div class="">
-                  {!! Form::open(['action' => 'ModulesController@store', 'method' => 'POST']) !!}
+                  {!! Form::open(['action' => 'ModulesController@store', 'method' => 'POST', 'id' => 'add_modal']) !!}
                   <div class="row">
                   <div class="form-group col-md-6 col-sm-6">
                       {{Form::label('year_taken', 'Year Taken')}} {{Form::selectRange('year',  date('Y', strtotime('- 5 years')),date('Y', strtotime('+ 2 years')),'null',['class' => 'form-control', 'placeholder' => 'Pick a Year', 'id' => 'year'])}}
@@ -165,18 +165,25 @@
                 </div>
             </div>
             
-            
+
           </div>
         </div> 
   
   
         <script type="text/javascript">
   
+  
+  $(document).ready(function(){
+
+$("#add_modal")[0].reset();
+})
+
             $('#submit-btn').click(function(){
                 $('#spinner').show();
                 $('#submit-btn').hide();
+                
             });
-  
+
           $('#num_modules').hide();
   
           var yearSelected = false;
@@ -229,7 +236,7 @@
           // $("#module_details").append('<div class="form-row">');
           // $("#module_details").append('<div class="col-md-4"> {{Form::label('mod_code', 'Module Code')}} {{Form::text('mod_code ' , '',['class' => 'form-control', 'placeholder' => 'Eg. CS1010'])}} </div>');
           
-          $("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><select class = 'form-control' name = 'grade" + $i + "'>" + grade_options + SU_option + "</select></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' value='4' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
+          $("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code*</label><input class = 'form-control darken' placeholder = 'Eg. CFG1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade*</label><select class = 'form-control darken' name = 'grade" + $i + "'>" + grade_options + SU_option + "</select></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth*</label><input class = 'form-control darken' value='4' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
           //$("#module_details").append("<div class='row'><div class = 'col-md-4'> <label for='mod_code" + $i + "'>Module Code</label><input class = 'form-control' placeholder = 'Eg. CS1010' name = 'mod_code" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='grade" + $i + "'>Grade</label><input class = 'form-control' placeholder = 'Eg. A' name = 'grade" + $i + "' type='text' </input></div><div class = 'col-md-4'> <label for='mc_worth" + $i + "'>MC Worth</label><input class = 'form-control' placeholder = 'Eg. 4' name = 'mc_worth" + $i + "' type='text' </input></div></div>");
   
   

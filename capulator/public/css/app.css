@@ -13567,6 +13567,11 @@ body {
   background-attachment: fixed;
 }
 
+.darken {
+  color: #000;
+  font-weight: bold;
+}
+
 .invert {
   -webkit-filter: invert(100%);
 }

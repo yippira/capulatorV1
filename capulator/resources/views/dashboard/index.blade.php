@@ -416,7 +416,7 @@ $earliest_sem = $module->sem_taken;
             var start = '';
             startYear = {{$earliest_year}} + i;
             for(var j = 1; j <= 2; j++){
-                start = startYear + '/' + j;
+                start = startYear + '/' + (startYear+1) +' Sem '+ j;
                 acadYearArray.push(start);
             }
             
