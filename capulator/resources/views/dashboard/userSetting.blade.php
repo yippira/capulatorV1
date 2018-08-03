@@ -9,14 +9,14 @@
             </ol>
                <div class="card mb-3">
                     <div class="card-header">
-                        <i class="fa fa-target"></i> Setup exemptions
+                        <i class="fa fa-target"></i> Setup your MC requirement.
                       
                     </div>
                     
 
                     <div class="card-body">
                             {!! Form::open(['action' => ['DashboardController@setSpecial'], 'method' => 'POST'])!!}
-                                <div class="form-group">
+                                <div class="form-group"data-toggle="tooltip" data-placement="bottom" title="Polytechnic students are given a default of at least 20MC exemption, please check with your faculty to confirm your actual exemption. If you are not taking honours degree, please also deduct 40 MC! ">
                                         {{Form::label('exemption', 'Exempted MC for graduation')}}
                                         {{Form::text('exemption', $exemption,['class' => 'form-control', 'placeholder' => 'Polytechnic default : 20 MC.'])}}
                                     </div>
